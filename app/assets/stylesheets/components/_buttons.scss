@@ -1,0 +1,31 @@
+.btn-red {
+  height: 50px;
+  width: 165px;
+  background-color: #EF6666;
+  color: white;
+  border-radius: 22px;
+
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
+.btn-white {
+  height: 50px;
+  width: 165px;
+  background-color: white;
+  color: black;
+  border-radius: 22px;
+  border: 1px solid #000000;
+
+  p {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    padding-top: 15px;
+
+  }
+}
