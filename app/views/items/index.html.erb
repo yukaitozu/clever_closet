@@ -1,2 +1,12 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>My Closet</h1>
+
+<%= render 'searchbar_items'%>
+
+<% @items.each do |item| %>
+  <% if item.photo.attached? %>
+    <%= cl_image_tag item.photo.key, height: 300, width: 250, crop: :fill %>
+  <% else %>
+    <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
+  <%= item.name %>
+  <% end %>
+<% end %>
