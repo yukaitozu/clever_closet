@@ -12,48 +12,89 @@ Item.destroy_all
 Look.destroy_all
 User.destroy_all
 
-p 1
+puts "creating User"
 user = User.create!(
   email: "abcd@gmail.com",
   password: "123456"
   )
-p 1
 
-p 2
+puts "creating shirts"
+
 shirts = Item.create!(
   name: "shirts",
   size: "m",
   user: user
   )
-p 2
+file = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424984/sub/424984_sub7_popup.jpg')
+shirts.photo.attach(io: file, filename: 'shirts.jpg', content_type: 'image/jpg')
 
-p 3
-file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-shirts.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-p 3
+shirts2 = Item.create!(
+  name: "shirts",
+  size: "m",
+  user: user
+  )
+file = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424984/sub/424984_sub7_popup.jpg')
+shirts2.photo.attach(io: file, filename: 'shirts.jpg', content_type: 'image/jpg')
 
-p 4
+shirts3 = Item.create!(
+  name: "shirts",
+  size: "m",
+  user: user
+  )
+file = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424984/sub/424984_sub7_popup.jpg')
+shirts3.photo.attach(io: file, filename: 'shirts.jpg', content_type: 'image/jpg')
+
+
+puts "creating jeans"
+
 jeans = Item.create!(
   name: "jeans",
   size: "m",
   user: user
   )
-p 4
-
-p 5
 file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/425520/item/68_425520_large.jpg')
 jeans.photo.attach(io: file2, filename: 'jeans.jpg', content_type: 'image/jpg')
-p 5
 
-p 6
+jeans2 = Item.create!(
+  name: "jeans",
+  size: "m",
+  user: user
+  )
+file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/425520/item/68_425520_large.jpg')
+jeans2.photo.attach(io: file2, filename: 'jeans.jpg', content_type: 'image/jpg')
+
+jeans3 = Item.create!(
+  name: "jeans",
+  size: "m",
+  user: user
+  )
+file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/425520/item/68_425520_large.jpg')
+jeans3.photo.attach(io: file2, filename: 'jeans.jpg', content_type: 'image/jpg')
+
+
+
 shoes = Item.create!(
   name: "shoes",
   size: "m",
   user: user
   )
-p 6
-
-p 7
 file3 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/422356/item/56_422356.jpg')
-jeans.photo.attach(io: file3, filename: 'shoes.jpg', content_type: 'image/jpg')
-p 7
+shoes.photo.attach(io: file3, filename: 'shoes.jpg', content_type: 'image/jpg')
+
+shoes2 = Item.create!(
+  name: "shoes",
+  size: "m",
+  user: user
+  )
+file3 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/422356/item/56_422356.jpg')
+shoes2.photo.attach(io: file3, filename: 'shoes.jpg', content_type: 'image/jpg')
+
+shoes3 = Item.create!(
+  name: "shoes",
+  size: "m",
+  user: user
+  )
+file3 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/422356/item/56_422356.jpg')
+shoes3.photo.attach(io: file3, filename: 'shoes.jpg', content_type: 'image/jpg')
+
+puts "finish"
