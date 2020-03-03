@@ -1,2 +1,6 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>My Closet</h1>
+
+<%= render 'searchbar_items'%>
+<% @items.each do |item| %>
+  <%= render "items/cards", item: item %>
+<% end %>
