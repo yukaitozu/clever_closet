@@ -16,7 +16,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-#added
+# Manually added gems
+gem 'cloudinary', '~> 1.12.0'
 gem 'pundit'
 
 group :development do
