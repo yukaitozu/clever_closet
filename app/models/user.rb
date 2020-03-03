@@ -8,5 +8,8 @@ class User < ApplicationRecord
   has_many :donations, dependent: :destroy
   has_many :looks, dependent: :destroy
 
+  # https://github.com/sungwoncho/has_friendship to check docs
   has_friendship
+
+
 end
