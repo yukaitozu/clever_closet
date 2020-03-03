@@ -1,2 +1,15 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<h1><%= @item.name %></h1>
+<h3><%= @item.user %>'s Closet</h3>
+
+<% if @item.photo.attached? %>
+  <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill %>
+<% else %>
+  <%= image_tag "https://cdni.llbean.net/is/image/wim/280367_35374_41?hei=1095&wid=950&resMode=sharp2&defaultImage=llbstage/A0211793_2"%>
+<% end %>
+
+ <p><%#= @item.color %></p>
+<p><%= @item.category %></p>
+<p><%= @item.size %></p>
+
+<!-- button -->
+<%#= link_to "Borrow", chat_path, class: "btn" %> <!-- need to figure out path to messaging -->
