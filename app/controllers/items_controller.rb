@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
     @items = policy_scope(Item)
 
     if params[:query].present?
-      @items = Item.search_by_name_and_size(params[:query])
+      @items = Item.search_all_items(params[:query])
     end
   end
 
