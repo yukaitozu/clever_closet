@@ -5,6 +5,9 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :size, presence: true
+  validates :category, presence: true
 
   acts_as_taggable_on :tags
+
+  CATEGORIES = ["top", "bottom", "shoe", "outerwear", "accessory"]
 end
