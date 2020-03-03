@@ -4,6 +4,10 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @items = policy_scope(Item)
+
+    if params[:query].present?
+      @items = Item.search_all_items(params[:query])
+    end
   end
 
   def show
