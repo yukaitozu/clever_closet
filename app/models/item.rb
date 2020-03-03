@@ -2,6 +2,9 @@ class Item < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_all_items,
     against: [ :name, :size, :category ],
+    associated_against: {
+      tags: [:name]
+    },
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
