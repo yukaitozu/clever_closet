@@ -16,10 +16,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+
+
 # Manually added gems
 gem 'cloudinary', '~> 1.12.0'
-gem 'has_friendship'
 gem 'pundit'
+gem 'has_friendship'
 
 
 group :development do
