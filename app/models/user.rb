@@ -11,5 +11,5 @@ class User < ApplicationRecord
   # https://github.com/sungwoncho/has_friendship to check docs
   has_friendship
 
-
+  validates :username, presence: true
 end
