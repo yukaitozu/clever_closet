@@ -21,6 +21,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'pundit'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'has_friendship'
+gem 'pg_search', '~> 2.3.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
