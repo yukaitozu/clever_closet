@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :donations, dependent: :destroy
   has_many :looks, dependent: :destroy
+
+  has_friendship
 end
