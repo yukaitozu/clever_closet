@@ -5,4 +5,6 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :size, presence: true
+
+  acts_as_taggable_on :tags
 end
