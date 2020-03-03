@@ -4,9 +4,12 @@
 
 <% @items.each do |item| %>
   <% if item.photo.attached? %>
+    <%= link_to item_path(item) do %>
     <%= cl_image_tag item.photo.key, height: 300, width: 250, crop: :fill %>
+    <% end %>
   <% else %>
     <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
   <%= item.name %>
   <% end %>
+
 <% end %>
