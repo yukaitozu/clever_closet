@@ -1,5 +1,4 @@
-<h1><%= @item.name %></h1>
-<h3><%= @item.user %>'s Closet</h3>
+<h3><%= @item.user.username %>'s Closet</h3>
 
 <%= render 'items/show-card', item: @item %>
 
