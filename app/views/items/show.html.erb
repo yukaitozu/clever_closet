@@ -1,6 +1,34 @@
+<h1><%= @item.name %></h1>
 <% if @current_user == @item.user %>
-  <%= render 'items/current-user-show', item: @item %>
+  <h3>Your Closet</h3>
 <% else %>
-  <%= render 'items/friend-show', item: @item %>
+  <h3><%= @item.user.username %>'s Closet</h3>
+<% end %>
+
+<%= render 'items/show-card', item: @item %>
+
+<p><%#= @item.color %></p>
+<p><%= @item.category %></p>
+<p><%= @item.size %></p>
+
+<% if @current_user == @item.user %>
+  <%= link_to root_path do %>  <!-- need to add path for edit -->
+    <i class="fas fa-pencil-alt"></i>
+  <% end %>
+
+  <!-- delete button -->
+  <%= link_to root_path do %> <!-- need to add path for delete -->
+    <i class="fas fa-times"></i>
+  <% end %>
+
+  <!-- donate button -->
+  <% if policy(@item).donate? %>
+    <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
+  <% end %>
+
+<% else %>
+
+  <%= link_to "Borrow", root_path, class: "btn btn-red" %> <!-- need to figure out path to messaging -->
+
 <% end %>
 
