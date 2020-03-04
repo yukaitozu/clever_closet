@@ -8,4 +8,8 @@ class ItemPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def donate?
+    !record.donated?
+  end
 end
