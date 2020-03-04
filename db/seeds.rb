@@ -12,12 +12,18 @@ Item.destroy_all
 Look.destroy_all
 User.destroy_all
 
-puts "creating User"
+puts "creating Users"
 user = User.create!(
-  username: "erica",
-  email: "abcd@gmail.com",
+  username: "Erica",
+  email: "erica@gmail.com",
   password: "123456"
   )
+
+user2 = User.create!(
+  username: "Beth",
+  email: "beth@gmail.com",
+  password: "123456"
+)
 
 puts "creating shirts"
 
@@ -33,7 +39,7 @@ shirts.photo.attach(io: file, filename: 'shirts.jpg', content_type: 'image/jpg')
 shirts2 = Item.create!(
   name: "shirts",
   size: "m",
-  user: user,
+  user: user2,
   category: Item::CATEGORIES.sample
   )
 file = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424984/sub/424984_sub7_popup.jpg')
@@ -54,7 +60,7 @@ puts "creating jeans"
 jeans = Item.create!(
   name: "jeans",
   size: "m",
-  user: user,
+  user: user2,
   category: Item::CATEGORIES.sample
   )
 file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/425520/item/68_425520_large.jpg')
@@ -63,7 +69,7 @@ jeans.photo.attach(io: file2, filename: 'jeans.jpg', content_type: 'image/jpg')
 jeans2 = Item.create!(
   name: "jeans",
   size: "m",
-  user: user,
+  user: user2,
   category: Item::CATEGORIES.sample
   )
 file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/425520/item/68_425520_large.jpg')
@@ -92,7 +98,7 @@ shoes.photo.attach(io: file3, filename: 'shoes.jpg', content_type: 'image/jpg')
 shoes2 = Item.create!(
   name: "shoes",
   size: "m",
-  user: user,
+  user: user2,
   category: Item::CATEGORIES.sample
   )
 file3 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/422356/item/56_422356.jpg')
