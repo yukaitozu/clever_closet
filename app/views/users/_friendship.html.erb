@@ -1,9 +1,17 @@
 <!-- if friend  -->
 <% if current_user.friends.include?(user) %>
-  <%= "friend" %>
+  <p>Already Friends</p>
   <!-- elsif pending request -->
 <% elsif current_user.pending_friends.include?(user) %>
-  <%= "requested" %>
+  <p>Friendship Requested</p>
+<% elsif current_user.requested_friends.include?(user) %>
+  <%= form_for :user, url: user_accept_request_path(user) do |f| %>
+      <%= f.submit "accept", class: "btn" %>
+  <% end %>
+
+  <%= form_for :user, url: user_decline_request_path(user) do |f| %>
+      <%= f.submit "reject", class: "btn" %>
+  <% end %>
 <% elsif current_user == user %>
   <%= "you" %>
   <!-- create request -->

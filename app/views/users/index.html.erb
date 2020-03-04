@@ -19,15 +19,4 @@
 
 <% end %>
 
-<% current_user.pending_friends.each do |pending| %>
-  <%= pending.username %>
 
-  <%= form_for :pending, url: user_accept_request_path(pending) do |f| %>
-      <%= f.submit "accept", class: "btn" %>
-  <% end %>
-
-  <%= form_for :pending, url: user_decline_request_path(pending) do |f| %>
-      <%= f.submit "reject", class: "btn" %>
-  <% end %>
-
-<% end %>

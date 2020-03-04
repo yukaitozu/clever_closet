@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     current_user.accept_request(@user)
      authorize @user
-     raise
+     # raise
 
     redirect_to users_path
   end
