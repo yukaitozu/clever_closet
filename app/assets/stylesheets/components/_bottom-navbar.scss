@@ -1,0 +1,34 @@
+.bottom-navbar {
+  background-color: #343434;
+  height: 60px;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+
+.icons {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  .fa-tshirt {
+    color: white;
+    font-size:30px;
+  }
+  .fa-user-friends {
+    color: white;
+    font-size:30px;
+  }
+  .fa-camera {
+    color: white;
+    font-size:30px;
+  }
+  .fa-search {
+    color: white;
+    font-size:30px;
+  }
+}
+
