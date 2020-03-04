@@ -1,7 +1,7 @@
 class DonationPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      record.user == user
+      scope.where(user: user)
     end
   end
 
@@ -10,7 +10,7 @@ class DonationPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    !record.item.donated
   end
 
   

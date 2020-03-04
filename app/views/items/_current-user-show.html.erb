@@ -18,4 +18,8 @@
 <% end %>
 
 <!-- donate button -->
+<% if policy(@item).donate? %>
+  
+
 <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
+<% end %>
