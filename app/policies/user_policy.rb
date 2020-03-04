@@ -21,4 +21,8 @@ class UserPolicy < ApplicationPolicy
   def decline_request?
     true
   end
+
+  def remove_friend?
+    true
+  end
 end

@@ -1,6 +1,10 @@
 <!-- if friend  -->
 <% if current_user.friends.include?(user) %>
   <p>Already Friends</p>
+  <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
+      <%= f.submit "bye", class: "btn" %>
+  <% end %>
+
   <!-- elsif pending request -->
 <% elsif current_user.pending_friends.include?(user) %>
   <p>Friendship Requested</p>

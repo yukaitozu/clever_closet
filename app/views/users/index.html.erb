@@ -7,7 +7,6 @@
   <%= submit_tag "Search" %>
 <% end %>
 
-
 <% @users.reject{|u| u == current_user}.each do |user| %>
   <%= user.username %>
   <% if user.photo.attached? %>
@@ -16,7 +15,8 @@
     <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
   <% end %>
   <%= render "friendship", user: user %>
-
 <% end %>
+
+<%= render "index_tab"%>
 
 
