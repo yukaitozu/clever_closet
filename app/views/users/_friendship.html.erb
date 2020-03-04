@@ -1,0 +1,14 @@
+<!-- if friend  -->
+<% if current_user.friends.include?(user) %>
+  <%= "friend" %>
+  <!-- elsif pending request -->
+<% elsif current_user.pending_friends.include?(user) %>
+  <%= "requested" %>
+<% elsif current_user == user %>
+  <%= "you" %>
+  <!-- create request -->
+<% else %>
+  <%= form_for :user, url: user_request_friendship_path(user) do |f| %>
+      <%= f.submit "friend request", class: "btn" %>
+  <% end %>
+<% end %>

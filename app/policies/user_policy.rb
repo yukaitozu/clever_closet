@@ -5,7 +5,20 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
+
   def show?
+    true
+  end
+
+  def request_friendship?
+    true
+  end
+
+  def accept_request?
+    true
+  end
+
+  def decline_request?
     true
   end
 end
