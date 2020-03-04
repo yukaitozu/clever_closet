@@ -1,4 +1,4 @@
-<% if @current_user %>
+<% if @current_user == @item.user %>
   <%= render 'items/current-user-show', item: @item %>
 <% else %>
   <%= render 'items/friend-show', item: @item %>
