@@ -1,9 +1,7 @@
-<h3><%= @item.user.username %>'s Closet</h3>
+<% if @current_user %>
+  <%= render 'items/current-user-show', item: @item %>
+<% else %>
+  <%= render 'items/friend-show', item: @item %>
+<% end %>
 
-<%= render 'items/show-card', item: @item %>
 
- <p><%#= @item.color %></p>
-<p><%= @item.category %></p>
-<p><%= @item.size %></p>
-
-<%= link_to "Borrow", root_path, class: "btn btn-red" %> <!-- need to figure out path to messaging -->
