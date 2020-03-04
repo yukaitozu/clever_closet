@@ -1,0 +1,10 @@
+<h1>Donations</h1>
+<% @donations.each do |donation| %>
+<p><%= donation.pick_up_date %></p>
+<p><%= donation.item.name %></p>
+<p><% if donation.picked_up? %>
+    <%= "Status: Picked up" %>
+    <% else %>
+    <%= "Status: Pending"%>
+  <% end %>
+<% end %>
