@@ -14,4 +14,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   validates :username, presence: true
+  validates_each :items do |user, attr, value|
+    user.errors.add attr, "Too many items for user" if user.items.size > user.items_limit
+  end
 end
