@@ -8,7 +8,7 @@
 <% end %>
 
 
-<% @users.each do |user| %>
+<% @users.reject{|u| u == current_user}.each do |user| %>
   <%= user.username %>
   <% if user.photo.attached? %>
     <%= cl_image_tag user.photo.key height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
