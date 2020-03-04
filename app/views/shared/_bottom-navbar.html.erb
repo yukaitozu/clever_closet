@@ -1,8 +1,18 @@
 <div class="bottom-navbar navbar-expand-lg jus">
   <div class="icons">
-    <i class="fas fa-tshirt"></i>
-    <i class="fas fa-user-friends"></i>
-    <i class="fas fa-camera"></i>
-    <i class="fas fa-search"></i>
+    <!-- add links -->
+
+    <%= link_to do %>
+      <i class="fas fa-tshirt"></i>
+    <% end %>
+    <%= link_to do %>
+      <i class="fas fa-user-friends"></i>
+    <% end %>
+    <%= link_to do %>
+      <i class="fas fa-camera"></i>
+    <% end %>
+    <%= link_to items_path do %>
+      <i class="fas fa-search"></i>
+    <% end %>
   </div>
 </div>
