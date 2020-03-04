@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:show, :index]
-skip_after_action :verify_policy_scoped, only: :index
+  skip_after_action :verify_policy_scoped, only: :index
   def index
     # @items = Item.all
     @items = Item.all.where(user: current_user)
