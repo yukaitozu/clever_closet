@@ -15,6 +15,7 @@ class Item < ApplicationRecord
 
   validates :name, :size, presence: true
   validates :category, presence: true
+  validates_associated :user, :message => "You have too many items"
 
   acts_as_taggable_on :tags
 
