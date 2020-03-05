@@ -1,0 +1,22 @@
+<%= form_tag users_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a friend"
+  %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<% @users.reject{|u| u == current_user}.each do |user| %>
+  <%= user.username %>
+  <% if user.photo.attached? %>
+    <%= cl_image_tag user.photo.key height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+  <% else %>
+    <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+  <% end %>
+  <%= render "friendship", user: user %>
+<% end %>
+
+<%= render "index_tab"%>
+
+
