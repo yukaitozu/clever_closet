@@ -1,25 +1,28 @@
 <div class="container">
+  <%= render 'searchbar_items'%>
   <div class="title">
-    <h1>My Closet</h1>
-      <%= render 'searchbar_items'%>
-    </div>
-    
+    <h2>My Closet</h2>
+
   <div class="row">
     <div class="col-index mx-auto">
       <% if @items.any? %>
-        <% @items.each do |item| %>
-          <%= render "items/cards", item: item %>
+        <div class="your-items">
+          <% @items.each do |item| %>
+            <%= render "items/cards", item: item %>
+          <% end %>
+        </div>
+        <% else %>
+          <p><em>No results in your closet<em></p>
         <% end %>
-      <% else %>
-        <p>No results in your closet</p>
-      <% end %>
-
       <% if @friends_items %>
-      <p>Found in your friends closets:</p>
-        <% @friends_items.each do |item| %>
-          <%= render "items/cards", item: item %>
-        <% end %>
+      <p><em>Found in your friends closets:<em></p>
+        <div class="friend-items">
+          <% @friends_items.each do |item| %>
+            <%= render "items/cards", item: item %>
+          <% end %>
+        </div>
       <% end %>
       </div>
     </div>
+  </div>
 </div>

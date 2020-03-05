@@ -7,11 +7,11 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <%= render 'shared/top-navbar' %>
-    <div class="container" style="padding-top: 95px;">
+    <div class="container" style="padding-top: 95px">
       <%= render 'shared/flashes' %>
       <%= yield %>
       <%= render 'shared/bottom-navbar' %>
