@@ -1,15 +1,14 @@
 <div class="container">
   <h1>Donations</h1>
   <% @donations.each do |donation| %>
-  <p><%= donation.pick_up_date. strftime('%A, %B %e, %Y') %></p>
-  <p><%= donation.pick_up_date. strftime('%l:%M %p') %></p>
-  <p><%= donation.item.name %></p>
-  <p>
+    <p><strong>Date:</strong> <%= donation.pick_up_date. strftime('%A, %B %e, %Y') %></p>
+    <p><strong>Time:</strong> <%= donation.pick_up_date. strftime('%l:%M %p') %></p>
+    <p><strong>Item Name:</strong> <%= donation.item.name %></p>
     <% if donation.picked_up? %>
-        <%= "Status: Picked up" %>
-      <% else %>
-        <%= "Status: Pending"%>
+      <p><strong>Status:</strong> Picked Up</p>
+    <% else %>
+      <p><strong>Status:</strong> Pending</p>
     <% end %>
-  </p>
+    <%= donation %>
   <% end %>
 </div>
