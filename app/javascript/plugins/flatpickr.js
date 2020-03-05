@@ -3,5 +3,5 @@ import "flatpickr/dist/flatpickr.min.css"
 flatpickr(".datepicker", {
   altInput: true,
   enableTime: true,
-  inline: true
+  inline: true,
 });
