@@ -1,7 +1,7 @@
 <div class="container">
+  <%= render 'searchbar_items'%>
   <div class="title">
     <h2>My Closet</h2>
-      <%= render 'searchbar_items'%>
 
   <div class="row">
     <div class="col-index mx-auto">
@@ -14,7 +14,7 @@
       <% end %>
 
       <% if @friends_items %>
-      <p>Found in your friends closets:</p>
+      <p><em>Found in your friends closets:<em></p>
         <% @friends_items.each do |item| %>
           <%= render "items/cards", item: item %>
         <% end %>
