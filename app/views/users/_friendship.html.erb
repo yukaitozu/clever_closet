@@ -2,7 +2,7 @@
 <% if current_user.friends.include?(user) %>
   <p>Already Friends</p>
   <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
-      <%= f.submit "bye", class: "btn" %>
+      <%= f.submit "Remove Friend", class: "btn" %>
   <% end %>
 
   <!-- elsif pending request -->
@@ -10,17 +10,17 @@
   <p>Friendship Requested</p>
 <% elsif current_user.requested_friends.include?(user) %>
   <%= form_for :user, url: user_accept_request_path(user) do |f| %>
-      <%= f.submit "accept", class: "btn" %>
+      <%= f.submit "Accept", class: "btn" %>
   <% end %>
 
   <%= form_for :user, url: user_decline_request_path(user) do |f| %>
-      <%= f.submit "reject", class: "btn" %>
+      <%= f.submit "Reject", class: "btn" %>
   <% end %>
 <% elsif current_user == user %>
   <%= "you" %>
   <!-- create request -->
 <% else %>
   <%= form_for :user, url: user_request_friendship_path(user) do |f| %>
-      <%= f.submit "friend request", class: "btn" %>
+      <%= f.submit "Friend request", class: "btn" %>
   <% end %>
 <% end %>
