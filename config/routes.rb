@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index]
 
-  resources :chat_rooms, only: [:show] do
+  resources :chat_rooms, only: [:index, :show, :new, :create] do
     resources :messages, only: [:create]
   end
 end
