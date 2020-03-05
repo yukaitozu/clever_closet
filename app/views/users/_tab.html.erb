@@ -7,17 +7,22 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <% @user.items.each do |item| %>
-      <% if item.photo.attached? %>
-        <%= link_to item_path(item) do %>
-          <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill %>
-        <% end %>
-      <% else %>
-        <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
-      <% end %>
-    <% end %>
 
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+      <div class = "row">
+      <% @user.items.each do |item| %>
+        <div class = "col-6 p-0">
+          <% if item.photo.attached? %>
+            <%= link_to item_path(item) do %>
+              <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-show-2" %>
+            <% end %>
+          <% else %>
+            <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
+          <% end %>
+        </div>
+      <% end %>
+      </div>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <!-- put looks  -->
