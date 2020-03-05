@@ -18,12 +18,17 @@ user = User.create!(
   email: "erica@gmail.com",
   password: "123456"
   )
+file = URI.open('https://kaigai-drama-board.com/assets/medias/2016/06/20160608-getty_453921466.jpg')
+user.photo.attach(io: file, filename: 'erica.jpg', content_type: 'image/jpg')
+
 
 user2 = User.create!(
   username: "Beth",
   email: "beth@gmail.com",
   password: "123456"
 )
+file = URI.open('https://assets.media-platform.com/gizmodo/dist/images/2019/01/16/the-mona-lisa-w1280.jpg')
+user2.photo.attach(io: file, filename: 'beth.jpg', content_type: 'image/jpg')
 
 puts "creating shirts"
 
