@@ -10,16 +10,16 @@
 
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-      <div class = "row">
+      <div class = "row mx-0" style = "margin-bottom: 80px;">
       <% @user.items.each do |item| %>
-        <div class = "col-6 p-0">
-          <% if item.photo.attached? %>
-            <%= link_to item_path(item) do %>
-              <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-show-2" %>
+        <div class = "col-6 py-3">
+            <% if item.photo.attached? %>
+              <%= link_to item_path(item) do %>
+                <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-show-2" %>
+              <% end %>
+            <% else %>
+              <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
             <% end %>
-          <% else %>
-            <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
-          <% end %>
         </div>
       <% end %>
       </div>
