@@ -5,19 +5,21 @@
 </div>
 
 <div class = row >
-  <div class="col-6">
-  <%= render "users/avatar" %>
+  <div class="col-5">
+  <%= render "users/avatar_profile" %>
   </div>
   <!-- link to setting -->
  <!--  <div class="row"> -->
-    <div class="col-6">
-      <h1><%= @user.username %></h1>
-        <div class = "btn btn-red my-2">
+    <div class="col-7">
+      <div class ="user_name" >
+        <h1 id = "headerfont"><%= @user.username %></h1>
+      </div>
+        <div class = "btn btn-red-wide my-2">
           <%= @user.items.size %>/ <%= @user.items_limit %>
         </div>
       <!-- </div> -->
      <!--  <div class="col-6"> -->
-        <div class = "btn btn-red my-2">
+        <div class = "btn btn-red-wide my-2">
         <!-- after adding merit -->
           <%=  "point" %>
         </div>
