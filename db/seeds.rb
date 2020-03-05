@@ -28,7 +28,7 @@ user2 = User.create!(
   password: "123456"
 )
 file = URI.open('https://assets.media-platform.com/gizmodo/dist/images/2019/01/16/the-mona-lisa-w1280.jpg')
-user2.photo.attach(io: file, filename: 'beth.jpg', content_type: 'image/jpg')
+user2.photo.attach(io: file, filename: 'beths.jpg', content_type: 'image/jpg')
 
 puts "creating shirts"
 

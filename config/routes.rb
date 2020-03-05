@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :donations, only: [:index]
   end
 
-  resources :items, only: [:show] do
+  resources :items, only: [:show, :new] do
     resources :donations, only: [:new, :create]
   end
   resources :items, only: [:index]
