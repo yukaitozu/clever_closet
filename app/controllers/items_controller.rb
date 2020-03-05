@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
       @friends_items = searched_items.where.not(user: current_user)
     else
       @items = Item.all.where(user: current_user)
-      
     end
 
   end
