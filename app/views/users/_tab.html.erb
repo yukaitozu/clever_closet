@@ -15,7 +15,7 @@
         <div class = "col-6 py-3">
             <% if item.photo.attached? %>
               <%= link_to item_path(item) do %>
-                <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-show-2" %>
+                <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
               <% end %>
             <% else %>
               <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
