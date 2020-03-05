@@ -36,6 +36,12 @@ ActiveRecord::Schema.define(version: 2020_03_05_092454) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "donations", force: :cascade do |t|
     t.date "pick_up_date"
     t.string "address"
@@ -88,6 +94,16 @@ ActiveRecord::Schema.define(version: 2020_03_05_092454) do
     t.index ["user_id"], name: "index_looks_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.bigint "chat_room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -134,5 +150,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_092454) do
   add_foreign_key "donations", "users"
   add_foreign_key "items", "users"
   add_foreign_key "looks", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "taggings", "tags"
 end
