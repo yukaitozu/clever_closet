@@ -1,10 +1,17 @@
 <%= render "users/avatar" %>
 <!-- link to setting -->
-<%= link_to "setting", root_path %>
-<%= "limit" %>
+<% if current_user.id == params[:id] %>
+  <%= link_to "setting", root_path %>
+<% end %>
+<%= @user.items.size %>/ <%= @user.items_limit %>
+<!-- after adding merit -->
 <%=  "point" %>
 <%= @user.username %>
 <!-- link to looks -->
 <%= link_to "create looks", root_path %>
 <%= render "users/tab" %>
 
+<!-- protect from nonfriend users -->
+<!-- <#% if current_user.friends.include?(@user) %>
+<#% end %>
+ -->
