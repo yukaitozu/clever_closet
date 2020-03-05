@@ -1,7 +1,7 @@
 <div class="container">
   <div class="show-title">
     <% if @current_user == @item.user %>
-      <h2>Your Closet</h2>
+      <h2>My Closet</h2>
     <% else %>
       <h3><%= @item.user.username %>'s Closet</h3>
     <% end %>
