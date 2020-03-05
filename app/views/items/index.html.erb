@@ -10,10 +10,10 @@
           <% @items.each do |item| %>
             <%= render "items/cards", item: item %>
           <% end %>
-        </div>
         <% else %>
           <p><em>No results in your closet<em></p>
         <% end %>
+        </div>
       <% if @friends_items %>
       <p><em>Found in your friends closets:<em></p>
         <div class="friend-items">
