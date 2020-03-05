@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1><%= @item.name %></h1>
 <% if @current_user == @item.user %>
   <h3>Your Closet</h3>
@@ -32,4 +33,56 @@
 
 <% end %>
 
+=======
+<div class="container">
+  <div class="show-title">
+    <% if @current_user == @item.user %>
+      <h2>My Closet</h2>
+    <% else %>
+
+      <h3><%= @item.user.username %>'s Closet</h3>
+    <% end %>
+    <h1><%= @item.name %></h1>
+  </div>
+
+  <div class="show-card">
+    <%= render 'items/show-card', item: @item %>
+
+    <div class="show-description">
+      <p><%#= @item.color %></p>
+      <p><%= @item.category %></p>
+      <p><%= @item.size %></p>
+
+      <div class="tags">
+        <% @item.tag_list.each do |tag| %>
+          <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="selection-icons">
+      <% if @current_user == @item.user %>
+        <%= link_to root_path do %>  <!-- need to add path for edit -->
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+
+        <!-- delete button -->
+        <%= link_to root_path do %> <!-- need to add path for delete -->
+          <i class="fas fa-times"></i>
+        <% end %>
+
+    </div>
+        <!-- donate button -->
+        <% if policy(@item).donate? %>
+          <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
+        <% end %>
+
+      <% else %>
+
+        <%= link_to "Borrow", root_path, class: "btn btn-red" %> <!-- need to figure out path to messaging -->
+
+      <% end %>
+  </div>
+</div>
+>>>>>>> master
 
