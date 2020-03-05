@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     resources :donations, only: [:index]
+    resources :looks
   end
 
   resources :items, only: [:show] do
