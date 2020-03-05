@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     authorize @user
-    raise
+
   end
 
   def request_friendship
