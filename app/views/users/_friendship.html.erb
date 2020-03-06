@@ -7,7 +7,9 @@
 
   <!-- elsif pending request -->
 <% elsif current_user.pending_friends.include?(user) %>
-  <p>Friendship Requested</p>
+  <div class="btn btn-red btn-request">
+    <%= "Requested" %>
+  </div>
 <% elsif current_user.requested_friends.include?(user) %>
   <%= form_for :user, url: user_accept_request_path(user) do |f| %>
       <%= f.submit "Accept", class: "btn" %>
@@ -21,6 +23,6 @@
   <!-- create request -->
 <% else %>
   <%= form_for :user, url: user_request_friendship_path(user) do |f| %>
-      <%= f.submit "Friend Request", class: "btn" %>
+      <%= f.submit "Request Friend", class: "btn" %>
   <% end %>
 <% end %>
