@@ -1,14 +1,14 @@
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
-require("channels")
+// require("channels")
 
 import "bootstrap";
-
 import { initUpdateNavbarOnScroll } from '../components/top-navbar';
+import 'plugins/flatpickr';
+import {scrollLastMessageIntoView} from '../components/scroll';
+
+// NavBar Scroll
 initUpdateNavbarOnScroll();
 
-import 'plugins/flatpickr';
-
-import {scrollLastMessageIntoView} from '../components/scroll';
 scrollLastMessageIntoView()
 window.scrollLastMessageIntoView = scrollLastMessageIntoView;

@@ -1,14 +1,12 @@
 const initUpdateNavbarOnScroll = () => {
-  var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".top-navbar").style.top = "0";
-  } else {
-    document.querySelector(".top-navbar").style.top = "-75px";
-  }
-  prevScrollpos = currentScrollPos;
-  }
+  document.addEventListener("scroll", () => {
+    if (window.pageYOffset == 0){
+      document.querySelector(".top-navbar").classList.remove("hidden");
+    }
+    else {
+      document.querySelector(".top-navbar").classList.add("hidden");
+    }
+  });
 }
 
 export { initUpdateNavbarOnScroll };
