@@ -10,15 +10,15 @@
   <% end %>
 
   <% @users.reject{|u| u == current_user}.each do |user| %>
+      <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
     <% if user.photo.attached? %>
       <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
     <% else %>
-      <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
+          <%= image_tag 'blank_avatar.png', class: "avatar-profile" %>
+        <% end %>
         <div class="avatar-username" style="
     display: flex;
     align-items: flex-end;">
-          <%= image_tag 'blank_avatar.png', class: "avatar-profile" %>
-        <% end %>
         <p> <%= user.username %> </p>
       </div>
       <%= render "friendship", user: user %>
