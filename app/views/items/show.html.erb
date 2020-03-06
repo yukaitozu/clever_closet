@@ -43,7 +43,7 @@
 
       <% else %>
 
-        <%= link_to "Borrow", chat_room_path(id: 1), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
+        <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user)), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
 
       <% end %>
   </div>

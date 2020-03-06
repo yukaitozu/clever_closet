@@ -25,10 +25,10 @@ class User < ApplicationRecord
   end
   
   def chat_room_with(user)
-     chat_rooms.find_by(“user_one_id = ? OR user_two_id = ?”, user.id, user.id)
+     chat_rooms.find_by("user_one_id = ? OR user_two_id = ?", user.id, user.id)
   end
 
   def chat_rooms
-    ChatRoom.where(“user_one_id = ? OR user_two_id = ?”, id, id)
+    ChatRoom.where("user_one_id = ? OR user_two_id = ?", id, id)
   end
 end
