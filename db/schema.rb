@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_05_092454) do
+ActiveRecord::Schema.define(version: 2020_03_06_020653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 2020_03_05_092454) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_one_id"
+    t.bigint "user_two_id"
+    t.index ["user_one_id"], name: "index_chat_rooms_on_user_one_id"
+    t.index ["user_two_id"], name: "index_chat_rooms_on_user_two_id"
   end
 
   create_table "donations", force: :cascade do |t|
@@ -146,6 +150,8 @@ ActiveRecord::Schema.define(version: 2020_03_05_092454) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chat_rooms", "users", column: "user_one_id"
+  add_foreign_key "chat_rooms", "users", column: "user_two_id"
   add_foreign_key "donations", "items"
   add_foreign_key "donations", "users"
   add_foreign_key "items", "users"
