@@ -19,4 +19,16 @@ class User < ApplicationRecord
   validates_each :items do |user, attr, value|
     user.errors.add attr, "Too many items for user" if user.items.size > user.items_limit
   end
+
+  def on_friendship_accepted(friendship)
+    ChatRoom.create(user_one: friendship.friendable, user_two: friendship.friend)
+  end
+  
+  def chat_room_with(user)
+     chat_rooms.find_by(“user_one_id = ? OR user_two_id = ?”, user.id, user.id)
+  end
+
+  def chat_rooms
+    ChatRoom.where(“user_one_id = ? OR user_two_id = ?”, id, id)
+  end
 end
