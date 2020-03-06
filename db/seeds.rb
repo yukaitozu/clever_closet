@@ -66,7 +66,7 @@ purple = Item.create!(
   user: noemi,
   category: Item::CATEGORIES[0],
   )
-file = URI.open('https://lp2.hm.com/hmgoepprod?set=quality[79],source[/b6/04/b604dfe61163cd67499fac3895220c8620cc29cb.jpg],origin[dam],category[ladies_cardigansjumpers_jumpers],type[DESCRIPTIVESTILLLIFE],res[m],hmver[4]&call=url[file:/product/main]')
+file = URI.open('https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/400452/item/goods_72_400452.jpg?width=734')
 purple.photo.attach(io: file, filename: 'purple_sweater.jpg', content_type: 'image/jpg')
 
 red_tshirt = Item.create!(
