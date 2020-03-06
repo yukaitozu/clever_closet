@@ -9,6 +9,7 @@
   transition: top 0.3s;
   width: 100%;
   position: fixed;
+  z-index: 100;
 
   .top-links {
     display: flex;
@@ -38,5 +39,4 @@
       margin-left: 10px;
     }
   }
-
 }
