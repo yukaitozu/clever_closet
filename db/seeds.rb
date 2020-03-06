@@ -88,7 +88,7 @@ jeans = Item.create!(
   user: noemi,
   category: Item::CATEGORIES[1]
   )
-file2 = URI.open('https://www.kmart.com.au/wcsstore/Kmart/images/ncatalog/f/4/69069734-1-f.jpg')
+file2 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/427456/item/64_427456.jpg')
 jeans.photo.attach(io: file2, filename: 'jeans.jpg', content_type: 'image/jpg')
 
 skirt = Item.create!(
