@@ -1,13 +1,18 @@
 <!-- friends page search results -->
 <div class="container">
   <%= form_tag users_path, method: :get do %>
-    <%= text_field_tag :query,
+    <div class="line-up">
+      <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control mb-1",
       placeholder: "Find a friend"
     %>
-    <%= submit_tag "Search" %>
+    <%= button_tag :submit do %>
+        <i class="fas fa-search"></i>
+    <% end %>
+    </div>
   <% end %>
+
 
   <% @users.reject{|u| u == current_user}.each do |user| %>
       <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
