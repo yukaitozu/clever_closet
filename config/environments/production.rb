@@ -40,7 +40,7 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Mount Action Cable outside main process or domain.
-  # config.action_cable.mount_path = nil
+  config.action_cable.mount_path = '/cable'
   config.action_cable.url = 'ws://clever-closet.me/cable'
   config.action_cable.allowed_request_origins = [ 'http://clever-closet.me', 'https://clever-closet.me', 'https://clever-closet.herokuapp.com', 'http://clever-closet.herokuapp.com' ]
 
