@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   skip_after_action :verify_policy_scoped, only: :index
   def index
     # @items = Item.all
-    
+
 
     if params[:query].present?
       # @items = Item.where(user: current_user.friends).or(Item.where(user: current_user)).search_all_items(params[:query])
@@ -20,4 +20,24 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     authorize @item
   end
+
+  def new
+    @item = Item.new
+    authorize @item
+  end
+
+  def create
+    @item = Item.new(items_params)
+    @item.user = current_user
+    authorize @item
+    if @item.save
+      redirect_to item_path(@item)
+    else
+      render :new
+    end
+  end
+def items_params
+    params.require(:item).permit(:name, :size, :location, :photo, :category, :tag_list)
+end
+
 end
