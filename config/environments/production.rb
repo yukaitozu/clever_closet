@@ -41,7 +41,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   config.action_cable.mount_path = '/cable'
-  config.action_cable.url = 'wss://clever-closet.me/cable'
+  config.action_cable.url = 'wss://clever-closet.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ 'http://clever-closet.me', 'https://clever-closet.me', 'https://clever-closet.herokuapp.com', 'http://clever-closet.herokuapp.com' ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
