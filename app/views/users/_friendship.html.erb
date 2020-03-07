@@ -5,9 +5,9 @@
       <%= f.submit "Remove Friend", class: "btn btn-red btn-request" %>
   <% end %>
 <% elsif current_user.requested_friends.include?(user)%>
-  <p>you recive a friend request</p>
+  <p>You received a friend request</p>
 <% elsif current_user.pending_friends.include?(user)%>
-  <p>requested</p>
+  <p>Requested</p>
 <% else %>
   <%= form_for :user, url: user_request_friendship_path(user) do |f| %>
       <%= f.submit "Request Friend", class: "btn btn-red btn-request" %>
