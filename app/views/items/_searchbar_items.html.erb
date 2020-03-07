@@ -1,8 +1,17 @@
 <%= form_tag items_path, method: :get do %>
-<%= text_field_tag :query, 
-  params[:query],
-  class: "form-control",
-  placeholder: "Find clothes"
-%>
-<%= submit_tag "Search" %>
+  <div class="line-up">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mb-1",
+      placeholder: "Find clothes"
+    %>
+    <div class="search-icon">
+      <%= button_tag :submit do %>
+          <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+  </div>
 <% end %>
+
+
+

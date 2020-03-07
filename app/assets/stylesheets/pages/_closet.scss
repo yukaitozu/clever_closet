@@ -5,10 +5,22 @@
     margin-right: 5px;
     width: 150px;
     height: 200px;
+
   }
 }
 
 .title {
   text-align: center;
-  margin-bottom: 10px;
+
+  h2 {
+    color: gray;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+  }
 }

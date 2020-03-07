@@ -1,0 +1,65 @@
+<nav>
+  <div class="nav nav-tabs" style="
+    margin-bottom: 15px;" id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Friends </a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Request</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Requested</a>
+  </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+    <% if current_user.friends.length > 0  %>
+      <% current_user.friends.each do |user| %>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+          <% else %>
+            <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+          <% end %>
+        <%= user.username %>
+      <% end %>
+    <% else %>
+    <h2> No Friends to Show </h2>
+  <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <% if current_user.requested_friends.length > 0  %>
+      <% current_user.requested_friends.each do |user| %>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+          <% else %>
+            <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+          <% end %>
+          <%= form_for :user, url: user_accept_request_path(user) do |f| %>
+            <%= f.submit "accept", class: "btn" %>
+          <% end %>
+          <%= form_for :user, url: user_decline_request_path(user) do |f| %>
+            <%= f.submit "reject", class: "btn" %>
+          <% end %>
+        <%= user.username %>
+      <% end %>
+    <% else %>
+      <h2> Add some friends! </h2>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <div class="row">
+        <% if current_user.pending_friends.length > 0  %>
+          <% current_user.pending_friends.each do |user| %>
+          <div class="col-12">
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+              <% else %>
+                <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+              <% end %>
+            <%= user.username %>
+          </div>
+          <br>
+          <br>
+          <br>
+          <% end %>
+        <% else %>
+          <h2> No pending friend requests... </h2>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,14 @@
   <div class="top-links">
     <div class="nav-avatar">
     <!-- add paths to messages-->
-
-      <%= link_to do %>
-        <%= image_tag 'girl.jpg', class: "avatar-chat" %>
+      <% if current_user == nil %>
+        <% link_to root_path do %>
+          <%=  image_tag 'blank_avatar.png', class: "avatar-chat" %>
+        <% end %>
+      <% else %>
+        <%= link_to user_path(current_user) do %>
+          <%= cl_image_tag current_user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-chat" %>
+        <% end %>
       <% end %>
       <!-- <p class="nav-points">123pts</p> -->
     </div>
@@ -14,3 +19,4 @@
     <% end %>
   </div>
 </div>
+

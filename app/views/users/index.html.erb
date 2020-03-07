@@ -1,0 +1,33 @@
+<!-- friends page search results -->
+<div class="container">
+  <%= form_tag users_path, method: :get do %>
+    <div class="line-up">
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mb-1",
+      placeholder: "Find a friend"
+    %>
+    <%= button_tag :submit do %>
+        <i class="fas fa-search"></i>
+    <% end %>
+    </div>
+  <% end %>
+
+
+  <% @users.reject{|u| u == current_user}.each do |user| %>
+      <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
+    <% if user.photo.attached? %>
+      <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+    <% else %>
+          <%= image_tag 'blank_avatar.png', class: "avatar-profile" %>
+        <% end %>
+        <div class="avatar-username" style="
+    display: flex;
+    align-items: flex-end;">
+        <p> <%= user.username %> </p>
+      </div>
+      <%= render "friendship", user: user %>
+      </div>
+  <% end %>
+  <%= render "index_tab"%>
+</div>
