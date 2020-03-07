@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  has_merit
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,6 +12,9 @@ class User < ApplicationRecord
   # https://github.com/sungwoncho/has_friendship to check docs
   has_friendship
 
+  # https://github.com/merit-gem/merit
+  has_merit
+
   has_one_attached :photo
 
 
@@ -25,7 +26,7 @@ class User < ApplicationRecord
   def on_friendship_accepted(friendship)
     ChatRoom.create(user_one: friendship.friendable, user_two: friendship.friend)
   end
-  
+
   def chat_room_with(user)
      chat_rooms.find_by("user_one_id = ? OR user_two_id = ?", user.id, user.id)
   end
