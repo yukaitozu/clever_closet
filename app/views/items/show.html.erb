@@ -9,21 +9,6 @@
     <h1><%= @item.name %></h1>
   </div>
 
-  <div class="show-card">
-    <%= render 'items/show-card', item: @item %>
-
-    <div class="show-description">
-      <p><%#= @item.color %></p>
-      <p><%= @item.category %></p>
-      <p><%= @item.size %></p>
-
-      <div class="tags">
-        <% @item.tag_list.each do |tag| %>
-          <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
-        <% end %>
-      </div>
-    </div>
-
     <div class="selection-icons">
       <% if @current_user == @item.user %>
         <%= link_to root_path do %>  <!-- need to add path for edit -->
@@ -36,6 +21,21 @@
         <% end %>
 
     </div>
+  <div class="show-card">
+    <%= render 'items/show-card', item: @item %>
+
+    <div class="show-description">
+      <p><%#= @item.color %></p>
+      <p>Category: <%= @item.category %></p>
+      <p>Size: <%= @item.size %></p>
+
+      <div class="tags">
+        <% @item.tag_list.each do |tag| %>
+          <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
+        <% end %>
+      </div>
+    </div>
+
         <!-- donate button -->
         <% if policy(@item).donate? %>
           <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
