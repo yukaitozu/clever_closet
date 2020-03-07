@@ -7,6 +7,11 @@ class ChatRoomsController < ApplicationController
 
   def show
     @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
+    # if @chat_room.user_one == current_user
+    #   @chat_room.name = @chat_room.user_two.username
+    # else 
+    #   @chat_room.name = @chat_room.user_one.username
+    # end
     authorize @chat_room
   end
 
