@@ -21,23 +21,12 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-        grant_on 'donations#new', badge_id: amount, to: :user do |donation|
-          donation.count == amount
-        end
-      end
+      # [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
+      #   grant_on "donations#create", badge_id: 1, to: :user do |donation|
+      #     @user.donation.length == amount
+      #   end
+      # end
 
-      [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-        grant_on 'donations#new', badge_id: amount, to: :user do |donation|
-          donation.length == amount
-        end
-      end
-
-      [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-        grant_on 'donations#new', badge_id: amount, to: :user do |donation|
-          donation.length == amount
-        end
-      end
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # Find badge by badge_id, badge_id takes presidence over badge

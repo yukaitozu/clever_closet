@@ -13,17 +13,10 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 1, to: :user, on: 'donations#new' do |donation|
-        donation.present?
+      score 1, on: 'donations#new' do |donation|
+        donation.item.present?
       end
 
-      score 1, to: :user, on: 'lends#create' do |lend|
-        lend.present?
-      end
-
-      score 1, to: :user, on: 'borrows#create' do |borrow|
-        borrow.present?
-      end
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end
