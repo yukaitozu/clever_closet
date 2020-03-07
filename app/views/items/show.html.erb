@@ -9,18 +9,20 @@
     <h1><%= @item.name %></h1>
   </div>
 
-    <div class="selection-icons">
-      <% if @current_user == @item.user %>
-        <%= link_to root_path do %>  <!-- need to add path for edit -->
-          <i class="fas fa-pencil-alt"></i>
-        <% end %>
+  <div class="selection-icons">
+    <% if @current_user == @item.user %>
+      <%= link_to edit_item_path do %>
+      <!-- need to add path for edit -->
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
 
-        <!-- delete button -->
-        <%= link_to root_path do %> <!-- need to add path for delete -->
-          <i class="fas fa-times"></i>
-        <% end %>
+      <!-- delete button -->
+      <%= link_to item_path(@item), method: :delete do %>
+      <!-- need to add path for delete -->
+        <i class="fas fa-times"></i>
+      <% end %>
+  </div>
 
-    </div>
   <div class="show-card">
     <%= render 'items/show-card', item: @item %>
 
@@ -33,7 +35,9 @@
         <% @item.tag_list.each do |tag| %>
           <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
         <% end %>
-      </div>
+    </div>
+  </div>
+
     </div>
 
         <!-- donate button -->
