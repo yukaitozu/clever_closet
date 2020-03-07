@@ -2,9 +2,9 @@
 
 <%= simple_form_for :looks do |f| %>
   <%= f.input :title %>
-  <%= f.input :item %>
-  <%= f.association :item_photos %>
-  <%= f.input :item %>
-  <%= f.input :item %>
+  <%= f.input :item, as: :select, collection: @items.where(category: "top") %>
+  <%= f.input :item, as: :select, collection: @items.where(category: "bottom") %>
+  <%= f.input :item, as: :select, collection: @items.where(category: "shoes") %>
+  <%= f.input :item, as: :select, collection: @items.where(category: "accessory") %>
   <%= f.submit "Create", class: "btn btn-red" %>
 <% end %>

@@ -21,5 +21,5 @@ class Item < ApplicationRecord
 
   acts_as_taggable_on :tags
 
-  CATEGORIES = ["top", "bottom", "shoe", "outerwear", "accessory"]
+  CATEGORIES = ["top", "bottom", "shoes", "outerwear", "accessory"]
 end
