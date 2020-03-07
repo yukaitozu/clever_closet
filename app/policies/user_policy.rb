@@ -10,6 +10,14 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
+  def edit?
+    true
+  end
+
   def request_friendship?
     true
   end

@@ -1,0 +1,8 @@
+<%= link_to "donations", user_donations_path  %>
+
+
+
+<%= simple_form_for(@item) do |f| %>
+  <%= f.input :username %>
+  <%= f.submit %>
+<% end %>
