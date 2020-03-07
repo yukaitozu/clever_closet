@@ -4,25 +4,19 @@
   <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
       <%= f.submit "Remove Friend", class: "btn btn-red btn-request" %>
   <% end %>
-
-  <!-- elsif pending request -->
-<% elsif current_user.pending_friends.include?(user) %>
-  <div class="btn btn-red btn-request">
-    <%= "Requested" %>
-  </div>
-<% elsif current_user.requested_friends.include?(user) %>
-  <%= form_for :user, url: user_accept_request_path(user) do |f| %>
-      <%= f.submit "Accept", class: "btn btn-red btn-request" %>
-  <% end %>
-
-  <%= form_for :user, url: user_decline_request_path(user) do |f| %>
-      <%= f.submit "Reject", class: "btn btn-red btn-request" %>
-  <% end %>
-<% elsif current_user == user %>
-  <%= "you" %>
-  <!-- create request -->
+<% elsif current_user.requested_friends.include?(user)%>
+  <p>You received a friend request</p>
+<% elsif current_user.pending_friends.include?(user)%>
+  <p>Requested</p>
 <% else %>
   <%= form_for :user, url: user_request_friendship_path(user) do |f| %>
       <%= f.submit "Request Friend", class: "btn btn-red btn-request" %>
   <% end %>
 <% end %>
+
+
+
+
+
+
+
