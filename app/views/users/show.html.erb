@@ -8,9 +8,11 @@
   <!-- link to setting -->
  <!--  <div class="row"> -->
     <div class="col-7">
-      <%= link_to user_link_path(@user) do %>
-      <i class="fas fa-cog"></i>
-      <% end %>
+      <div class="gear">
+        <%= link_to user_link_path(@user) do %>
+        <i class="fas fa-cog"></i>
+        <% end %>
+      </div>
       <div class ="user_name" >
         <h1 id = "headerfont"><%= @user.username %></h1>
       </div>
