@@ -1,27 +1,14 @@
 <div class="container">
   <div class="show-title">
     <% if @current_user == @item.user %>
+    <div>
       <h2>My Closet</h2>
-    <% else %>
+      <% else %>
 
-      <h3><%= @item.user.username %>'s Closet</h3>
-    <% end %>
-    <h1><%= @item.name %></h1>
-  </div>
-
-
-  <div class="show-card">
-    <%= render 'items/show-card', item: @item %>
-
-    <div class="show-description">
-      <p><%#= @item.color %></p>
-      <p>Category: <%= @item.category %></p>
-      <p>Size: <%= @item.size %></p>
-
-      <div class="tags">
-        <% @item.tag_list.each do |tag| %>
-          <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
-        <% end %>
+        <h3><%= @item.user.username %>'s Closet</h3>
+      <% end %>
+      <h1><%= @item.name %></h1>
+    </div>
       <div class="selection-icons">
         <% if @current_user == @item.user %>
           <%= link_to edit_item_path do %>
@@ -35,10 +22,25 @@
             <i class="fas fa-times"></i>
           <% end %>
       </div>
+  </div>
+
+
+  <div class="show-card">
+      <%= render 'items/show-card', item: @item %>
+
+
+    <div class="show-description">
+      <p><%#= @item.color %></p>
+      <p>Category: <%= @item.category %></p>
+      <p>Size: <%= @item.size %></p>
+
+      <div class="tags">
+        <% @item.tag_list.each do |tag| %>
+          <%= link_to tag, root_path(tag: tag), class: 'show-badge badge badge-secondary' %>
+        <% end %>
     </div>
   </div>
 
-    </div>
 
         <!-- donate button -->
         <% if policy(@item).donate? %>
@@ -50,6 +52,7 @@
         <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user)), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
 
       <% end %>
+    </div>
   </div>
 </div>
 

@@ -1,6 +1,7 @@
 .show-title {
-  text-align: center;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 
   h2 {
     color: gray;
@@ -8,55 +9,52 @@
   }
 
   h1 {
-    font-size:28px;
+    font-size:24px;
   }
-}
-
-.show-card {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-
-
   .show-description {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 
     p {
       margin-bottom: 0;
       color: gray;
     }
   }
+    .selection-icons {
+      display: grid;
 
-  .selection-icons {
+      .fa-pencil-alt {
+        color: gray;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        margin-bottom: 10px;
+
+      }
+
+      .fa-times {
+        color: gray;
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        margin-bottom: 10px;
+
+      }
+    }
+
+}
+
+  .show-card {
     display: block;
     margin-right: auto;
     margin-left: auto;
-    width: 50%;
+    text-align: center;
 
-    .fa-pencil-alt {
-      color: #EF6666;
-      width: 60px;
-      height: 60px;
-      font-size: 40px;
-      margin-bottom: 10px;
 
-    }
-
-    .fa-times {
-      color: #EF6666;
-      width: 60px;
-      height: 60px;
-      font-size: 40px;
-      margin-bottom: 10px;
-
-    }
-  }
 }
 
 .tags {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-top: 15px;}
 
 .show-badge {
