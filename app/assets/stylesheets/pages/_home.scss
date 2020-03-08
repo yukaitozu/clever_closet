@@ -1,23 +1,29 @@
 // Specific CSS for your home-page
 
-.search{
-  text-align: center;
+.feed-name {
+  align-items: center;
+  margin-bottom: 10px;
+
+  p {
+    margin-left: 10px;
+  }
+}
+
+.feed-container {
+  margin-top: 30px;
 }
 
 .feed_style{
-  width: 120%;
-  height: 120%;
-  position: relative;
-  top: 35px;
-  right: 15px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
 }
 
-.avatar-profile-temp{
-  width: 50px;
-  height: 50px;
+.avatar-feed{
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  position: relative;
-  top: 10px;
+
 }
 
 .banner {
