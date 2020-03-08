@@ -18,6 +18,9 @@
               <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
             <% end %>
           <%= user.username %>
+          <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
+            <%= f.submit "Remove Friend", class: "btn btn-red btn-request" %>
+          <% end %>
         </div>
         <% end %>
       <% else %>
