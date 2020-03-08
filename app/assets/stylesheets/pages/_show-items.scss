@@ -1,7 +1,8 @@
 .show-title {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+  text-align: center;
+  justify-content: center;
 
   h2 {
     color: gray;
@@ -20,8 +21,16 @@
       color: gray;
     }
   }
+
+}
+
+  .show-card {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+
     .selection-icons {
-      display: grid;
 
       .fa-pencil-alt {
         color: gray;
@@ -41,15 +50,6 @@
 
       }
     }
-
-}
-
-  .show-card {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-
 
 }
 
