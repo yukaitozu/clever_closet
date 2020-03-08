@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
     else
       @items = Item.all.where(user: current_user)
     end
-
   end
 
   def show
@@ -36,8 +35,29 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-def items_params
+
+  def edit
+    @item = Item.find(params[:id])
+    authorize @item
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    authorize @item
+    @item.update(items_params)
+    redirect_to item_path(@item)
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    authorize @item
+    @item.destroy
+    redirect_to user_path(current_user.id)
+  end
+
+ private
+  def items_params
     params.require(:item).permit(:name, :size, :location, :photo, :category, :tag_list)
-end
+  end
 
 end

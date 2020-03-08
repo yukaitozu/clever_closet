@@ -10,8 +10,8 @@ class DonationPolicy < ApplicationPolicy
   end
 
   def create?
-    !record.item.donated
+    true
   end
 
-  
+
 end
