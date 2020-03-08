@@ -1,0 +1,17 @@
+<div row>
+  <div class="col-12" >
+    <%= link_to "donations", user_donations_path, class: "btn btn-red-thick" %>
+    <br>
+    <br>
+    <br>
+    <!-- it is not work -->
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-red-thick" %>
+    <br>
+    <br>
+    <br>
+    <%= link_to "edit", edit_user_path(@user), class: "btn btn-red-thick" %>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
