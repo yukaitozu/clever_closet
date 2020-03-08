@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_forgery_protection only: :create
   def create
     @message = Message.new(message_params)
     @chat_room = ChatRoom.find(params[:chat_room_id])

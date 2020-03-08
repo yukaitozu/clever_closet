@@ -15,22 +15,22 @@ User.destroy_all
 
 
 puts "creating Users"
-# erica = User.create!(
-#   username: "Erica",
-#   email: "erica@gmail.com",
-#   password: "123456"
-#   )
-# file = URI.open('https://kaigai-drama-board.com/assets/medias/2016/06/20160608-getty_453921466.jpg')
-# erica.photo.attach(io: file, filename: 'erica.jpg', content_type: 'image/jpg')
+erica = User.create!(
+  username: "Erica",
+  email: "erica@gmail.com",
+  password: "123456"
+  )
+file = URI.open('https://kaigai-drama-board.com/assets/medias/2016/06/20160608-getty_453921466.jpg')
+erica.photo.attach(io: file, filename: 'erica.jpg', content_type: 'image/jpg')
 
 
-# beth = User.create!(
-#   username: "Beth",
-#   email: "beth@gmail.com",
-#   password: "123456"
-# )
-# file = URI.open('https://assets.media-platform.com/gizmodo/dist/images/2019/01/16/the-mona-lisa-w1280.jpg')
-# beth.photo.attach(io: file, filename: 'beth.jpg', content_type: 'image/jpg')
+beth = User.create!(
+  username: "Beth",
+  email: "beth@gmail.com",
+  password: "123456"
+)
+file = URI.open('https://assets.media-platform.com/gizmodo/dist/images/2019/01/16/the-mona-lisa-w1280.jpg')
+beth.photo.attach(io: file, filename: 'beth.jpg', content_type: 'image/jpg')
 
 noemi = User.create!(
   username: "Noemi",
