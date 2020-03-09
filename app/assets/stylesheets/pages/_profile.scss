@@ -2,3 +2,19 @@
 h1#headerfont{
   font-size: 24px;
 }
+
+.gear{
+  text-align: right;
+  margin-right: 4px;
+  font-size: 30px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #000000;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #F4F4F4;
+    border-color: #00000e #000000 #F4F4F4;
+}

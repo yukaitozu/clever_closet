@@ -1,7 +1,4 @@
- <div class = "setting-btn">
-  <% if current_user.id == params[:id] %>
-    <p><%= link_to "setting", root_path%></p>
-  <% end %>
+
 </div>
 
 <div class = row >
@@ -11,6 +8,11 @@
   <!-- link to setting -->
  <!--  <div class="row"> -->
     <div class="col-7">
+      <div class="gear">
+        <%= link_to user_link_path(@user) do %>
+        <i class="fas fa-cog"></i>
+        <% end %>
+      </div>
       <div class ="user_name" >
         <h1 id = "headerfont"><%= @user.username %></h1>
       </div>
@@ -21,7 +23,8 @@
      <!--  <div class="col-6"> -->
         <div class = "btn btn-red-wide my-2">
         <!-- after adding merit -->
-          <%=  "point" %>
+          <p><%= current_user.points %> point</p>
+          </%>
         </div>
      <!--  </div> -->
     </div>

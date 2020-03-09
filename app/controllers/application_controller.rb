@@ -13,6 +13,9 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  def after_sign_out_path_for(user)
+    root_path
+  end
   private
 
   def skip_pundit?
