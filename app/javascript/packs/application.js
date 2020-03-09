@@ -7,7 +7,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initUpdateNavbarOnScroll } from '../components/top-navbar';
 import 'plugins/flatpickr';
 import {scrollLastMessageIntoView} from '../components/scroll';
-
+import {initBottomIcons} from '../components/bottom-navbar';
 
 initAutocomplete();
 
@@ -16,3 +16,6 @@ initUpdateNavbarOnScroll();
 
 scrollLastMessageIntoView()
 window.scrollLastMessageIntoView = scrollLastMessageIntoView;
+
+// bottom nav colored icons
+initBottomIcons();
