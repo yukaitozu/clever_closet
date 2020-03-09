@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   scope :owned_by, -> (user) {where(user: user)}
-  
+
   include PgSearch::Model
   pg_search_scope :search_all_items,
     against: [ :name, :size, :category ],
@@ -22,4 +22,5 @@ class Item < ApplicationRecord
   acts_as_taggable_on :tags
 
   CATEGORIES = ["top", "bottom", "shoe", "outerwear", "accessory"]
+
 end
