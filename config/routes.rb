@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   mount ActionCable.server => "/cable"
 
-  resources :users, only: [:show, :index] do
+  resources :users, only: [:show, :index, :edit, :update, ] do
     post 'request_friendship'
     post 'accept_request'
     post 'decline_request'
     post 'remove_friend'
+    get 'link'
     resources :donations, only: [:index]
   end
 

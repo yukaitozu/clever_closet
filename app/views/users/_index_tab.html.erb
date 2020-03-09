@@ -12,12 +12,18 @@
       <% if current_user.friends.length > 0  %>
         <% current_user.friends.each do |user| %>
         <div class="col-12">
+          <%= link_to user_path(user) do %>
             <% if user.photo.attached? %>
               <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
             <% else %>
               <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
             <% end %>
+          <% end %>
           <%= user.username %>
+          <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
+          <!-- changing btn style  -->
+            <%= f.submit "Remove Friend", class: "btn-white" %>
+          <% end %>
         </div>
         <% end %>
       <% else %>
@@ -31,10 +37,12 @@
         <% current_user.requested_friends.each do |user| %>
 
           <div class="col-12">
+            <%= link_to user_path(user) do %>
             <% if user.photo.attached? %>
               <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
             <% else %>
               <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+            <% end %>
             <% end %>
             <%= form_for :user, url: user_accept_request_path(user) do |f| %>
               <%= f.submit "accept", class: "btn btn-red btn-request" %>
@@ -58,10 +66,12 @@
         <% if current_user.pending_friends.length > 0  %>
           <% current_user.pending_friends.each do |user| %>
           <div class="col-12">
+              <%= link_to user_path(user) do %>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
               <% else %>
                 <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+              <% end %>
               <% end %>
             <%= user.username %>
           </div>
