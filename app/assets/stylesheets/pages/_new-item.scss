@@ -1,0 +1,16 @@
+.item-form {
+
+  .center {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  label {
+    color: gray;
+  }
+}
+.form-control-file {
+  background-color: cornsilk;
+  padding: 8px;
+}
