@@ -2,16 +2,45 @@
   <input type="text" placeholder="search">
 </div> -->
 
-<div class="banner">
-  <div class="container">
-    <h1>Better Closet,<br>Better Planet.</h1>
-    <p>Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint.</p>
-    <div class="d-flex justify-content-center">
-      <a class="btn btn-red" href="#">Start Your Closet</a>
+<!-- <div class="banner">
+</div> -->
+
+<div id="home-carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="first-slide">
+        <div class="container">
+          <h1>Better Closet,<br>Better Planet.</h1>
+          <p>Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint.</p>
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-red" href="#">Start Your Closet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="second-slide">
+        <div class="container">
+            <h1>Your Donations <br>Go Further</h1>
+            <p>We make it easy to close the loop. Send us your gently used clothes and we'll make sure your items find a new home.</p>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-red" href="#">Donate Today</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+      <div class="third-slide">
+        <div class="container">
+            <h1>Simplify Your Style With Capsule Wardrobes</h1>
+            <p>Add your favorite pieces to Your Closet and start building outfits without the hassle.</p>
+            <div class="d-flex justify-content-center">
+              <a class="btn btn-red" href="#">Create Looks</a>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
-</div>
-
 <div class="feed-container">
     <div class="feed-name d-flex">
       <%= image_tag "girl.jpg", class: "avatar-feed" %>
@@ -26,5 +55,7 @@
     </div>
     <%= image_tag 'outfit.jpg', class: "feed_style"%>
   </div>
+</div>
+
 
 </div>
