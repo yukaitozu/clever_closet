@@ -22,7 +22,7 @@ class LooksController < ApplicationController
     @look.user = current_user
     authorize @look
     if @look.save
-      redirect_to look_path(@look)
+      redirect_to user_looks_path(@look)
     else
       render :new
     end
@@ -31,7 +31,7 @@ class LooksController < ApplicationController
   private
 
   def look_params
-    params.require(:look).permit(:title, item: [])
+    params.require(:look).permit(:title, item_ids: [])
   end
 
   def set_look
