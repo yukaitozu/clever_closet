@@ -23,8 +23,16 @@
     <% end %>
 
     <!-- add notifications route -->
+    <% if current_user.nil? %>
     <%= link_to items_path do %>
     <i class="fas fa-bell" id="bell"></i>
+    <% end %>
+    <% else %>
+    <%= link_to  user_notification_path(current_user) do %>
+    <i class="fas fa-bell">
+    <%= Notification.unread_count(current_user) %>
+    </i>
+    <% end %>
     <% end %>
   </div>
 </div>
