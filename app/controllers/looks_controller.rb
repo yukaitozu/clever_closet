@@ -1,5 +1,5 @@
 class LooksController < ApplicationController
-  before_action :set_look, only: [:show, :edit, :update]
+  before_action :set_look, only: [:show, :edit, :update, :destroy]
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
@@ -44,6 +44,12 @@ class LooksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @look.destroy
+    authorize @look
+    redirect_to user_path(current_user)
   end
 
   private
