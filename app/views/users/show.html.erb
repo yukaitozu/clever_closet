@@ -4,6 +4,11 @@
 <div class = row >
   <div class="col-5">
   <%= render "users/avatar_profile" %>
+  <ul>
+  <% current_user.badges.each do |badge| %>
+    <li><%= badge.name %></li>
+  <% end %>
+</ul>
   </div>
   <!-- link to setting -->
  <!--  <div class="row"> -->
@@ -23,8 +28,7 @@
      <!--  <div class="col-6"> -->
         <div class = "btn btn-red-wide my-2">
         <!-- after adding merit -->
-          <p><%= current_user.points %> point</p>
-          </%>
+          <p><%= current_user.points %> points</p>
         </div>
      <!--  </div> -->
     </div>
