@@ -21,9 +21,10 @@
        <!--  <div class="col-6"> -->
           <div class = "btn btn-red-wide my-2">
           <!-- after adding merit -->
-            <p><%= @user.points %> point</p>
-            </%>
+            <p><%= @user.points %> points</p>
           </div>
+
+          <%= @user.badges.last.name %>
        <!--  </div> -->
       </div>
     </div>
