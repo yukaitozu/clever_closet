@@ -17,6 +17,14 @@ module Merit
         donation.item.present?
       end
 
+      # score 1, on: 'lends#new' do |lend|
+      #   lend.item.present?
+      # end
+
+      # score 1, on: 'borrows#new' do |lend|
+      #   lend.item.present?
+      # end
+
       # score 10, :on => 'users#create' do |user|
       #   user.bio.present?
       # end

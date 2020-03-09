@@ -21,9 +21,39 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
+      grant_on "donations#new", badge_id: 1 do |donation|
+        Donation.all.count >= 0 && Donation.all.count < 4
+      end
+
+      grant_on "donations#new", badge_id: 2 do |donation|
+        Donation.all.count >= 4 && Donation.all.count < 10
+      end
+
+      grant_on "donations#new", badge_id: 3 do |donation|
+        Donation.all.count >= 9 && Donation.all.count < 24
+      end
+
+      grant_on "donations#new", badge_id: 4 do |donation|
+        Donation.all.count >= 24 && Donation.all.count < 49
+      end
+
+      grant_on "donations#new", badge_id: 5 do |donation|
+        Donation.all.count >= 49 && Donation.all.count < 74
+      end
+
+      grant_on "donations#new", badge_id: 6 do |donation|
+        Donation.all.count >= 74 && Donation.all.count < 100
+      end
+
       # [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-      #   grant_on "donations#create", badge_id: 1, to: :user do |donation|
-      #     @user.donation.length == amount
+      #   grant_on "lends#new", badge_id: 2, to: :user do |lend|
+      #     @user.lend.length == amount
+      #   end
+      # end
+
+      # [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
+      #   grant_on "borrows#new", badge_id: 3, to: :user do |borrow|
+      #     @user.borrow.length == amount
       #   end
       # end
 
