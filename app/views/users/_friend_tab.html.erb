@@ -26,6 +26,13 @@
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <!-- put looks  -->
-    <h1> looks</h1>
+    <% current_user.friends_looks.each do |look| %>
+      <div class = "d-flex my-3">
+        <%= look.title %>
+        <% look.items.each do |item| %>
+          <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fit %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
