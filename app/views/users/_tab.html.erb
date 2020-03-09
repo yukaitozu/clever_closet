@@ -32,6 +32,9 @@
         <% look.items.each do |item| %>
           <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fit %>
         <% end %>
+        <%= link_to look_path(look), method: "delete" do %> 
+          <i class="fas fa-times"></i>
+        <% end %>
       </div>
     <% end %>
   </div>
