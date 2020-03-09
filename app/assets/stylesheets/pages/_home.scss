@@ -6,6 +6,7 @@
 
   p {
     margin-left: 10px;
+    margin-bottom: 0px;
   }
 }
 
@@ -20,23 +21,28 @@
 }
 
 .avatar-feed{
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
+  margin-left: 20px;
+
 
 }
 
 #home-carousel {
-  height:345px;
   margin-top: -25px;
   margin-right: -25px;
   margin-left: -25px;
 }
 
+.carousel-inner {
+  height: 340px;
+}
+
 .first-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
-    url("forest.jpg");
+    url("ocean.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -47,13 +53,13 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 100;
   }
 
   p {
     font-size: 16px;
     color: white;
-    opacity: .8;
+    opacity: .9;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     margin-bottom: 24px;
   }
@@ -78,13 +84,13 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 100;
   }
 
   p {
     font-size: 16px;
     color: white;
-    opacity: .8;
+    opacity: .9;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     margin-bottom: 24px;
   }
@@ -99,7 +105,7 @@
 .third-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
-    url("forest.jpg");
+    url("street.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -109,13 +115,13 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 100;
   }
 
   p {
     font-size: 16px;
     color: white;
-    opacity: .8;
+    opacity: .9;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     margin-bottom: 24px;
   }
