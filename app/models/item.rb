@@ -11,7 +11,7 @@ class Item < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
   belongs_to :user
-  has_and_belongs_to_many :looks
+  has_and_belongs_to_many :looks, -> { distinct(:id)}
   has_one_attached :photo
 
 
@@ -21,6 +21,5 @@ class Item < ApplicationRecord
 
   acts_as_taggable_on :tags
 
-  CATEGORIES = ["top", "bottom", "shoe", "outerwear", "accessory"]
-
+  CATEGORIES = ["top", "bottom", "shoes", "outerwear", "accessory"]
 end

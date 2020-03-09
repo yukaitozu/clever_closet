@@ -1,0 +1,5 @@
+<h1><%= @look.title %></h1>
+
+<% @look.items.each do |item| %>
+  <%= cl_image_tag item.photo.key, height: 300, width: 300, crop: :fit %>
+<% end %>

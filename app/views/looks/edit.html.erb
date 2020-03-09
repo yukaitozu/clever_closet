@@ -1,0 +1,13 @@
+<h1>Look Maker Page</h1>
+
+<%= @look.title %>
+
+<%= simple_form_for @look do |f| %>
+  <%= f.association :items, collection: @look.user.clothes("top").map { |item| [item.name, item.id]} %>
+  <%= f.association :items, collection: @look.user.clothes("bottom").map { |item| [item.name, item.id] } %>
+  <%= f.association :items, collection: @look.user.clothes("shoes").map { |item| [item.name, item.id] } %>
+  <%= f.association :items, collection: @look.user.clothes("outerwear").map { |item| [item.name, item.id] } %>
+  <%= f.association :items, collection: @look.user.clothes("accessory").map { |item| [item.name, item.id] } %>
+  <%= f.submit "Done", class: "btn btn-red" %>
+  
+<% end %>
