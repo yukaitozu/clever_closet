@@ -3,11 +3,75 @@
 <%= @look.title %>
 
 <%= simple_form_for @look do |f| %>
-  <%= f.association :items, collection: @look.user.clothes("top").map { |item| [item.name, item.id]} %>
-  <%= f.association :items, collection: @look.user.clothes("bottom").map { |item| [item.name, item.id] } %>
-  <%= f.association :items, collection: @look.user.clothes("shoes").map { |item| [item.name, item.id] } %>
-  <%= f.association :items, collection: @look.user.clothes("outerwear").map { |item| [item.name, item.id] } %>
-  <%= f.association :items, collection: @look.user.clothes("accessory").map { |item| [item.name, item.id] } %>
+ <div class="form-group">
+   <label class="control-label check_boxes optional">Tops</label>
+   <div class="category-choices">
+   <% @look.user.clothes("top").each do |item| %>
+   <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
+       <label for="item_id<%= item.id %>" class="category-choice">
+       <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
+       </label>
+     <% end %>
+    </div>
+ </div>
+  <div class="form-group">
+   <label class="control-label check_boxes optional">Bottom</label>
+   <div class="category-choices">
+   <% @look.user.clothes("bottom").each do |item| %>
+   <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
+       <label for="item_id<%= item.id %>" class="category-choice">
+       <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
+       </label>
+     <% end %>
+    </div>
+ </div>
+  <div class="form-group">
+   <label class="control-label check_boxes optional">Shoes</label>
+   <div class="category-choices">
+   <% @look.user.clothes("shoes").each do |item| %>
+   <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
+       <label for="item_id<%= item.id %>" class="category-choice">
+       <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
+       </label>
+     <% end %>
+    </div>
+ </div>
+  <div class="form-group">
+   <label class="control-label check_boxes optional">Outerwear</label>
+   <div class="category-choices">
+   <% @look.user.clothes("outerwear").each do |item| %>
+   <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
+       <label for="item_id<%= item.id %>" class="category-choice">
+       <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
+       </label>
+     <% end %>
+    </div>
+ </div>
+  <div class="form-group">
+   <label class="control-label check_boxes optional">Accessory</label>
+   <div class="category-choices">
+   <% @look.user.clothes("accessory").each do |item| %>
+   <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
+       <label for="item_id<%= item.id %>" class="category-choice">
+       <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
+       </label>
+     <% end %>
+    </div>
+ </div>
+  
   <%= f.submit "Done", class: "btn btn-red" %>
   
+<% end %>
+
+
+<%= content_for :after_js do %>
+  
+<script>
+  $(document).ready(function(){
+  $(".category-choice").click(function(){
+    $(this).toggleClass("active");
+  });
+});
+</script>
+
 <% end %>

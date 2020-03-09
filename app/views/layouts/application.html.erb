@@ -17,6 +17,7 @@
       <%= yield %>
       <%= render 'shared/bottom-navbar' %>
       <%= javascript_pack_tag 'application' %>
+      <%= yield :after_js %>
     </div>
   </body>
 </html>
