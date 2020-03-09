@@ -5,10 +5,10 @@
 <%= simple_form_for @look do |f| %>
  <div class="form-group">
    <label class="control-label check_boxes optional">Tops</label>
-   <div class="category-choices">
+   <div class="category-choices scrolling-wrapper-flexbox">
    <% @look.user.clothes("top").each do |item| %>
    <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
-       <label for="item_id<%= item.id %>" class="category-choice">
+       <label for="item_id<%= item.id %>" class="category-choice item-img">
        <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
        </label>
      <% end %>
@@ -16,10 +16,10 @@
  </div>
   <div class="form-group">
    <label class="control-label check_boxes optional">Bottom</label>
-   <div class="category-choices">
+   <div class="category-choices scrolling-wrapper-flexbox">
    <% @look.user.clothes("bottom").each do |item| %>
    <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
-       <label for="item_id<%= item.id %>" class="category-choice">
+       <label for="item_id<%= item.id %>" class="category-choice item-img">
        <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
        </label>
      <% end %>
@@ -27,10 +27,10 @@
  </div>
   <div class="form-group">
    <label class="control-label check_boxes optional">Shoes</label>
-   <div class="category-choices">
+   <div class="category-choices scrolling-wrapper-flexbox">
    <% @look.user.clothes("shoes").each do |item| %>
    <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
-       <label for="item_id<%= item.id %>" class="category-choice">
+       <label for="item_id<%= item.id %>" class="category-choice item-img">
        <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
        </label>
      <% end %>
@@ -38,10 +38,10 @@
  </div>
   <div class="form-group">
    <label class="control-label check_boxes optional">Outerwear</label>
-   <div class="category-choices">
+   <div class="category-choices scrolling-wrapper-flexbox">
    <% @look.user.clothes("outerwear").each do |item| %>
    <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
-       <label for="item_id<%= item.id %>" class="category-choice">
+       <label for="item_id<%= item.id %>" class="category-choice item-img">
        <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
        </label>
      <% end %>
@@ -49,10 +49,10 @@
  </div>
   <div class="form-group">
    <label class="control-label check_boxes optional">Accessory</label>
-   <div class="category-choices">
+   <div class="category-choices scrolling-wrapper-flexbox">
    <% @look.user.clothes("accessory").each do |item| %>
    <input type="checkbox" class="d-none" value="<%= item.id %>" name="look[item_ids][]" id="item_id<%= item.id %>">
-       <label for="item_id<%= item.id %>" class="category-choice">
+       <label for="item_id<%= item.id %>" class="category-choice item-img">
        <%= cl_image_tag item.photo.key, height: 200, width: 200, crop: :fit %>
        </label>
      <% end %>

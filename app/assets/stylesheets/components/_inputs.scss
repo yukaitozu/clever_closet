@@ -43,3 +43,13 @@
   opacity: .5;
   }
 }
+
+.scrolling-wrapper-flexbox {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .item-img {
+    flex: 0 0 auto;
+  }
+}
