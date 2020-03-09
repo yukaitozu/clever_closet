@@ -21,9 +21,38 @@ end
 
 Merit::Badge.create!(
   id: 1,
-  name: "Donator",
-  description: "Donated an item",
-  level: [1, 5, 10, 20, 35, 50, 75, 100]
+  name: "Beginner Donator",
+  description: "Donated 1-4 items",
+)
+
+Merit::Badge.create!(
+  id: 2,
+  name: "Amateur Donator",
+  description: "Donated 5-9 items",
+)
+
+Merit::Badge.create!(
+  id: 3,
+  name: "Novice Donator",
+  description: "Donated 10-24 items",
+)
+
+Merit::Badge.create!(
+  id: 4,
+  name: "Intermediate Donator",
+  description: "Donated 25-49 items",
+)
+
+Merit::Badge.create!(
+  id: 5,
+  name: "Advanced Donator",
+  description: "Donated 50-74 items",
+)
+
+Merit::Badge.create!(
+  id: 6,
+  name: "Expert Donator",
+  description: "Donated 75-100 items",
 )
 
 # Merit::Badge.create!(

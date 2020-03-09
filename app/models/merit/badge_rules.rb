@@ -21,10 +21,28 @@ module Merit
     include Merit::BadgeRulesMethods
 
     def initialize
-      [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-        grant_on "donations#new", badge_id: 1 do |donation|
-          Donation.count == amount
-        end
+      grant_on "donations#new", badge_id: 1 do |donation|
+        Donation.all.count >= 0 && Donation.all.count < 5
+      end
+
+      grant_on "donations#new", badge_id: 2 do |donation|
+        Donation.all.count >= 5 && Donation.all.count < 10
+      end
+
+      grant_on "donations#new", badge_id: 3 do |donation|
+        Donation.all.count >= 10 && Donation.all.count < 25
+      end
+
+      grant_on "donations#new", badge_id: 4 do |donation|
+        Donation.all.count >= 25 && Donation.all.count < 50
+      end
+
+      grant_on "donations#new", badge_id: 5 do |donation|
+        Donation.all.count >= 50 && Donation.all.count < 75
+      end
+
+      grant_on "donations#new", badge_id: 6 do |donation|
+        Donation.all.count >= 75 && Donation.all.count < 100
       end
 
       # [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
