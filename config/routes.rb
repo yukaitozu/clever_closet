@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :items do
     resources :donations, only: [:new, :create]
+    get 'borrow', to: 'chat_rooms#borrow', as: :borrow
   end
   # resources :items, only: [:index]
 
