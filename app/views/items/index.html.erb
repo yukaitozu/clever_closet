@@ -12,6 +12,15 @@
           <% end %>
         <% else %>
           <p><em>No results in your closet<em></p>
+          <%= link_to new_item_path do %>
+            <p>add your item</p>
+            <i class="fas fa-camera">
+              <%= simple_form_for(@item) do |f| %>
+              <%= f.input :photo, as: :file %>
+            <% end %>
+            </i>
+          <% end %>
+
         <% end %>
         </div>
       <% if @friends_items %>
