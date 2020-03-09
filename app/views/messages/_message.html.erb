@@ -1,4 +1,4 @@
 <div class="message <%= "right" if user_is_messages_author %>">
-  <%# image_tag message.user.avatar_url, class: "avatar" %>
+  <%= cl_image_tag message.user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-chat" %>
   <div class="message-content"><%= message.content %></div>
 </div>

@@ -1,6 +1,6 @@
 .bottom-navbar {
   background-color: #343434;
-  height: 60px;
+  height: 65px;
   text-align: center;
   padding-left: 20px;
   padding-right: 20px;
@@ -11,25 +11,26 @@
 
 
 .icons {
-  padding-top: 10px;
+  padding-top: 8px;
   display: flex;
   justify-content: space-between;
+  font-size:24px;
 
-  .fa-tshirt {
+  .fa-home {
     color: white;
-    font-size:30px;
   }
   .fa-user-friends {
     color: white;
-    font-size:30px;
   }
-  .fa-camera {
+  .fa-plus-square {
     color: white;
-    font-size:30px;
   }
   .fa-search {
     color: white;
-    font-size:30px;
+  }
+
+  .fa-bell {
+    color: white;
   }
 }
 
