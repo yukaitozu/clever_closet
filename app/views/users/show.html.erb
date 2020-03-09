@@ -23,11 +23,8 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-          <ul>
-            <% @user.badges.each do |badge| %>
-              <li><%= badge.name %></li>
-            <% end %>
-          </ul>
+
+          <%= @user.badges.last.name %>
        <!--  </div> -->
       </div>
     </div>
