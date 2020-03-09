@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'remove_friend'
     get 'link'
     resources :donations, only: [:index]
+    resources :looks, only: [:new, :create]
   end
 
   resources :items do
@@ -22,4 +23,7 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: [:index, :show, :new, :create] do
     resources :messages, only: [:create]
   end
+
+  resources :looks
+
 end
