@@ -35,6 +35,7 @@
     <div class="row">
       <% if current_user.requested_friends.length > 0  %>
         <% current_user.requested_friends.each do |user| %>
+
           <div class="col-12">
             <%= link_to user_path(user) do %>
             <% if user.photo.attached? %>
