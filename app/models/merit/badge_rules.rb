@@ -22,8 +22,8 @@ module Merit
 
     def initialize
       [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
-        grant_on "donations#new", badge_id: 1, to: :user do |donation|
-          user.donations.length == amount
+        grant_on "donations#new", badge_id: 1 do |donation|
+          Donation.count == amount
         end
       end
 
