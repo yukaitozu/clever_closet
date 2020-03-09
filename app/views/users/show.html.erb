@@ -23,18 +23,15 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-          <% if @user.badges.present? %>
-            <%= @user.badges.last.name %>
-          <% else %>
-            <%= "" %>
-          <% end %>
+
+          <%= @user.badges.last.name %>
        <!--  </div> -->
       </div>
     </div>
 
     <div class = "btn btn-white-wide my-3">
     <!-- link to looks -->
-    <%= link_to "create a look", new_look_path %>
+    <%= link_to "create looks", root_path %>
     </div>
   </div>
   <div class = "tab">
@@ -59,13 +56,14 @@
           <div class = "btn btn-red-wide my-2">
           <!-- after adding merit -->
             <p><%= @user.points %> point</p>
+            </%>
           </div>
        <!--  </div> -->
       </div>
     </div>
     <div class = "btn btn-white-wide my-3">
     <!-- link to looks -->
-    <%= link_to "create looks", new_user_look_path(params[:id]) %>
+    <%= link_to "create looks", root_path %>
     </div>
   </div>
   <div class = "tab">
