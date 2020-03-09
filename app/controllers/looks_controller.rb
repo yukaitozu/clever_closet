@@ -48,6 +48,8 @@ class LooksController < ApplicationController
 
   def destroy
     @look.destroy
+    authorize @look
+    redirect_to user_path(current_user)
   end
 
   private
