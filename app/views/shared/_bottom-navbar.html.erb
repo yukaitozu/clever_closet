@@ -1,22 +1,30 @@
-<div class="bottom-navbar fixed-bottom navbar-expand-lg jus">
+<div class="bottom-navbar fixed-bottom">
   <div class="icons">
     <!-- add links -->
 
     <%= link_to root_path do %>
-      <i class="fas fa-home"></i>
+      <% current_page?(controller: "pages", action: "home") ? icon_class = "icons-red" : icons_class = "" %>
+      <i class="fas fa-home <%= icon_class %>"> </i>
     <% end %>
+
     <%= link_to users_path do %>
-      <i class="fas fa-user-friends"></i>
+      <% current_page?(controller: "users", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <i class="fas fa-user-friends <%= icon_class %>"></i>
     <% end %>
+
     <%= link_to new_item_path do %>
-      <i class="far fa-plus-square"></i>
+      <% current_page?(controller: "items", action: "new") ? icon_class = "icons-red" : icons_class = "" %>
+      <i class="far fa-plus-square <%= icon_class %>"></i>
     <% end %>
+
     <%= link_to items_path do %>
-      <i class="fas fa-search"></i>
+      <% current_page?(controller: "items", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <i class="fas fa-search <%= icon_class %>"></i>
     <% end %>
+
     <!-- add notifications route -->
     <%= link_to items_path do %>
-    <i class="fas fa-bell"></i>
+    <i class="fas fa-bell" id="bell"></i>
     <% end %>
   </div>
 </div>
