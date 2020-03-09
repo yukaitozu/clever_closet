@@ -3,22 +3,22 @@
     <!-- add links -->
 
     <%= link_to root_path do %>
-      <% current_page?(controller: "pages", action: "home") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/pages", action: "home") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-home <%= icon_class %>"> </i>
     <% end %>
 
     <%= link_to users_path do %>
-      <% current_page?(controller: "users", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/users", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-user-friends <%= icon_class %>"></i>
     <% end %>
 
     <%= link_to new_item_path do %>
-      <% current_page?(controller: "items", action: "new") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/items", action: "new") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="far fa-plus-square <%= icon_class %>"></i>
     <% end %>
 
     <%= link_to items_path do %>
-      <% current_page?(controller: "items", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/items", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-search <%= icon_class %>"></i>
     <% end %>
 
