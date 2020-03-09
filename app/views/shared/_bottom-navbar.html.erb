@@ -3,16 +3,20 @@
     <!-- add links -->
 
     <%= link_to root_path do %>
-      <i class="fas fa-tshirt"></i>
+      <i class="fas fa-home"></i>
     <% end %>
     <%= link_to users_path do %>
       <i class="fas fa-user-friends"></i>
     <% end %>
     <%= link_to new_item_path do %>
-      <i class="fas fa-camera"></i>
+      <i class="far fa-plus-square"></i>
     <% end %>
     <%= link_to items_path do %>
       <i class="fas fa-search"></i>
+    <% end %>
+    <!-- add notifications route -->
+    <%= link_to items_path do %>
+    <i class="fas fa-bell"></i>
     <% end %>
   </div>
 </div>
