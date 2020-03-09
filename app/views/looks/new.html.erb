@@ -1,8 +1,6 @@
 <h1>Create a New Look</h1>
 
-<%= simple_form_for :looks do |f| %>
+<%= simple_form_for [current_user, @look] do |f| %>
   <%= f.input :title %>
-  <%= collection_check_boxes(:look, :item_ids, @items, :id, :name) %>
-  
   <%= f.submit "Create", class: "btn btn-red" %>
 <% end %>

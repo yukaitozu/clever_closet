@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     post 'decline_request'
     post 'remove_friend'
     resources :donations, only: [:index]
-    resources :looks
   end
 
   resources :items do
@@ -21,5 +20,7 @@ Rails.application.routes.draw do
   resources :chat_rooms, only: [:index, :show, :new, :create] do
     resources :messages, only: [:create]
   end
+
+  resources :looks
 
 end
