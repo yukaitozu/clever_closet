@@ -19,10 +19,24 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
+Merit::Badge.create!(
+  id: 1,
+  name: "Donator",
+  description: "Donated an item",
+  level: [1, 5, 10, 20, 35, 50, 75, 100]
+)
+
 # Merit::Badge.create!(
-#   id: 1,
-#   name: "Donator",
-#   description: "Donated an item",
+#   id: 2,
+#   name: "Lender",
+#   description: "Lent an item",
+#   level: [1, 5, 10, 20, 35, 50, 75, 100]
+# )
+
+# Merit::Badge.create!(
+#   id: 3,
+#   name: "Borrower",
+#   description: "Borrowed an item",
 #   level: [1, 5, 10, 20, 35, 50, 75, 100]
 # )
 
