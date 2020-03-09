@@ -23,6 +23,10 @@ class User < ApplicationRecord
     user.errors.add attr, "Too many items for user" if user.items.size > user.items_limit
   end
 
+  def clothes(type)
+    Item.where(user_id: id, category: type)
+  end
+
   def on_friendship_accepted(friendship)
     ChatRoom.create(user_one: friendship.friendable, user_two: friendship.friend)
   end

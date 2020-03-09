@@ -1,3 +1,9 @@
-<%= @my_looks.each do |look| %>
-  <%= look.title %>
+<h1><%= current_user.username.capitalize %>'s Looks</h1>
+<% @my_looks.each do |look| %>
+  <div class = "d-flex">
+    <%= look.title %>
+    <% look.items.each do |item| %>
+      <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fit %>
+    <% end %>
+  </div>
 <% end %>

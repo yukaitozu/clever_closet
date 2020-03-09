@@ -1,5 +1,5 @@
 class LooksController < ApplicationController
-  before_action :set_look, only: [:show, :edit]
+  before_action :set_look, only: [:show, :edit, :update]
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
@@ -8,7 +8,7 @@ class LooksController < ApplicationController
   end
 
   def show
-
+    authorize @look
   end
 
   def new
@@ -22,24 +22,43 @@ class LooksController < ApplicationController
     @look.user = current_user
     authorize @look
     if @look.save
-      redirect_to edit(@look)
+      redirect_to edit_look_path(@look)
     else
       render :new
     end
   end
 
   def edit
+    authorize @look
+   
+    @bottoms = Item.where(user: current_user, category: "bottom")
+    @shoes = Item.where(user: current_user, category: "shoes")
+    @outers = Item.where(user: current_user, category: "outerwear")
+    @accessories = Item.where(user: current_user, category: "accessory")
 
   end
 
   def update
+    
+    @bottoms = Item.where(user: current_user, category: "bottom")
+    @shoes = Item.where(user: current_user, category: "shoes")
+    @outers = Item.where(user: current_user, category: "outerwear")
+    @accessories = Item.where(user: current_user, category: "accessory")
+    @look.items = []
+    @look.items << params[:look][:item_ids].reject{ |item_id| item_id == "" }.map { |item_id| Item.find(item_id)}
+    authorize @look
+    if @look.save
+      redirect_to look_path(@look)
+    else
+      render :edit
+    end
 
   end
 
   private
 
   def look_params
-    params.require(:look).permit(:title, item_ids: [])
+    params.require(:look).permit(:title, items: [:id])
   end
 
   def set_look
