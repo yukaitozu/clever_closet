@@ -9,6 +9,10 @@ class ChatRoomPolicy < ApplicationPolicy
     true
   end
 
+  def borrow?
+    true
+  end
+
   def new?
     create?
   end
