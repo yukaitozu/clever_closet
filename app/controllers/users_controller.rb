@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @user.update(user_params)
-    redirect_to users_path
+    redirect_to user_path
   end
 
   def link
