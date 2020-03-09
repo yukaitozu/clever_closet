@@ -18,7 +18,7 @@
     <% if user.photo.attached? %>
       <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
     <% else %>
-          <%= image_tag 'blank_avatar.png' , class: "avatar-profile" %>
+          <%= image_tag 'blank_avatar.png', class: "avatar-profile" %>
     <% end %>
     <% end %>
         <div class="avatar-username" style="
