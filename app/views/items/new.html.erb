@@ -1,9 +1,14 @@
-<%= simple_form_for(@item) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :size %>
-  <%= f.input :location %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :category, collection: Item::CATEGORIES %>
-   <%= f.input :tag_list,  hint: "Add your tags, separated by commas" %>
-  <%= f.submit %>
-<% end %>
+<div class="container new-item-form">
+  <%= simple_form_for(@item) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :size %>
+    <%= f.input :location %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :category, collection: Item::CATEGORIES %>
+     <%= f.input :tag_list,  hint: "Add your tags, separated by commas" %>
+    <div class="center">
+      <%= f.submit "Add Item", class: "btn btn-red btn-request" %>
+    </div>
+  <% end %>
+
+</div>
