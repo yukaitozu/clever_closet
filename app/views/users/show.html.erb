@@ -5,16 +5,16 @@
     </div>
     <!-- link to setting -->
    <!--  <div class="row"> -->
-      <div class="col-7">
+      <div class="profile-title col-7">
+        <div class ="user_name">
         <div class="gear">
           <%= link_to user_link_path(@user) do %>
           <i class="fas fa-cog"></i>
           <% end %>
         </div>
-        <div class ="user_name" >
           <h1 id = "headerfont"><%= @user.username %></h1>
         </div>
-          <div class = "btn btn-red-wide my-2">
+          <div class = "btn btn-red-wide my-1">
             <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
             <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
             <% else %>
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class = "btn btn-white-wide my-3">
+    <div class = "btn btn-white-wide">
     <!-- link to looks -->
     <%= link_to "create a look", new_look_path %>
     </div>
@@ -48,22 +48,22 @@
     <%= render "users/tab" %>
   </div>
 <% else %>
-    <div class = row >
-    <div class="col-5">
+    <div class = "row" >
+    <div class="avatar-box col-5">
     <%= render "users/avatar_profile" %>
     </div>
     <!-- link to setting -->
    <!--  <div class="row"> -->
-      <div class="col-7">
+      <div class="profile-title col-7">
         <div class ="user_name" >
           <h1 id = "headerfont"><%= @user.username %></h1>
         </div>
-          <div class = "btn btn-red-wide my-2">
+          <div class = "btn btn-red-wide my-1">
             <%= @user.items.size %>/ <%= @user.items_limit %>
           </div>
         <!-- </div> -->
        <!--  <div class="col-6"> -->
-          <div class = "btn btn-red-wide my-2">
+          <div class = "btn btn-red-wide my-1">
           <!-- after adding merit -->
             <p><%= @user.points %> point</p>
             </%>
