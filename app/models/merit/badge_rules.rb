@@ -22,27 +22,27 @@ module Merit
 
     def initialize
       grant_on "donations#create", badge_id: 1, to: :user do |donation|
-        donation.user.donations.count >= 0 && donation.user.donations.count < 4
+        donation.user.donations.count >= 0 && donation.user.donations.count <= 4
       end
 
       grant_on "donations#create", badge_id: 2 do |donation|
-        donation.user.donations.count >= 4 && donation.user.donations.count < 10
+        donation.user.donations.count >= 5 && donation.user.donations.count <= 10
       end
 
       grant_on "donations#create", badge_id: 3 do |donation|
-        donation.user.donations.count >= 9 && donation.user.donations.count < 24
+        donation.user.donations.count >= 10 && donation.user.donations.count <= 24
       end
 
       grant_on "donations#create", badge_id: 4 do |donation|
-        donation.user.donations.count >= 24 && donation.user.donations.count < 49
+        donation.user.donations.count >= 25 && donation.user.donations.count <= 49
       end
 
       grant_on "donations#create", badge_id: 5 do |donation|
-        donation.user.donations.count >= 49 && donation.user.donations.count < 74
+        donation.user.donations.count >= 50 && donation.user.donations.count <= 74
       end
 
       grant_on "donations#create", badge_id: 6 do |donation|
-        donation.user.donations.count >= 74 && donation.user.donations.count < 100
+        donation.user.donations.count >= 75 && donation.user.donations.count <= 100
       end
 
       # [1, 5, 10, 20, 35, 50, 75, 100].each do |amount|
