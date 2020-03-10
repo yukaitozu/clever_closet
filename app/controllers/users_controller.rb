@@ -33,7 +33,8 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def notification
+  def notification_user
+    # raise
     authorize current_user
   end
 

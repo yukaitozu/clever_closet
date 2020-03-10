@@ -12,6 +12,7 @@ module Notifications
     def clean
       notifications.delete_all
       redirect_to notifications_path
+      authorize notifications
     end
 
     private

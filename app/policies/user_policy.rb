@@ -22,7 +22,7 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
-  def notification?
+  def notification_user?
     true
   end
 

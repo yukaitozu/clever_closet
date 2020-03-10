@@ -1,6 +1,8 @@
 <!-- things to show -->
 <!-- friends request -->
 <!-- looks suggetion -->
+
+ <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete' %>
 <% current_user.requested_friends.each do |user| %>
 <%= user.username %>
 <% end %>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     post 'decline_request'
     post 'remove_friend'
     get 'link'
-    get 'notification'
+    get 'notification_user'
     resources :donations, only: [:index]
     resources :looks, only: [:new, :create]
   end
