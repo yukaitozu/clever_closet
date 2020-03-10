@@ -3,28 +3,36 @@
     <!-- add links -->
 
     <%= link_to root_path do %>
-      <% current_page?(controller: "pages", action: "home") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/pages", action: "home") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-home <%= icon_class %>"> </i>
     <% end %>
 
     <%= link_to users_path do %>
-      <% current_page?(controller: "users", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/users", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-user-friends <%= icon_class %>"></i>
     <% end %>
 
     <%= link_to new_item_path do %>
-      <% current_page?(controller: "items", action: "new") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/items", action: "new") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="far fa-plus-square <%= icon_class %>"></i>
     <% end %>
 
     <%= link_to items_path do %>
-      <% current_page?(controller: "items", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
+      <% current_page?(controller: "/items", action: "index") ? icon_class = "icons-red" : icons_class = "" %>
       <i class="fas fa-search <%= icon_class %>"></i>
     <% end %>
 
     <!-- add notifications route -->
+    <% if current_user.nil? %>
     <%= link_to items_path do %>
     <i class="fas fa-bell" id="bell"></i>
+    <% end %>
+    <% else %>
+    <%= link_to  user_notification_path(current_user) do %>
+    <i class="fas fa-bell">
+    <%= Notification.unread_count(current_user) %>
+    </i>
+    <% end %>
     <% end %>
   </div>
 </div>

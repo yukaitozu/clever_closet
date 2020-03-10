@@ -22,6 +22,10 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def notification?
+    true
+  end
+
   def request_friendship?
     true
   end
