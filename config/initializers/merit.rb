@@ -22,38 +22,43 @@ end
 Merit::Badge.create!(
   id: 1,
   name: "Beginner Donator",
-  description: "badge1.png",
-  image:
+  description: "Donated 1-4 items",
+  custom_fields: { image: 'badge1.png'}
 )
 
 Merit::Badge.create!(
   id: 2,
   name: "Amateur Donator",
   description: "Donated 5-9 items",
+  custom_fields: { image: 'badge2.png'}
 )
 
 Merit::Badge.create!(
   id: 3,
   name: "Novice Donator",
   description: "Donated 10-24 items",
+  custom_fields: { image: 'badge3.png'}
 )
 
 Merit::Badge.create!(
   id: 4,
   name: "Intermediate Donator",
   description: "Donated 25-49 items",
+  custom_fields: { image: 'badge4.png'}
 )
 
 Merit::Badge.create!(
   id: 5,
   name: "Advanced Donator",
   description: "Donated 50-74 items",
+  custom_fields: { image: 'badge5.png'}
 )
 
 Merit::Badge.create!(
   id: 6,
   name: "Expert Donator",
   description: "Donated 75-100 items",
+  custom_fields: { image: 'badge6.png'}
 )
 
 # Merit::Badge.create!(

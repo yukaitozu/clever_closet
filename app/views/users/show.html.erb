@@ -27,12 +27,14 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-          <% if @user.badges.present? %>
-            <%= @user.badges.last.name %>
-            <%= @user.badges.last.description %>
-          <% else %>
-            <%= "" %>
-          <% end %>
+          <div>
+            <% if @user.badges.present? %>
+              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+              <%= @user.badges.last.name %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </div>
        <!--  </div> -->
       </div>
     </div>
