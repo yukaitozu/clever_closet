@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     if params[:query].present?
       @users = User.where("username ILIKE ?", "%#{params[:query]}%")
     else
-      @users = User.all
+      # delete it and show another thing
+      @users = nil
     end
     @user = policy_scope(User)
   end
