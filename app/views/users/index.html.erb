@@ -12,6 +12,9 @@
     <% end %>
     </div>
   <% end %>
+  <% if @users == nil %>
+  <h1> find your friend</h1>
+  <% else %>
   <% @users.reject{|u| u == current_user}.each do |user| %>
       <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
     <%= link_to user_path(user) do %>
@@ -28,6 +31,7 @@
       </div>
       <%= render "friendship", user: user %>
       </div>
+  <% end %>
   <% end %>
   <%= render "index_tab"%>
 
