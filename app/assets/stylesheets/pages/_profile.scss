@@ -1,20 +1,48 @@
 
 h1#headerfont{
   font-size: 24px;
+  color: #6c757d;
+}
+
+.avatar-box {
 }
 
 .gear{
   text-align: right;
   margin-right: 4px;
-  font-size: 30px;
+  font-size: 25px;
+}
+.profile-title{
+  margin-bottom: 10px;
+}
+
+.btn-white-wide {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 8px 30px;
+  border: 0.5px solid #adb5bd;
+
+
+  a {
+    color: #6c757d;
+  }
+}
+
+.fa-cog:before {
+    color: gray;
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #ef6666;
+
+    a {
+      color: #6c757d;
+    }
+
+  .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+      color: #ef6666;
+      background-color: #F4F4F4;
+      border-color: #ef6666 #ef6666 #f8f9fa;
+    }
 }
 
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
-    color: #495057;
-    background-color: #F4F4F4;
-    border-color: #00000e #000000 #F4F4F4;
-}
