@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="show-title"> 
+  <div class="show-title">
     <div>
       <% if @current_user == @item.user %>
         <h2>My Closet</h2>
@@ -9,35 +9,38 @@
       <h1><%= @item.name %></h1>
     </div>
   </div>
-
-
   <div class="show-card">
-    <%= render "items/show-card", item: @item %>
-
-  <div class="show-description">
-    <p>Category: <%= @item.category %></p>
-    <p>Size: <%= @item.size %></p>
-
-    <div class="selection-icons">
-      <% if @current_user == @item.user %>
-        <%= link_to edit_item_path do %>
-        <!-- need to add path for edit -->
-          <i class="fas fa-pencil-alt"></i>
-        <% end %>
-
-        <!-- delete button -->
-        <%= link_to item_path(@item), method: :delete do %>
-        <!-- need to add path for delete -->
-          <i class="fas fa-times"></i>
-        <% end %>
-      <% end %>
+    <div class="border p-1">
+      <%= render "items/show-card", item: @item %>
     </div>
-    
-    <div class="tags">
-      <% @item.tag_list.each do |tag| %>
-        <%= link_to tag, root_path(tag: tag), class: "show-badge badge badge-secondary" %>
-      <% end %>
-    </div>
+    <div class="show-description">
+      <div class="d-flex justify-content-around my-3">
+        <div class="border p-2 show-card-box">
+          <h4><%= @item.category %></h4>
+          <p> Category </p>
+        </div>
+        <div class="border p-2 w-25 show-card-box">
+          <h4><%= @item.size %> </h4>
+          <p>  Size </p>
+        </div>
+      </div>
+      <div class="selection-icons">
+        <% if @current_user == @item.user %>
+          <%= link_to edit_item_path do %>
+            <!-- need to add path for edit -->
+            <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <!-- delete button -->
+          <%= link_to item_path(@item), method: :delete do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tags">
+        <% @item.tag_list.each do |tag| %>
+          <%= link_to tag, root_path(tag: tag), class: "show-badge badge badge-secondary" %>
+        <% end %>
+      </div>
     </div>
     <!-- donate button -->
     <% if @item.user == current_user %>
@@ -45,6 +48,6 @@
     <% else %>
       <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user), item_id: @item.id), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
     <% end %>
-    </div>
   </div>
+</div>
 </div>
