@@ -200,6 +200,28 @@ yellow_shoes = Item.create!(
   )
 file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424035/item/44_424035.jpg')
 yellow_shoes.photo.attach(io: file4, filename: 'yellow_shoes', content_type: 'image/jpg')
+
+
+shoes3 = Item.create!(
+  name: "shoes3",
+  size: "M",
+  user: soda,
+  category: Item::CATEGORIES[2],
+  )
+file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/420127/item/08_420127.jpg')
+shoes3.photo.attach(io: file4, filename: 'shoes3', content_type: 'image/jpg')
+
+
+shoes4 = Item.create!(
+  name: "shoes3",
+  size: "M",
+  user: soda,
+  category: Item::CATEGORIES[2],
+  )
+file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/424021/item/56_424021.jpg')
+shoes4.photo.attach(io: file4, filename: 'shoes4', content_type: 'image/jpg')
+
+
 p 6
 
 bottoms = Item.create!(
@@ -210,6 +232,35 @@ bottoms = Item.create!(
   )
 file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/427423/sub/427423_sub7_popup.jpg')
 bottoms.photo.attach(io: file4, filename: 'bottoms', content_type: 'image/jpg')
+
+
+bottoms2 = Item.create!(
+  name: "jeans",
+  size: "M",
+  user: soda,
+  category: Item::CATEGORIES[1],
+  )
+file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/421376/item/66_421376.jpg')
+bottoms2.photo.attach(io: file4, filename: 'bottoms2', content_type: 'image/jpg')
+
+bottoms3 = Item.create!(
+  name: "jeans_2",
+  size: "M",
+  user: soda,
+  category: Item::CATEGORIES[1],
+  )
+file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/421625/item/69_421625.jpg')
+bottoms3.photo.attach(io: file4, filename: 'bottoms3', content_type: 'image/jpg')
+
+bottoms4 = Item.create!(
+  name: "jeans_2",
+  size: "M",
+  user: soda,
+  category: Item::CATEGORIES[1],
+  )
+file4 = URI.open('https://im.uniqlo.com/images/jp/pc/goods/427000/item/68_427000.jpg')
+bottoms4.photo.attach(io: file4, filename: 'bottoms4', content_type: 'image/jpg')
+
 
 
 puts "finish"
