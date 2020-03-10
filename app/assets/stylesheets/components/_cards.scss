@@ -57,3 +57,12 @@
 .card-chat-img {
   height: 100%;
 }
+
+.gal {
+  column-count: 2;
+  img {
+    padding: 10px;
+    border: 1px solid #dedede;
+    margin: 5px;
+  }
+}
