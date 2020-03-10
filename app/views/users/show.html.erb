@@ -12,7 +12,9 @@
           <i class="fas fa-cog"></i>
           <% end %>
         </div>
-        <div class= "badge">
+
+          <h1 id = "headerfont"><%= @user.username %></h1>
+          <div class = "badge">
             <% if @user.badges.present? %>
               <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
               <%= @user.badges.last.name %>
@@ -20,7 +22,6 @@
               <%= "" %>
             <% end %>
           </div>
-          <h1 id = "headerfont"><%= @user.username %></h1>
         </div>
           <div class = "btn btn-red-wide my-1">
             <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
