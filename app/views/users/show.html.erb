@@ -36,9 +36,15 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-
-
        <!--  </div> -->
+          <div>
+            <% if @user.badges.present? %>
+              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+              <%= @user.badges.last.name %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </div>
       </div>
     </div>
 
@@ -49,6 +55,38 @@
   </div>
   <div class = "tab">
     <%= render "users/tab" %>
+  </div>
+<% elsif current_user.friends.include?(@user) %>
+ <div class = "row" >
+    <div class="avatar-box col-5">
+    <%= render "users/avatar_profile" %>
+    </div>
+    <!-- link to setting -->
+   <!--  <div class="row"> -->
+      <div class="profile-title col-7">
+        <div class ="user_name" >
+          <h1 id = "headerfont"><%= @user.username %></h1>
+        </div>
+          <div class = "btn btn-red-wide my-1">
+            <%= @user.items.size %>/ <%= @user.items_limit %>
+          </div>
+        <!-- </div> -->
+       <!--  <div class="col-6"> -->
+          <div class = "btn btn-red-wide my-1">
+          <!-- after adding merit -->
+            <p><%= @user.points %> point</p>
+            </%>
+          </div>
+       <!--  </div> -->
+      </div>
+    </div>
+    <div class = "btn btn-white-wide my-3">
+    <!-- link to looks -->
+      <%= link_to "create looks", new_user_look_path(params[:id]) %>
+    </div>
+  </div>
+  <div class = "tab">
+    <%= render "users/friend_tab" %>
   </div>
 <% else %>
     <div class = "row" >
@@ -76,7 +114,7 @@
     </div>
     <div class = "btn btn-white-wide my-3">
     <!-- link to looks -->
-    <%= link_to "create looks", new_user_look_path(params[:id]) %>
+    <%= link_to "request friend", root_path %>
     </div>
   </div>
   <div class = "tab">
