@@ -37,14 +37,6 @@
             <p><%= @user.points %> points</p>
           </div>
        <!--  </div> -->
-          <div>
-            <% if @user.badges.present? %>
-              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
-              <%= @user.badges.last.name %>
-            <% else %>
-              <%= "" %>
-            <% end %>
-          </div>
       </div>
     </div>
 
