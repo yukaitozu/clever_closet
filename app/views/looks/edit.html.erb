@@ -58,7 +58,7 @@
      <% end %>
     </div>
  </div>
-  
+  <p><%= f.object.errors.full_messages.join(", ") if f.object.errors.any? %></p>
   <%= f.submit "Done", class: "btn btn-red" %>
   
 <% end %>
