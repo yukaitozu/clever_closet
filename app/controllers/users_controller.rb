@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @user.update(user_params)
-    redirect_to users_path
+    redirect_to user_path
   end
 
   def link
@@ -32,9 +32,14 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def notification
+    authorize current_user
+  end
+
   def request_friendship
     @user = User.find(params[:user_id])
     current_user.friend_request(@user)
+    current_user.create_notification
     authorize @user
     # raise
 

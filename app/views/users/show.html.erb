@@ -15,7 +15,11 @@
           <h1 id = "headerfont"><%= @user.username %></h1>
         </div>
           <div class = "btn btn-red-wide my-2">
+            <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
+            <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
+            <% else %>
             <%= @user.items.size %>/ <%= @user.items_limit %>
+            <% end %>
           </div>
         <!-- </div> -->
        <!--  <div class="col-6"> -->
@@ -23,15 +27,18 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-
-          <%= @user.badges.last.name %>
+          <% if @user.badges.present? %>
+            <%= @user.badges.last.name %>
+          <% else %>
+            <%= "" %>
+          <% end %>
        <!--  </div> -->
       </div>
     </div>
 
     <div class = "btn btn-white-wide my-3">
     <!-- link to looks -->
-    <%= link_to "create looks", root_path %>
+    <%= link_to "create a look", new_look_path %>
     </div>
   </div>
   <div class = "tab">
@@ -63,7 +70,7 @@
     </div>
     <div class = "btn btn-white-wide my-3">
     <!-- link to looks -->
-    <%= link_to "create looks", root_path %>
+    <%= link_to "create looks", new_user_look_path(params[:id]) %>
     </div>
   </div>
   <div class = "tab">

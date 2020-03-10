@@ -1,0 +1,6 @@
+<h1>Create a New Look</h1>
+
+<%= simple_form_for [@user, @look] do |f| %>
+  <%= f.input :title %>
+  <%= f.submit "Create", class: "btn btn-red" %>
+<% end %>
