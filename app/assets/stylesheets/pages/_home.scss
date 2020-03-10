@@ -42,7 +42,7 @@
 .first-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
-    url("ocean.jpg");
+    asset-url("ocean.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -74,7 +74,7 @@
 .second-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
-    url("forest.jpg");
+    asset-url("forest.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -105,7 +105,7 @@
 .third-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.2)),
-    url("street.jpg");
+    asset-url("street.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
