@@ -22,7 +22,8 @@ end
 Merit::Badge.create!(
   id: 1,
   name: "Beginner Donator",
-  description: "Donated 1-4 items",
+  description: "badge1.png",
+  image:
 )
 
 Merit::Badge.create!(

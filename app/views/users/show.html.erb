@@ -29,6 +29,7 @@
           </div>
           <% if @user.badges.present? %>
             <%= @user.badges.last.name %>
+            <%= @user.badges.last.description %>
           <% else %>
             <%= "" %>
           <% end %>
