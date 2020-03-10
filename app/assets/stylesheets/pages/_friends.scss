@@ -18,12 +18,35 @@
     width: 55px;
     height: 55px;
   }
-  .tab-content {
-    h2 {
-      text-align: center;
-      font-size: 18px;
-    }
-  }
+
   .nav-tabs a {
     color: #EF6666;
   }
+
+#nav-tabContent {
+  position: relative;
+  width: 100%;
+
+  h2 {
+    margin: auto;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #6c757d;
+  }
+}
+
+#nav-pills {
+  height: 80px;
+  color: #fff;
+  justify-content: space-between;
+
+  a {
+
+  }
+}
+.nav-item-friend{
+  width: 32%;
+  text-align: center;
+  font-size: 14px;
+}
+

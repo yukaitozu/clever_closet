@@ -5,7 +5,7 @@
       <%= text_field_tag :query,
       params[:query],
       class: "form-control mb-1",
-      placeholder: "Find a friend"
+      placeholder: "Find a Friend"
     %>
     <%= button_tag :submit do %>
         <i class="fas fa-search"></i>
@@ -13,7 +13,6 @@
     </div>
   <% end %>
   <% if @users == nil %>
-  <h1> find your friend</h1>
   <% else %>
   <% @users.reject{|u| u == current_user}.each do |user| %>
       <div class="friend-results" style="display: flex; align-items: center; justify-content: space-between;">
