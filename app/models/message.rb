@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :chat_room
+  belongs_to :item, optional: true
   validates :content, presence: true, allow_blank: false
 
   after_create :broadcast_message

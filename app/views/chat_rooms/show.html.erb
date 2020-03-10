@@ -8,8 +8,12 @@
           <% end %>
         </div>
         <div id="create-message">
-          <%= simple_form_for [ @chat_room, @message ], remote: true do |f| %>
+          <%= simple_form_for [ @chat_room, @message ], remote: @item.nil? do |f| %>
             <%= f.input :content, label: false %>
+            <%= f.association :item, as: :hidden %>
+            <% if @item.present? %>
+              <%= render 'messages/chat_card', item: @message.item %>
+            <% end %>
             <%= f.submit "Send", class: "btn btn-red-small my-2" %>
           <% end %>
         </div>
