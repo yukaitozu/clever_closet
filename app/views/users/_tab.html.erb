@@ -14,21 +14,30 @@
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
       <div class = "row mx-0" style = "margin-bottom: 80px;">
-      <% @user.items.each do |item| %>
-        <div class = "col-6 py-3">
-            <% if item.photo.attached? %>
-              <%= link_to item_path(item) do %>
-                <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
+       <% if @user.items.count > 0 %>
+
+
+        <% @user.items.each do |item| %>
+          <div class = "col-6 py-3">
+              <% if item.photo.attached? %>
+                <%= link_to item_path(item) do %>
+                  <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
+                <% end %>
+              <% else %>
+                <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
               <% end %>
-            <% else %>
-              <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
-            <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+        <% else %>
+        <%= link_to new_item_path do %>
+        <h1>add new item</h1>
+        <% end %>
+       <% end %>
       </div>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <!-- put looks  -->
+    <% if @user.looks.count > 0 %>
     <% current_user.my_looks.each do |look| %>
       <div class = "d-flex my-3">
         <%= look.title %>
@@ -39,6 +48,12 @@
           <i class="fas fa-times"></i>
         <% end %>
       </div>
+    <% end %>
+    <% else %>
+
+    <%= link_to new_user_look_path(current_user) do  %>
+    <h1>add new look</h1>
+    <%end%>
     <% end %>
   </div>
 </div>
