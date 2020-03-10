@@ -18,7 +18,7 @@ class ChatRoomsController < ApplicationController
 
   def borrow
     @item = Item.find(params[:item_id])
-    @message = Message.new(content: "Hi, can I borrow this? #{@item.name}")
+    @message = Message.new(content: "Hi, can I borrow this?", item: @item)
     @chat_room = ChatRoom.find_by(user_one: current_user, user_two: @item.user) || ChatRoom.find_by(user_one: @item.user, user_two: current_user)
     show
     render 'show'
