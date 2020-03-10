@@ -27,8 +27,11 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-
-          <%= @user.badges.last.name %>
+          <% if @user.badges.present? %>
+            <%= @user.badges.last.name %>
+          <% else %>
+            <%= "" %>
+          <% end %>
        <!--  </div> -->
       </div>
     </div>
