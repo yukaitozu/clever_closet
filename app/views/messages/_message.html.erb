@@ -1,4 +1,10 @@
 <div class="message <%= "right" if user_is_messages_author %>">
   <%= cl_image_tag message.user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-chat" %>
-  <div class="message-content"><%= message.content %></div>
+  <% if message.item %>
+    <div class="message-content"> <%= message.content %> <%= link_to item_path(message.item), style: "text-decoration:none;" do %>
+      <%= render 'messages/chat_card', item: message.item %></div>
+      <% end %>
+  <% else %>
+    <div class="message-content"><%= message.content %></div>
+  <% end %>
 </div>

@@ -6,7 +6,9 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room = @chat_room || ChatRoom.includes(messages: :user).find(params[:id])
+    @item = Item.find(params[:item_id]) if params[:item_id]
+    @message = Message.new(content: "Hi, can I borrow this?", item: @item) if params[:item_id]
+    @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
     @message = @message || Message.new
     if @chat_room.user_one == current_user
       @chat_room.name = @chat_room.user_two.username
@@ -17,9 +19,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def borrow
-    @item = Item.find(params[:item_id])
-    @message = Message.new(content: "Hi, can I borrow this? #{@item.name}")
-    @chat_room = ChatRoom.find_by(user_one: current_user, user_two: @item.user) || ChatRoom.find_by(user_one: @item.user, user_two: current_user)
+    
     show
     render 'show'
   end
