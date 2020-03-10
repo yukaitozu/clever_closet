@@ -14,6 +14,14 @@
         </div>
 
           <h1 id = "headerfont"><%= @user.username %></h1>
+          <div class = "badge">
+            <% if @user.badges.present? %>
+              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+              <%= @user.badges.last.name %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </div>
         </div>
           <div class = "btn btn-red-wide my-1">
             <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
@@ -28,20 +36,13 @@
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
-          <div>
-            <% if @user.badges.present? %>
-              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
-              <%= @user.badges.last.name %>
-            <% else %>
-              <%= "" %>
-            <% end %>
-          </div>
+       <!--  </div> -->
       </div>
     </div>
 
     <div class = "btn btn-white-wide">
     <!-- link to looks -->
-    <%= link_to "create a look", new_look_path %>
+    <%= link_to "Create a Look", new_look_path %>
     </div>
   </div>
   <div class = "tab">
