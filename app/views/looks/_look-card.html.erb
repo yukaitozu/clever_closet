@@ -1,0 +1,10 @@
+<div class="col-md-12">
+  <div class="row justify-content-center">
+    <div class="gal">
+      <% @look.items.each do |item| %>
+        <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
