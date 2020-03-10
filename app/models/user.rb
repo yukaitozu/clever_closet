@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_one_attached :photo
 
 
+
   validates :username, presence: true
   validates_each :items do |user, attr, value|
     user.errors.add attr, "Too many items for user" if user.items.size > user.items_limit
@@ -45,4 +46,20 @@ class User < ApplicationRecord
   def chat_rooms
     ChatRoom.where("user_one_id = ? OR user_two_id = ?", id, id)
   end
+
+
+  # notification for friend request
+
+
+
+  def create_notification
+    Notification.create do |notification|
+      notification.notify_type = 'request_friendship'
+      notification.actor = self
+      notification.user = self
+      notification.target = self
+    end
+  end
+
+
 end

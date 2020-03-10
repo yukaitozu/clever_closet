@@ -1,0 +1,5 @@
+meta_product_name: "Clever Closet"
+meta_title: "Clever Closet - Smaller Closet, Bigger Impact"
+meta_description: "Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+# twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     if params[:query].present?
       @users = User.where("username ILIKE ?", "%#{params[:query]}%")
     else
-      @users = User.all
+      # delete it and show another thing
+      @users = nil
     end
     @user = policy_scope(User)
   end
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @user.update(user_params)
-    redirect_to users_path
+    redirect_to user_path
   end
 
   def link
@@ -32,9 +33,14 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def notification
+    authorize current_user
+  end
+
   def request_friendship
     @user = User.find(params[:user_id])
     current_user.friend_request(@user)
+    current_user.create_notification
     authorize @user
     # raise
 
