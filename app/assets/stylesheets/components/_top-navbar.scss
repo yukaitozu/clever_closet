@@ -18,16 +18,13 @@
   .top-links {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
 
-    .nav-title {
-      font-family: "Scheherazade";
-      font-size: 24px;
-      text-align: center;
-      color: #FFFFFF;
-      margin-bottom: 0;
-      letter-spacing: 1.5px;
-    }
+     .logo {
+      width: 40%;
+      padding-bottom: 10px;
+     }
+  }
 
     .fa-leaf {
       color: white;
@@ -52,5 +49,5 @@
       font-size: 14px;
       margin-left: 10px;
     }
-  }
+
 }
