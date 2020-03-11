@@ -41,7 +41,6 @@ class LooksController < ApplicationController
     @look.items << params[:look][:item_ids].reject{ |item_id| item_id == "" }.map { |item_id| Item.find(item_id)}
     authorize @look
     if @look.save
-      raise
       redirect_to look_path(@look)
     else
       render :edit
