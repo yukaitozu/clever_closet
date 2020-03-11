@@ -12,7 +12,10 @@
             Better Planet.</h1>
           <p>Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint.</p>
           <div class="d-flex justify-content-center">
-            <a class="btn btn-red" href="#">Start Your Closet</a>
+            <%= link_to new_item_path do %>
+              <% current_page?(controller: "/items", action: "new") %>
+              <a class="btn btn-red">Start Your Closet</a>
+            <% end %>
           </div>
         </div>
       </div>

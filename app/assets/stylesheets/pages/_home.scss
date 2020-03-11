@@ -46,7 +46,7 @@
 .first-slide {
   background-image:
     linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    asset-url("ocean.jpg");
+    asset-url("water.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -108,8 +108,8 @@
 
 .third-slide {
   background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    asset-url("street.jpg");
+    linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+    asset-url("clothes.jpg");
   background-size: cover;
   background-position: center;
   padding: 50px 30px;
@@ -141,7 +141,6 @@
   padding: 14px 20px;
 }
 
-
 .feed-header {
   color: #6c757d;
   font-size: 24px;
@@ -149,5 +148,3 @@
   border-bottom: solid 0.5px #adb5bd;
   margin-bottom: 28px;
 }
-
-
