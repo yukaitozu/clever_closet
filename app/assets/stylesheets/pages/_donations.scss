@@ -1,0 +1,32 @@
+.donations-header {
+  h1 {
+    color: gray;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+.card-white {
+  background-color: white;
+  padding: 14px 10px 0px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hands {
+  width: 100px;
+}
+
+.donation-fact {
+  background-color: #ef6666;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+
+    p {
+      color:white;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+}
