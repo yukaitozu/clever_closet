@@ -1,5 +1,5 @@
 {
-  "background_color": white,
+  "background_color": "white",
   "description": "Clever Closet - Smaller Closets, Bigger Impact",
   "display": "fullscreen",
   "icons": [
