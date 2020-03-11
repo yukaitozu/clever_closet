@@ -17,12 +17,24 @@
   padding: 12px 30px;
   font-size: 14px;
 }
+
 .btn-red-wide {
   height: 30px;
   width: 180px;
   background-color: #EF6666;
   color: white;
   border-radius: 22px;
+  padding: 4px 30px;
+  font-size: 14px;
+}
+
+.btn-white-wide-profile {
+  height: 30px;
+  width: 180px;
+  background-color: white;
+  color: #6c757d;
+  border-radius: 22px;
+  border: 0.5px solid #adb5bd;
   padding: 4px 30px;
   font-size: 14px;
 }
@@ -47,6 +59,22 @@
   border: 0.5px solid #000000;
   padding: 12px 30px;
   font-size: 14px;
+}
+
+.btn-red-wide-profile {
+  height: 40px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #EF6666;
+  color: white;
+  border-radius: 22px;
+  padding: 8px 30px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-red-wide-profile a {
+  color: white;
 }
 
 .btn-red-small {
