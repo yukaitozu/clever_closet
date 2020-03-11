@@ -36,7 +36,7 @@
           <div class="col-4">
             <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
             <!-- temp btn will change color and name  -->
-              <%= f.submit "remove", class: "btn-white-temp" %>
+              <%= f.submit "remove", class: "btn-gray" %>
             <% end %>
           </div>
 <!-- ---------------------------------------------------------------------------- -->
@@ -50,28 +50,44 @@
     </div>
     <!-- close div for first one  -->
   </div>
-  <!-- ------------------------------------- -->
+  <!-- ------------------------------------------------------------------------------------ -->
+
+
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="row">
       <% if current_user.requested_friends.length > 0  %>
         <% current_user.requested_friends.each do |user| %>
+      <!--------------------------------------------------------------------- -->
 
-          <div class="col-12">
+          <div class="col-3">
             <%= link_to user_path(user) do %>
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
-            <% else %>
-              <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+              <% else %>
+                <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+              <% end %>
             <% end %>
-            <% end %>
-            <%= form_for :user, url: user_accept_request_path(user) do |f| %>
-              <%= f.submit "accept", class: "btn btn-red btn-request" %>
-            <% end %>
-            <%= form_for :user, url: user_decline_request_path(user) do |f| %>
-              <%= f.submit "reject", class: "btn btn-red btn-request" %>
-            <% end %>
-          <%= user.username %>
-          </div>
+            </div>
+            <!-- ---------------------   -->
+            <div class="col-3 username">
+              <%= user.username %>
+            </div>
+            <!-- ---------------------- class name will be change-->
+            <div class="col-6 d-flex justify-content-between">
+
+              <%= form_for :user, url: user_accept_request_path(user) do |f| %>
+                <%= f.submit "accept", class: "btn-gray-small mx-1" %>
+              <% end %>
+
+
+            <!-- --------------------------------- -->
+
+              <%= form_for :user, url: user_decline_request_path(user) do |f| %>
+                <%= f.submit "reject", class: "btn-gray-small mx-1" %>
+              <% end %>
+            </div>
+            <!-- ----------------------------- -->
+
           <br>
           <br>
           <br>
