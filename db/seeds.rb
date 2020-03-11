@@ -15,22 +15,22 @@ User.destroy_all
 
 
 puts "creating Users"
-erica = User.create!(
-  username: "Erica",
-  email: "erica@gmail.com",
+yuka = User.create!(
+  username: "Yuka",
+  email: "yuka@gmail.com",
   password: "123456"
   )
-file = URI.open('https://kaigai-drama-board.com/assets/medias/2016/06/20160608-getty_453921466.jpg')
-erica.photo.attach(io: file, filename: 'erica.jpg', content_type: 'image/jpg')
+file = URI.open('https://avatars1.githubusercontent.com/u/40887017?s=460&v=4')
+yuka.photo.attach(io: file, filename: 'yuka.jpg', content_type: 'image/jpg')
 
 
-beth = User.create!(
-  username: "Beth",
-  email: "beth@gmail.com",
+yuichiro = User.create!(
+  username: "Yuichiro",
+  email: "yuichiro@gmail.com",
   password: "123456"
 )
-file = URI.open('https://assets.media-platform.com/gizmodo/dist/images/2019/01/16/the-mona-lisa-w1280.jpg')
-beth.photo.attach(io: file, filename: 'beth.jpg', content_type: 'image/jpg')
+file = URI.open('https://avatars0.githubusercontent.com/u/40255442?s=460&v=4')
+yuichiro.photo.attach(io: file, filename: 'yuichiro.jpg', content_type: 'image/jpg')
 
 noemi = User.create!(
   username: "Noemi",
@@ -47,6 +47,23 @@ soda = User.create!(
 )
 file = URI.open('https://avatars1.githubusercontent.com/u/6465116?s=460&v=4')
 soda.photo.attach(io: file, filename: 'soda.jpg', content_type: 'image/jpg')
+
+
+erica = User.create!(
+  username: "Erica",
+  email: "erica@gmail.com",
+  password: "123456"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583929113/girl.jpg')
+erica.photo.attach(io: file, filename: 'girl.jpg', content_type: 'image/jpg')
+
+beth = User.create!(
+  username: "Beth",
+  email: "beth@gmail.com",
+  password: "123456"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583929128/girl2.jpg')
+beth.photo.attach(io: file, filename: 'girl2.jpg', content_type: 'image/jpg')
 
 puts "creating shirts"
 
