@@ -1,8 +1,8 @@
 <!-- things to show -->
 <!-- friends request -->
 <!-- looks suggetion -->
-<% Notification.last(5).each do |notification|%>
+
+<% Notification.where(user: current_user).each do |notification|%>
   <%= notification.notify_type %> <p>from</p><%= User.find(notification.actor_id).username %>
   <br><br><br>
 <% end %>
-
