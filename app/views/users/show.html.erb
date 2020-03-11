@@ -1,10 +1,9 @@
+<!-- YOUR PROFILE -->
 <% if current_user.id == params[:id].to_i %>
   <div class = row >
     <div class="col-5">
     <%= render "users/avatar_profile" %>
     </div>
-    <!-- link to setting -->
-   <!--  <div class="row"> -->
       <div class="profile-title col-7">
         <div class ="user_name">
         <div class="gear">
@@ -12,8 +11,15 @@
           <i class="fas fa-cog"></i>
           <% end %>
         </div>
-
-          <h1 id = "headerfont"><%= @user.username %></h1>
+          <% if @user.badges.present? %>
+            <div id = "headerfont-badge">
+              <%= @user.username %>
+            </div>
+          <% else %>
+            <div id = "headerfont">
+              <%= @user.username %>
+            </div>
+          <% end %>
           <div class = "badge">
             <% if @user.badges.present? %>
               <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
@@ -23,94 +29,129 @@
             <% end %>
           </div>
         </div>
-          <div class = "btn btn-red-wide my-1">
+          <div class = "btn-white-wide-profile my-1 text-center">
             <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
             <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
             <% else %>
             <%= @user.items.size %>/ <%= @user.items_limit %>
             <% end %>
           </div>
-        <!-- </div> -->
-       <!--  <div class="col-6"> -->
-          <div class = "btn btn-red-wide my-2">
-          <!-- after adding merit -->
+          <div class = "btn-white-wide-profile my-2 text-center">
             <p><%= @user.points %> points</p>
           </div>
-       <!--  </div> -->
       </div>
     </div>
 
-    <div class = "btn btn-white-wide">
-    <!-- link to looks -->
+    <div class = "btn btn-red-wide-profile">
     <%= link_to "Create a Look", new_look_path %>
     </div>
   </div>
   <div class = "tab">
     <%= render "users/tab" %>
   </div>
+
+<!-- FRIEND'S PROFILE -->
 <% elsif current_user.friends.include?(@user) %>
- <div class = "row" >
-    <div class="avatar-box col-5">
+ <div class = row >
+    <div class="col-5">
     <%= render "users/avatar_profile" %>
     </div>
-    <!-- link to setting -->
-   <!--  <div class="row"> -->
       <div class="profile-title col-7">
-        <div class ="user_name" >
-          <h1 id = "headerfont"><%= @user.username %></h1>
+        <div class ="user_name">
+        <div class="gear">
+          <%= link_to user_link_path(@user) do %>
+          <i class="fas fa-cog"></i>
+          <% end %>
         </div>
-          <div class = "btn btn-red-wide my-1">
+          <% if @user.badges.present? %>
+            <div id = "headerfont-badge">
+              <%= @user.username %>
+            </div>
+          <% else %>
+            <div id = "headerfont">
+              <%= @user.username %>
+            </div>
+          <% end %>
+          <div class = "badge">
+            <% if @user.badges.present? %>
+              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+              <%= @user.badges.last.name %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </div>
+        </div>
+          <div class = "btn-white-wide-profile my-1 text-center">
+            <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
+            <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
+            <% else %>
             <%= @user.items.size %>/ <%= @user.items_limit %>
+            <% end %>
           </div>
-        <!-- </div> -->
-       <!--  <div class="col-6"> -->
-          <div class = "btn btn-red-wide my-1">
-          <!-- after adding merit -->
-            <p><%= @user.points %> point</p>
-            </%>
+          <div class = "btn-white-wide-profile my-2 text-center">
+            <p><%= @user.points %> points</p>
           </div>
-       <!--  </div> -->
       </div>
     </div>
-    <div class = "btn btn-white-wide my-3">
-    <!-- link to looks -->
-      <%= link_to "create looks", new_user_look_path(params[:id]) %>
+
+    <div class = "btn btn-red-wide-profile">
+      <%= link_to "Create a Look", new_look_path %>
     </div>
   </div>
   <div class = "tab">
-    <%= render "users/friend_tab" %>
+    <%= render "users/tab" %>
   </div>
+ <!--  <div class = "tab">
+    <%#= render "users/friend_tab" %>
+  </div> -->
+
+<!-- PROFILE OF NON-FRIEND -->
 <% else %>
-    <div class = "row" >
-    <div class="avatar-box col-5">
+   <div class = row >
+    <div class="col-5">
     <%= render "users/avatar_profile" %>
     </div>
-    <!-- link to setting -->
-   <!--  <div class="row"> -->
       <div class="profile-title col-7">
-        <div class ="user_name" >
-          <h1 id = "headerfont"><%= @user.username %></h1>
+        <div class ="user_name">
+        <div class="gear">
+          <%= link_to user_link_path(@user) do %>
+          <i class="fas fa-cog"></i>
+          <% end %>
         </div>
-          <div class = "btn btn-red-wide my-1">
+          <% if @user.badges.present? %>
+            <div id = "headerfont-badge">
+              <%= @user.username %>
+            </div>
+          <% else %>
+            <div id = "headerfont">
+              <%= @user.username %>
+            </div>
+          <% end %>
+          <div class = "badge">
+            <% if @user.badges.present? %>
+              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+              <%= @user.badges.last.name %>
+            <% else %>
+              <%= "" %>
+            <% end %>
+          </div>
+        </div>
+          <div class = "btn-white-wide-profile my-1 text-center">
+            <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
+            <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
+            <% else %>
             <%= @user.items.size %>/ <%= @user.items_limit %>
+            <% end %>
           </div>
-        <!-- </div> -->
-       <!--  <div class="col-6"> -->
-          <div class = "btn btn-red-wide my-1">
-          <!-- after adding merit -->
-            <p><%= @user.points %> point</p>
-            </%>
+          <div class = "btn-white-wide-profile my-2 text-center">
+            <p><%= @user.points %> points</p>
           </div>
-       <!--  </div> -->
       </div>
     </div>
-    <div class = "btn btn-white-wide my-3">
-    <!-- link to looks -->
-    <%= link_to "request friend", root_path %>
+
+    <div class = "btn btn-red-wide-profile">
+    <%= link_to "Request Friend", new_look_path %>
     </div>
-  </div>
-  <div class = "tab">
-    <%= render "users/friend_tab" %>
   </div>
 <% end %>
 

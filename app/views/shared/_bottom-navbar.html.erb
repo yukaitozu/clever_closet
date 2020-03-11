@@ -27,11 +27,22 @@
     <%= link_to items_path do %>
     <i class="fas fa-bell" id="bell"></i>
     <% end %>
+    <% elsif Notification.unread_count(current_user) > 9 %>
+      <%= link_to  user_notification_path(current_user), class: "bell" do %>
+        <i class="fas fa-bell"></i>
+        <div class="red-badge"></div>
+        </div>
+      <% end %>
+    <% elsif  Notification.unread_count(current_user) == 0%>
+      <%= link_to  user_notification_path(current_user), class: "bell" do %>
+        <i class="fas fa-bell"></i>
+      <% end %>
     <% else %>
-    <%= link_to  user_notification_path(current_user) do %>
-    <i class="fas fa-bell">
-    <%#= Notification.unread_count(current_user) %>
-    </i>
+    <%= link_to  user_notification_path(current_user), class: "bell" do %>
+      <i class="fas fa-bell"></i>
+      <div class="red-badge">
+        <%= Notification.unread_count(current_user) %>
+      </div>
     <% end %>
     <% end %>
   </div>

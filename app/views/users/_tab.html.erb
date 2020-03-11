@@ -1,59 +1,138 @@
-<ul class="nav nav-pills" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">My Closet</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Looks</a>
-  </li>
-</ul>
+<!-- YOUR PROFILE -->
+<% if current_user.id == params[:id].to_i %>
+  <ul class="nav nav-pills" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">My Closet</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Looks</a>
+    </li>
+  </ul>
 
-<!-- tab panes -->
+  <!-- tab panes -->
 
-<div class="tab-content" id="myTabContent">
+  <div class="tab-content" id="myTabContent">
 
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-      <div class = "row mx-0" style = "margin-bottom: 80px;">
-       <% if @user.items.count > 0 %>
+        <div class = "row mx-0" style = "margin-bottom: 80px;">
+         <% if @user.items.count > 0 %>
 
 
-        <% @user.items.each do |item| %>
-          <div class = "col-6 py-3">
-              <% if item.photo.attached? %>
-                <%= link_to item_path(item) do %>
-                  <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
+          <% @user.items.each do |item| %>
+            <div class = "col-6 py-3">
+                <% if item.photo.attached? %>
+                  <%= link_to item_path(item) do %>
+                    <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
                 <% end %>
-              <% else %>
-                <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
+            </div>
+          <% end %>
+          <% else %>
+          <%= link_to new_item_path do %>
+          <h1>add new item</h1>
+          <% end %>
+         <% end %>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <!-- put looks  -->
+      <% if @user.looks.count > 0 %>
+      <% current_user.my_looks.each do |look| %>
+        <div class="text-center">
+          <%= look.title %>
+          <%= link_to look_path(look), method: "delete" do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="col-md-12">
+          <div class="row justify-content-center">
+            <div class="gal">
+              <% look.items.each do |item| %>
+                <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
               <% end %>
+            </div>
           </div>
-        <% end %>
-        <% else %>
-        <%= link_to new_item_path do %>
-        <h1>add new item</h1>
-        <% end %>
-       <% end %>
-      </div>
-  </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <!-- put looks  -->
-    <% if @user.looks.count > 0 %>
-    <% current_user.my_looks.each do |look| %>
-      <div class = "d-flex my-3">
-        <%= look.title %>
-        <% look.items.each do |item| %>
-          <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fit %>
-        <% end %>
-        <%= link_to look_path(look), method: "delete" do %>
-          <i class="fas fa-times"></i>
-        <% end %>
-      </div>
-    <% end %>
-    <% else %>
+        </div>
+      <% end %>
+      <% else %>
 
-    <%= link_to new_user_look_path(current_user) do  %>
-    <h1>add new look</h1>
-    <%end%>
-    <% end %>
+      <%= link_to new_user_look_path(current_user) do  %>
+      <h1>Add a New Look</h1>
+      <%end%>
+      <% end %>
+    </div>
   </div>
-</div>
+
+
+<!-- FRIEND'S PROFILE -->
+<% else %>
+  <ul class="nav nav-pills" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true">Closet</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="profile-tab" data-toggle="pill" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Looks</a>
+    </li>
+  </ul>
+
+
+  <!-- tab panes -->
+
+  <div class="tab-content" id="myTabContent">
+
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+        <div class = "row mx-0" style = "margin-bottom: 80px;">
+         <% if @user.items.count > 0 %>
+
+
+          <% @user.items.each do |item| %>
+            <div class = "col-6 py-3">
+                <% if item.photo.attached? %>
+                  <%= link_to item_path(item) do %>
+                    <%= cl_image_tag item.photo.key, height: 250, width: 300, crop: :fill, class: "card-profile-show" %>
+                  <% end %>
+                <% else %>
+                  <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
+                <% end %>
+            </div>
+          <% end %>
+          <% else %>
+          <%= link_to new_item_path do %>
+          <h1>add new item</h1>
+          <% end %>
+         <% end %>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+      <!-- put looks  -->
+      <% if @user.looks.count > 0 %>
+      <% current_user.friends_looks.each do |look| %>
+        <div class="text-center">
+          <%= look.title %>
+          <%= link_to look_path(look), method: "delete" do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div>
+        <div class="col-md-12">
+          <div class="row justify-content-center">
+            <div class="gal">
+              <% look.items.each do |item| %>
+                <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% else %>
+
+      <%= link_to new_user_look_path(current_user) do  %>
+      <h1>Add a New Look</h1>
+      <%end%>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 <div class="top-navbar navbar-expand-lg">
   <div class="top-links">
     <div class="nav-avatar">
-    <!-- add paths to messages-->
+      <!-- add paths to messages-->
       <% if current_user == nil %>
         <% link_to root_path do %>
           <%=  image_tag 'blank_avatar.png', class: "avatar-chat" %>
@@ -13,10 +13,12 @@
       <% end %>
       <!-- <p class="nav-points">123pts</p> -->
     </div>
-    <%= link_to "Clever Closet" %>
+    <div class="nav-title-box d-flex mt-2">
+      <h1 class="nav-title">Clever Closet</h1>
+      <i class="fas fa-leaf"></i>
+    </div>
     <%= link_to do %>
       <i class="fas fa-envelope"></i>
     <% end %>
   </div>
 </div>
-

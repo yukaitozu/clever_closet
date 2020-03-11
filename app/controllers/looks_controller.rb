@@ -23,6 +23,7 @@ class LooksController < ApplicationController
     @look.user = User.find(params[:user_id]) || current_user
     authorize @look
     if @look.save
+    Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
       redirect_to edit_look_path(@look)
     else
       render :new
