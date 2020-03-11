@@ -24,6 +24,15 @@
 
 }
 
+.card-polaroid {
+  width: 90vw;
+  height: 500px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 32px;
+  box-shadow: 1px 1px 4px gray;
+}
+
   .show-card {
     display: block;
     margin-right: auto;
@@ -34,6 +43,7 @@
 
       .fa-pencil-alt {
         color: gray;
+        opacity: 0.5;
         width: 40px;
         height: 40px;
         font-size: 25px;
@@ -43,6 +53,7 @@
 
       .fa-times {
         color: gray;
+        opacity: 0.5;
         width: 40px;
         height: 40px;
         font-size: 25px;

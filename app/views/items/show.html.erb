@@ -1,4 +1,4 @@
-<div class="container">
+
   <div class="show-title">
     <div>
       <% if @current_user == @item.user %>
@@ -10,9 +10,9 @@
     </div>
   </div>
   <div class="show-card">
-    <div class="border p-1">
+    
       <%= render "items/show-card", item: @item %>
-    </div>
+   
     <div class="show-description">
       <div class="d-flex justify-content-around my-3">
         <div class="border p-2 show-card-box">
@@ -49,5 +49,4 @@
       <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user), item_id: @item.id), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
     <% end %>
   </div>
-</div>
 </div>
