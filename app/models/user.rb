@@ -35,6 +35,7 @@ class User < ApplicationRecord
   def friends_looks
     Look.where.not(user_id: id)
   end
+  
   def on_friendship_accepted(friendship)
     ChatRoom.create(user_one: friendship.friendable, user_two: friendship.friend)
   end
