@@ -35,7 +35,7 @@ class User < ApplicationRecord
   def friends_looks
     Look.where.not(user_id: id)
   end
-  
+
   def on_friendship_accepted(friendship)
     ChatRoom.create(user_one: friendship.friendable, user_two: friendship.friend)
   end
@@ -53,14 +53,6 @@ class User < ApplicationRecord
 
 
 
-  def create_notification
-    Notification.create do |notification|
-      notification.notify_type = 'request_friendship'
-      notification.actor = self
-      notification.user = self
-      notification.target = self
-    end
-  end
 
 
 end
