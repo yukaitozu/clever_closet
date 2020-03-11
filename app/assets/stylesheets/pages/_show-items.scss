@@ -30,7 +30,7 @@
   margin: 0 auto;
   background-color: white;
   padding: 32px;
-  box-shadow: 1px 1px 4px gray;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-polaroid-small {
@@ -39,16 +39,21 @@
   background-color: white;
   padding: 8px;
   padding-bottom: 24px;
-  box-shadow: 1px 1px 4px gray;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   margin: 8px;
   margin-bottom: 16px;
 }
 
 .icons-side {
   display: flex;
-  justify-content: end;
+  width: 95vw;
+  justify-content: flex-end;
   .selection-icons {
-  
+    background-color: white;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0px -2px 4px 0px rgba(0, 0, 0, 0.1);
+    padding: 0 8px;
+    position: relative;
     .fa-pencil-alt {
       color: gray;
       opacity: 0.5;
