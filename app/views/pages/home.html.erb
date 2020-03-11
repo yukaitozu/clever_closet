@@ -48,11 +48,13 @@
 <% if user_signed_in? %>
   <div class="feed-container">
     <div class="text-center">
-      <h3 class="feed-title">Your Feed</h3>
+      <h3 class="feed-header">Your Feed</h3>
     </div>
     <% @looks.each do |look| %>
-      <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
-      <%= look.user.username %>
+      <%= link_to user_path(look.user), class: "feed-username", style: "text-decoration:none;" do %>
+        <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
+        <%= look.user.username %>
+      <% end %>
       <div class="feed-look-container">
         <div class="col-md-12">
           <div class="row justify-content-center">
