@@ -20,7 +20,7 @@ class LooksController < ApplicationController
 
   def create
     @look = Look.new(look_params)
-    @look.user = User.find(params[:user_id]) || current_user
+    @look.user = User.find(params[:user_id])
     authorize @look
     if @look.save
     Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
