@@ -45,7 +45,7 @@
 <% if user_signed_in? %>
   <div class="feed-container">
     <div class="text-center">
-      <h3>Your Feed</h3>
+      <h3 class="feed-header">Your Feed</h3>
     </div>
     <% @looks.each do |look| %>
       <%= link_to user_path(look.user), class: "feed-username", style: "text-decoration:none;" do %>
