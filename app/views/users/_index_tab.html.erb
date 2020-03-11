@@ -28,11 +28,9 @@
               <% end %>
             <% end %>
           </div>
-<!-- ---------------------------------------------------------------------------------- -->
           <div class="col-5 username">
             <%= user.username %>
           </div>
-<!-- ---------------------------------------------------------- -->
           <div class="col-4">
             <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
             <!-- temp btn will change color and name  -->
