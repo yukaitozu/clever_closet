@@ -1,9 +1,11 @@
 <!-- things to show -->
 <!-- friends request -->
 <!-- looks suggetion -->
-
-<% Notification.where(user: current_user).each do |notification|%>
-  <%= notification.notify_type %> <p>from</p><%= User.find(notification.actor_id).username %>
-  <%= notification.target.title %>
-  <br><br><br>
+<% @notifications.each do |notification|%>
+    <%= notification.notify_type %> <p>from</p><%= User.find(notification.actor_id).username %>
+    <% if notification.notify_type == "look"%>
+      <%= notification.target.title %>
+    <% end %>
+    <br><br><br>
 <% end %>
+ <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete' %>
