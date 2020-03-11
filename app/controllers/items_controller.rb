@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @related_items = @item.find_related_tags
     authorize @item
   end
 
