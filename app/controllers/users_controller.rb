@@ -38,14 +38,13 @@ class UsersController < ApplicationController
     # unread_ids = @notifications.reject(&:read?).select(&:id)
     # Notification.read!(unread_ids)
     # @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
-
     authorize current_user
   end
 
   def request_friendship
     @user = User.find(params[:user_id])
     current_user.friend_request(@user)
-    Notification.create(notify_type: 'friends request', actor: current_user, user: @user, )
+    Notification.create(notify_type: 'friends request', actor: current_user, user: @user )
     authorize @user
     # raise
 

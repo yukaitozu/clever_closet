@@ -12,31 +12,45 @@
     </li>
   </ul>
 </nav>
+
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
     <div class="row">
       <% if current_user.friends.length > 0  %>
         <% current_user.friends.each do |user| %>
-        <div class="col-12">
-          <%= link_to user_path(user) do %>
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
-            <% else %>
-              <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+<!-- --------------------------------------------------------------------- -->
+          <div class="col-3">
+            <%= link_to user_path(user) do %>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+              <% else %>
+                <%= image_tag 'blank_avatar.png', class: "avatar-profile"%>
+              <% end %>
             <% end %>
-          <% end %>
-          <%= user.username %>
-          <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
-          <!-- changing btn style  -->
-            <%= f.submit "Remove Friend", class: "btn-white" %>
-          <% end %>
-        </div>
+          </div>
+<!-- ---------------------------------------------------------------------------------- -->
+          <div class="col-5 username">
+            <%= user.username %>
+          </div>
+<!-- ---------------------------------------------------------- -->
+          <div class="col-4">
+            <%= form_for :user, url: user_remove_friend_path(user) do |f| %>
+            <!-- temp btn will change color and name  -->
+              <%= f.submit "remove", class: "btn-white-temp" %>
+            <% end %>
+          </div>
+<!-- ---------------------------------------------------------------------------- -->
+        <br><br><br>
         <% end %>
       <% else %>
-      <h2> No Friends to Show </h2>
-    <% end %>
+        <h2> No Friends to Show </h2>
+      <!-- end tag for under row div end -->
+      <% end %>
+      <!-- close div for row class -->
     </div>
+    <!-- close div for first one  -->
   </div>
+  <!-- ------------------------------------- -->
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
     <div class="row">
       <% if current_user.requested_friends.length > 0  %>
