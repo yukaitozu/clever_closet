@@ -39,20 +39,26 @@
     <!-- put looks  -->
     <% if @user.looks.count > 0 %>
     <% current_user.my_looks.each do |look| %>
-      <div class = "d-flex my-3">
+      <div class="text-center">
         <%= look.title %>
-        <% look.items.each do |item| %>
-          <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fit %>
-        <% end %>
         <%= link_to look_path(look), method: "delete" do %>
           <i class="fas fa-times"></i>
         <% end %>
+      </div>
+      <div class="col-md-12">
+        <div class="row justify-content-center">
+          <div class="gal">
+            <% look.items.each do |item| %>
+              <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
     <% else %>
 
     <%= link_to new_user_look_path(current_user) do  %>
-    <h1>add new look</h1>
+    <h1>Add a New Look</h1>
     <%end%>
     <% end %>
   </div>
