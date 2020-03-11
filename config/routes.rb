@@ -28,6 +28,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  resources :looks
+  resources :looks, except:[:new, :create]
 
 end
