@@ -5,14 +5,16 @@ module Notifications
 
       unread_ids = @notifications.reject(&:read?).select(&:id)
       Notification.read!(unread_ids)
-
       @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
     end
 
     def clean
       notifications.delete_all
-      redirect_to notifications_path
+      redirect_to "/"
+      authorize notifications
+
     end
+
 
     private
 
