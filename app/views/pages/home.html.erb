@@ -1,7 +1,6 @@
 <!-- <div class="search">
   <input type="text" placeholder="search">
 </div> -->
-
 <!-- <div class="banner">
 </div> -->
 <div id="home-carousel" class="carousel slide" data-ride="carousel" data-interval="8000">
@@ -9,10 +8,14 @@
     <div class="carousel-item active">
       <div class="first-slide">
         <div class="container">
-          <h1>Better Closet,<br>Better Planet.</h1>
+          <h1>Better Closet,<br>
+            Better Planet.</h1>
           <p>Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint.</p>
           <div class="d-flex justify-content-center">
-            <a class="btn btn-red" href="#">Start Your Closet</a>
+            <%= link_to new_item_path do %>
+              <% current_page?(controller: "/items", action: "new") %>
+              <a class="btn btn-red">Start Your Closet</a>
+            <% end %>
           </div>
         </div>
       </div>
@@ -20,13 +23,14 @@
     <div class="carousel-item">
       <div class="second-slide">
         <div class="container">
-            <h1>Your Donations <br>Go Further</h1>
-            <p>We make it easy to close the loop. Send us your gently used clothes and we'll make sure your items find a new home.</p>
-            <div class="d-flex justify-content-center">
-              <a class="btn btn-red" href="#">Donate Today</a>
-            </div>
+          <h1>Your Donations <br>
+            Go Further</h1>
+          <p>We make it easy to close the loop. Send us your gently used clothes and we'll make sure your items find a new home.</p>
+          <div class="d-flex justify-content-center">
+            <a class="btn btn-red" href="#">Donate Today</a>
           </div>
         </div>
+      </div>
     </div>
     <div class="carousel-item">
       <div class="third-slide">
@@ -43,23 +47,22 @@
 </div>
 <% if user_signed_in? %>
   <div class="feed-container">
-  <div class="text-center">
-    <h3>Your Feed</h3>
-  </div>
-  <% @looks.each do |look| %>
-    <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
-    <%= look.user.username %>
-  <div class="feed-look-container">
-    <div class="col-md-12">
-      <div class="row justify-content-center">
-        <div class="gal">
-          <% look.items.each do |item| %>
-            <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
-          <% end %>
+    <div class="text-center">
+      <h3>Your Feed</h3>
+    </div>
+    <% @looks.each do |look| %>
+      <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
+      <%= look.user.username %>
+      <div class="feed-look-container">
+        <div class="col-md-12">
+          <div class="row justify-content-center">
+            <div class="gal">
+              <% look.items.each do |item| %>
+                <%= cl_image_tag item.photo.key, width: 150, crop: :fill %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
-<% end %>
- 
