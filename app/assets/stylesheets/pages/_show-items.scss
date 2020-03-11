@@ -44,23 +44,28 @@
   margin-bottom: 16px;
 }
 
-.selection-icons {
-  margin-bottom: 16px;
-  .fa-pencil-alt {
-    color: gray;
-    opacity: 0.5;
-    font-size: 16px;
-    margin-top: 8px;
-    
+.icons-side {
+  display: flex;
+  justify-content: end;
+  .selection-icons {
+  
+    .fa-pencil-alt {
+      color: gray;
+      opacity: 0.5;
+      font-size: 16px;
+      margin-top: 8px;
+      
 
+    }
+
+    .fa-times {
+      color: gray;
+      opacity: 0.5;
+      font-size: 16px;
+      margin-top: 8px;
+    }
   }
 
-  .fa-times {
-    color: gray;
-    opacity: 0.5;
-    font-size: 16px;
-    margin-top: 8px;
-  }
 }
 
   .show-card {

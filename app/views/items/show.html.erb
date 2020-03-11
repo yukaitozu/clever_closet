@@ -6,24 +6,26 @@
       <% else %>
         <h2><%= @item.user.username %>'s Closet</h2>
       <% end %>
-      <div class="d-flex">
-        <div class=""></div>
         <div>
           <h1><%= @item.name %></h1>
         </div>
-        <div class="selection-icons">
-          <% if @current_user == @item.user %>
-            <%= link_to edit_item_path do %>
-              <i class="fas fa-pencil-alt"></i>
-            <% end %>
-          <% end %>
-            <% if @current_user == @item.user %>
-            <%= link_to item_path(@item), method: :delete do %>
-              <i class="fas fa-times"></i>
-            <% end %>
-          <% end %>
-        </div>
+        
       </div>
+    </div>
+  </div>
+  
+  <div class="icons-side">
+    <div class="selection-icons">
+      <% if @current_user == @item.user %>
+        <%= link_to edit_item_path do %>
+          <i class="fas fa-pencil-alt"></i>
+        <% end %>
+      <% end %>
+        <% if @current_user == @item.user %>
+        <%= link_to item_path(@item), method: :delete do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
   
