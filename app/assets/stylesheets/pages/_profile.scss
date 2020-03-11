@@ -1,7 +1,18 @@
 
+#headerfont-badge{
+  font-size: 24px;
+  color: #6c757d;
+  position: absolute;
+  top: 7px;
+  left: 20px;
+}
+
 #headerfont{
   font-size: 24px;
   color: #6c757d;
+  position: absolute;
+  top: 27px;
+  left: 19px;
 }
 
 .avatar-box {
@@ -21,7 +32,6 @@
   margin-bottom: 20px;
   padding: 8px 30px;
   border: 0.5px solid #adb5bd;
-
 
   a {
     color: #6c757d;
