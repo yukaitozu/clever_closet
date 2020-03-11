@@ -4,5 +4,6 @@
 
 <% Notification.where(user: current_user).each do |notification|%>
   <%= notification.notify_type %> <p>from</p><%= User.find(notification.actor_id).username %>
+  <%= notification.target.title %>
   <br><br><br>
 <% end %>
