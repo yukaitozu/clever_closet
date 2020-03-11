@@ -12,8 +12,9 @@
           <i class="fas fa-cog"></i>
           <% end %>
         </div>
-
-          <h1 id = "headerfont"><%= @user.username %></h1>
+          <div>
+            <h1 id = "headerfont"><%= @user.username %></h1>
+          </div>
           <div class = "badge">
             <% if @user.badges.present? %>
               <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
@@ -23,7 +24,7 @@
             <% end %>
           </div>
         </div>
-          <div class = "btn btn-red-wide my-1">
+          <div class = "btn-white-wide-profile my-1 text-center">
             <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
             <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
             <% else %>
@@ -32,7 +33,7 @@
           </div>
         <!-- </div> -->
        <!--  <div class="col-6"> -->
-          <div class = "btn btn-red-wide my-2">
+          <div class = "btn-white-wide-profile my-2 text-center">
           <!-- after adding merit -->
             <p><%= @user.points %> points</p>
           </div>
@@ -40,7 +41,7 @@
       </div>
     </div>
 
-    <div class = "btn btn-white-wide">
+    <div class = "btn btn-red-wide-profile">
     <!-- link to looks -->
     <%= link_to "Create a Look", new_look_path %>
     </div>
