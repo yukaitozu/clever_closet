@@ -435,7 +435,7 @@ ugg = Item.create!(
   size: "M",
   user: yuka,
   category: Item::CATEGORIES[2],
-  tag_list: "brown"
+  tag_list: "boots"
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583982066/ugg.png')
 ugg.photo.attach(io: file, filename: 'ugg.png', content_type: 'image/png')
@@ -445,10 +445,20 @@ adidas = Item.create!(
   size: "M",
   user: noemi,
   category: Item::CATEGORIES[2],
-  tag_list: "black"
+  tag_list: "sneakers"
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583982067/adidas.png')
 adidas.photo.attach(io: file, filename: 'adidas.png', content_type: 'image/png')
+
+red_flats = Item.create!(
+  name: "Red Flats",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[2],
+  tag_list: "flats"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005964/red_flats.png')
+red_flats.photo.attach(io: file, filename: 'red_flats.png', content_type: 'image/png')
 
 
 puts "creating outerwear"
