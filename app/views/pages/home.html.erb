@@ -10,7 +10,7 @@
         <div class="container">
           <h1>Smaller Closet,<br>
             Bigger Impact.</h1>
-          <p>Your actions go beyond your closet. Donatons and practicing mindful shopping reduces waste and your overall carbon footprint.</p>
+          <p>Using CleverCloset can help reduce your overall carbon footprint.</p>
           <div class="d-flex justify-content-center">
             <%= link_to new_item_path do %>
               <% current_page?(controller: "/items", action: "new") %>
@@ -25,7 +25,7 @@
         <div class="container">
           <h1>Your Donations <br>
             Go Further</h1>
-          <p>We make it easy to close the loop. Send us your gently used clothes and we'll make sure your items find a new home.</p>
+          <p>Send us your gently used clothes and we'll keep them out of the landfill.</p>
           <div class="d-flex justify-content-center">
             <a class="btn btn-red" href="#">Donate Today</a>
           </div>
@@ -35,10 +35,10 @@
     <div class="carousel-item">
       <div class="third-slide">
         <div class="container">
-          <h1>Simplify Your Style With a Capsule Wardrobe</h1>
-          <p>Add your favorite pieces to Your Closet and start building outfits with your friends.</p>
+          <h1>Simplify Your Style</h1>
+          <p>Start building outfits with your friends!</p>
           <div class="d-flex justify-content-center">
-            <a class="btn btn-red" href="#">Create Looks</a>
+            <a class="btn btn-red" href="#">Create A Look</a>
           </div>
         </div>
       </div>
@@ -53,19 +53,17 @@
     <% @looks.each do |look| %>
       <%= link_to user_path(look.user), class: "feed-username", style: "text-decoration:none;" do %>
         <div class="look-top-line">
-        <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
-        
-          <%= look.user.username %> 
-          
+          <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
+          <%= look.user.username %>
           <%= link_to upvote_look_path(look), remote: true, method: :put do %>
-          <div class="upvote-content">
-            <% if current_user.voted_for?(look) %>
-              <i class="fas fa-caret-square-up vote-icon gray-icon" data-id="<%= look.id %>"></i>
-            <% else %>
-              <i class="fas fa-caret-square-up vote-icon" data-id="<%= look.id %>"></i>
+            <div class="upvote-content">
+              <% if current_user.voted_for?(look) %>
+                <i class="fas fa-caret-square-up vote-icon gray-icon" data-id="<%= look.id %>"></i>
+              <% else %>
+                <i class="fas fa-caret-square-up vote-icon" data-id="<%= look.id %>"></i>
+              <% end %>
             <% end %>
-          <% end %>
-           <%= render "looks/upvote_size", look: look %>
+            <%= render "looks/upvote_size", look: look %>
           </div>
         <% end %>
       </div>
@@ -82,4 +80,3 @@
       </div>
     <% end %>
   <% end %>
-

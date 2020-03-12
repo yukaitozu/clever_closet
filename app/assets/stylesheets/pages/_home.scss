@@ -40,7 +40,7 @@
 }
 
 .carousel-inner {
-  height: 340px;
+  height: 350px;
 }
 
 .first-slide {
@@ -49,30 +49,36 @@
     asset-url("water.jpg");
   background-size: cover;
   background-position: center;
-  padding: 50px 30px;
+  height: 350px;
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
 
 
   h1 {
     margin-bottom: 16px;
-    color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 40px;
     font-weight: 100;
+    margin-top: 8px;
+
   }
 
   p {
-    font-size: 16px;
-    color: white;
-    opacity: .9;
+    font-size: 18px;
+    line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
-    padding: 8px 30px;
+    padding: 6px 15px;
     color: white;
+    font-size: 16px;
   }
 }
 
@@ -82,28 +88,34 @@
     asset-url("forest.jpg");
   background-size: cover;
   background-position: center;
-  padding: 50px 30px;
+  height: 350px;
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
 
   h1 {
     margin-bottom: 16px;
-    color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 28px;
+        font-size: 32px;
+    line-height: 40px;
     font-weight: 100;
+    margin-top: 10px;
+
   }
 
   p {
-    font-size: 16px;
-    color: white;
-    opacity: .9;
+    font-size: 18px;
+    line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
-    padding: 8px 30px;
+    padding: 6px 30px;
+    font-size: 16px;
   }
 }
 
@@ -113,28 +125,34 @@
     asset-url("clothes.jpg");
   background-size: cover;
   background-position: center;
-  padding: 50px 30px;
+  height: 350px;
+  padding: 40px 30px;
+  text-align: center;
+  color: white;
 
   h1 {
     margin-bottom: 16px;
-    color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 40px;
     font-weight: 100;
+    margin-top:45px;
+
   }
 
   p {
-    font-size: 16px;
-    color: white;
-    opacity: .9;
+    font-size: 18px;
+    line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
     padding: 8px 30px;
+    font-size: 16px;
   }
 }
 
