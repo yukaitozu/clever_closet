@@ -2,10 +2,22 @@
 <!-- friends request -->
 <!-- looks suggetion -->
 <% @notifications.each do |notification|%>
-    <%= notification.notify_type %> <p>from</p><%= User.find(notification.actor_id).username %>
-    <% if notification.notify_type == "look"%>
-      <%= notification.target.title %>
+<div class="notification_card">
+  <div class="row">
+    <% if User.find(notification.actor_id).username != current_user.username %>
+      <div class="col-3">
+        <% if User.find(notification.actor_id).photo.attached? %>
+          <%= cl_image_tag User.find(notification.actor_id).photo.key, height: 250, width: 300, crop: :fill, class: "avatar-profile" %>
+        <% end %>
+      </div>
+      <div class="col-5 username">
+        <p><%= notification.notify_type%> from <%= User.find(notification.actor_id).username %></p>
+      </div>
+      <div class="col-4">
+      <%= link_to "link", main_app.look_path(notification.target), class: 'btn-gray-small mx-1' %>
+    </div>
     <% end %>
-    <br><br><br>
+  </div>
+</div>
 <% end %>
  <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete' %>

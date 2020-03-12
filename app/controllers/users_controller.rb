@@ -44,7 +44,11 @@ class UsersController < ApplicationController
   def request_friendship
     @user = User.find(params[:user_id])
     current_user.friend_request(@user)
-    Notification.create(notify_type: 'friends request', actor: current_user, user: @user )
+
+
+
+
+     # Notification.create(notify_type: 'friends request', actor: current_user, user: @user, target: @user )
     authorize @user
     # raise
 
