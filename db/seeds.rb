@@ -75,15 +75,25 @@ brad.photo.attach(io: file, filename: 'boy.jpg', content_type: 'image/jpg')
 
 puts "creating shirts"
 
-red = Item.create!(
-  name: "Fluffy sweater",
+striped_shirt = Item.create!(
+  name: "Striped Shirt",
   size: "M",
-  user: soda,
+  user: noemi,
   category: Item::CATEGORIES[0],
-  tag_list: "red"
+  tag_list: "cream"
   )
-file = URI.open('https://gloimg.zafcdn.com/zaful/pdm-product-pic/Clothing/2018/10/15/goods-first-img/1569374114760435886.jpg')
-red.photo.attach(io: file, filename: 'red_sweater.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975705/striped-shirt.png')
+striped_shirt.photo.attach(io: file, filename: 'striped-shirt.jpg', content_type: 'image/jpg')
+
+white_tshirt = Item.create!(
+  name: "Simple T-Shirt",
+  size: "M",
+  user: yuichiro,
+  category: Item::CATEGORIES[0],
+  tag_list: "white"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975704/white-shirt.png')
+white_tshirt.photo.attach(io: file, filename: 'white-shirt.jpg', content_type: 'image/jpg')
 
 purple = Item.create!(
   name: "Comfy sweater",
