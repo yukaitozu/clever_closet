@@ -53,7 +53,10 @@
     <% @looks.each do |look| %>
       <%= link_to user_path(look.user), class: "feed-username", style: "text-decoration:none;" do %>
         <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
-        <%= look.user.username %>
+        <%= look.user.username %> <%= link_to upvote_look_path(look), remote: true, method: :put do %>
+          <i class="fas fa-caret-square-up"></i>
+        <% end %>
+          <%= look.get_upvotes.size %>
       <% end %>
       <div class="feed-look-container">
         <div class="col-md-12">
@@ -68,3 +71,7 @@
       </div>
     <% end %>
   <% end %>
+
+  <script>
+
+  </script>

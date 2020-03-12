@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
   get '/tagged', to: "items#tagged", as: :tagged
+  
 
   resources :users, only: [:show, :index, :edit, :update, ] do
     post 'request_friendship'
@@ -28,6 +29,10 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  resources :looks, except:[:new, :create]
+  resources :looks, except:[:new, :create] do
+    member do
+      put "upvote", to: "looks#upvote", as: :upvote
+    end
+  end
 
 end
