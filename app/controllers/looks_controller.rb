@@ -23,7 +23,6 @@ class LooksController < ApplicationController
     @look.user = User.find(params[:user_id])
     authorize @look
     if @look.save
-    Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
       redirect_to edit_look_path(@look)
     else
       render :new
@@ -41,6 +40,9 @@ class LooksController < ApplicationController
     @look.items << params[:look][:item_ids].reject{ |item_id| item_id == "" }.map { |item_id| Item.find(item_id)}
     authorize @look
     if @look.save
+      if @look.user != current_user
+        Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
+      end
       redirect_to look_path(@look)
     else
       render :edit
