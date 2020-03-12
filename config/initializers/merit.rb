@@ -28,9 +28,9 @@ Merit::Badge.create!(
 
 Merit::Badge.create!(
   id: 2,
-  name: "Amateur Donator",
+  name: "Master Donator",
   description: "Donated 5-9 items",
-  custom_fields: { image: 'badge2.png'}
+  custom_fields: { image: 'badge5.png'}
 )
 
 Merit::Badge.create!(
@@ -49,9 +49,9 @@ Merit::Badge.create!(
 
 Merit::Badge.create!(
   id: 5,
-  name: "Advanced Donator",
+  name: "Amateur Donator",
   description: "Donated 50-74 items",
-  custom_fields: { image: 'badge5.png'}
+  custom_fields: { image: 'badge2.png'}
 )
 
 Merit::Badge.create!(
