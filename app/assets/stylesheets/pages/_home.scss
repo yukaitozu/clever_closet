@@ -11,7 +11,6 @@
 }
 
 .feed-container {
-  margin-top: 30px;
 
   .feed-username {
     color: #ef6666;
@@ -162,10 +161,12 @@
 
 .feed-header {
   color: #6c757d;
+  background-color: #dee2e6;
   font-size: 24px;
-  padding-bottom: 18px;
-  border-bottom: solid 0.5px #adb5bd;
+  padding: 28px 20px;
   margin-bottom: 28px;
+  margin-left: -30px;
+  margin-right: -30px;
 }
 
 .look-top-line {
