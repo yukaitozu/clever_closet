@@ -24,12 +24,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin-bottom: 10px;
 }
 
 .category-choice {
   background: $accent-gray;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   opacity: 1;
   flex: 0 0 30%;
