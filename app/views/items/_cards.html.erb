@@ -1,11 +1,15 @@
 <div class="card-polaroid-medium">
   <% if item.photo.attached? %>
     <%= link_to item_path(item) do %>
-      <%= cl_image_tag item.photo.key, height: 700, width: 600, crop: :fill %>
+      <%= cl_image_tag item.photo.key, height: 700, width: 600, crop: :fill, class: "item-img" %>
     <% end %>
   <% else %>
     <%= image_tag "blouse.jpg", style: "height: 300px; width: 250px;"%>
   <% end %>
+    <div class="card-polaroid-bottom">
+      <%= cl_image_tag item.user.photo.key, height: 100, width: 100, crop: :fill, class: "item-avatar"%>
+      <p class="mr-2"><%= item.user.username %></p>
+    </div>
 </div>
 
 
