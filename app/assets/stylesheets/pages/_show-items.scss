@@ -31,6 +31,10 @@
   background-color: white;
   padding: 32px;
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  img {
+    border: 1px solid #dedede;
+  }
+  
 }
 
 .card-polaroid-small {
@@ -42,6 +46,9 @@
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   margin: 8px;
   margin-bottom: 16px;
+  img {
+    border: 1px solid #dedede;
+  }
 }
 
 .icons-side {

@@ -4,7 +4,7 @@
     <%= f.input :size %>
     <%= f.input :location %>
     <%= f.input :photo, as: :file %>
-    <%= f.input :category, collection: Item::CATEGORIES %>
+    <%= f.input :category, collection: Item::CATEGORIES , as: :radio_buttons  %>
      <%= f.input :tag_list,  hint: "Add your tags, separated by commas" %>
     <div class="center">
       <%= f.submit "Add Item", class: "btn btn-red btn-request" %>

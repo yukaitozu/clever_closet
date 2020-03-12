@@ -4,6 +4,7 @@ class Look < ApplicationRecord
   has_many_attached :photos
   validates :title, presence: true
   validate :has_enough_items, on: :update
+  acts_as_votable
 
   def has_enough_items
     if items.count < 3

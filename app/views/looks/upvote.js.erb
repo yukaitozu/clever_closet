@@ -1,0 +1,12 @@
+let lookId = '<%= @look.id %>'
+
+function refreshUpvote(lookId, innerHTML) {
+  const upvoteSize = document.querySelector(`.upvote[data-id='${lookId}']`);
+    upvoteSize.innerHTML = innerHTML;
+
+  const voteIcon = document.querySelector(`.vote-icon[data-id='${lookId}']`);
+  console.log(voteIcon);
+  voteIcon.classList.add('gray-icon');
+}
+
+refreshUpvote(lookId, '<%= j render "looks/upvote_size", look: @look %>');

@@ -28,4 +28,8 @@ class LookPolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def upvote?
+    true
+  end
 end

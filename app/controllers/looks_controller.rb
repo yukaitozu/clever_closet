@@ -1,5 +1,5 @@
 class LooksController < ApplicationController
-  before_action :set_look, only: [:show, :edit, :update, :destroy]
+  before_action :set_look, only: [:show, :edit, :update, :destroy, :upvote]
   skip_after_action :verify_policy_scoped, only: :index
 
   def index
@@ -23,7 +23,6 @@ class LooksController < ApplicationController
     @look.user = User.find(params[:user_id])
     authorize @look
     if @look.save
-    Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
       redirect_to edit_look_path(@look)
     else
       render :new
@@ -41,6 +40,9 @@ class LooksController < ApplicationController
     @look.items << params[:look][:item_ids].reject{ |item_id| item_id == "" }.map { |item_id| Item.find(item_id)}
     authorize @look
     if @look.save
+      if @look.user != current_user
+        Notification.create(notify_type: 'look', actor: current_user, user: @look.user, target: @look)
+      end
       redirect_to look_path(@look)
     else
       render :edit
@@ -51,6 +53,15 @@ class LooksController < ApplicationController
     @look.destroy
     authorize @look
     redirect_to user_path(current_user)
+  end
+
+  def upvote
+    current_user.up_votes(@look)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+    authorize @look
   end
 
   private
