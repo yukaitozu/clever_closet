@@ -1,72 +1,59 @@
-
-  <div class="show-title">
+<div class="show-title">
+  <div>
+    <% if @current_user == @item.user %>
+      <h2>My Closet</h2>
+    <% else %>
+      <h2><%= @item.user.username %>'s Closet</h2>
+    <% end %>
     <div>
-      <% if @current_user == @item.user %>
-        <h2>My Closet</h2>
-      <% else %>
-        <h2><%= @item.user.username %>'s Closet</h2>
+      <h1><%= @item.name %></h1>
+    </div>
+  </div>
+</div>
+</div>
+<div class="icons-side">
+  <div class="selection-icons">
+    <% if @current_user == @item.user %>
+      <%= link_to edit_item_path do %>
+        <i class="fas fa-pencil-alt"></i>
       <% end %>
-        <div>
-          <h1><%= @item.name %></h1>
-        </div>
-        
+    <% end %>
+    <% if @current_user == @item.user %>
+      <%= link_to item_path(@item), method: :delete do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="show-card">
+  <%= render "items/show-card", item: @item %>
+  <div class="show-description">
+    <div class="d-flex justify-content-around my-3">
+      <div class="p-2 show-card-box">
+        <h4><%= @item.category %></h4>
+        <p class="par-gray"> Category </p>
+      </div>
+      <div class="p-2 w-25 show-card-box">
+        <h4><%= @item.size %> </h4>
+        <p class="par-gray">  Size </p>
       </div>
     </div>
   </div>
-  
-    <div class="icons-side">
-    <div class="selection-icons">
-      <% if @current_user == @item.user %>
-        <%= link_to edit_item_path do %>
-          <i class="fas fa-pencil-alt"></i>
-        <% end %>
-      <% end %>
-        <% if @current_user == @item.user %>
-        <%= link_to item_path(@item), method: :delete do %>
-          <i class="fas fa-times"></i>
-        <% end %>
-      <% end %>
+  <!-- donate button -->
+  <% if @item.user == current_user %>
+    <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
+  <% else %>
+    <div class="mx-auto">
+      <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user), item_id: @item.id), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
     </div>
+  <% end %>
+  <p class="par-gray mt-4">Related items</p>
+  <div class="scrolling-wrapper-flexbox">
+    <% @related_items.each do |item| %>
+      <%= link_to item_path(item), class: "card-polaroid-small" do %>
+        <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fill, class: "item-img" %>
+      <% end %>
+    <% end %>
   </div>
-  
-  
-  <div class="show-card">
-    
-      <%= render "items/show-card", item: @item %>
-   
-    <div class="show-description">
-      <div class="d-flex justify-content-around my-3">
-        <div class="p-2 show-card-box">
-          <h4><%= @item.category %></h4>
-          <p class="par-gray"> Category </p>
-        </div>
-        <div class="p-2 w-25 show-card-box">
-          <h4><%= @item.size %> </h4>
-          <p class="par-gray">  Size </p>
-        </div>
-      </div>
-      
-      <p class="par-gray">Related items</p>
-      <div class="scrolling-wrapper-flexbox">
-        <% @related_items.each do |item| %>
-        <%= link_to item_path(item), class: "card-polaroid-small" do %>
-          <%= cl_image_tag item.photo.key, height: 100, width: 100, crop: :fill, class: "item-img" %>
-        <% end %>
-        <% end %>
-      </div>
-    
-    </div>
-   
-
-    <!-- donate button -->
-        <% if @item.user == current_user %>
-          <%= link_to "Donate", new_item_donation_path(@item), class: "btn btn-red" %> <!-- need to add path for donate -->
-        <% else %>
-          <div class="mx-auto">
-          <%= link_to "Borrow", chat_room_path(current_user.chat_room_with(@item.user), item_id: @item.id), class: "btn btn-red" %> <!-- need to figure out path to messaging -->
-          </div>
-        <% end %>
-    
-   
-  </div>
+</div>
 </div>
