@@ -117,7 +117,7 @@ blue_sweater.photo.attach(io: file, filename: 'blue_sweater.png', content_type: 
 white_shirt = Item.create!(
   name: "White Shirt",
   size: "M",
-  user: yuka,
+  user: soda,
   category: Item::CATEGORIES[0],
   tag_list: "white"
   )
@@ -127,7 +127,7 @@ white_shirt.photo.attach(io: file, filename: 'white_shirt.png', content_type: 'i
 orange_blouse = Item.create!(
   name: "Orange Blouse",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "orange"
   )
@@ -147,7 +147,7 @@ green_blouse.photo.attach(io: file, filename: 'green_blouse.png', content_type: 
 black_sweater = Item.create!(
   name: "Comfy Sweater",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "black"
   )
@@ -157,7 +157,7 @@ black_sweater.photo.attach(io: file, filename: 'black_sweater.png', content_type
 white_sweater = Item.create!(
   name: "White Sweater",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "white"
   )
@@ -167,7 +167,7 @@ white_sweater.photo.attach(io: file, filename: 'white_sweater.png', content_type
 pink_sweater = Item.create!(
   name: "Pink Sweater",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "pink"
   )
@@ -177,7 +177,7 @@ pink_sweater.photo.attach(io: file, filename: 'pink_sweater.png', content_type: 
 grey_vneck = Item.create!(
   name: "Grey V-Neck Sweater",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "grey"
   )
@@ -197,7 +197,7 @@ red_sweater.photo.attach(io: file, filename: 'red_sweater.png', content_type: 'i
 green_sweater = Item.create!(
   name: "Green Sweater",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "green"
   )
@@ -227,7 +227,7 @@ grey_cardigan.photo.attach(io: file, filename: 'grey_cardigan.png', content_type
 long_stripe = Item.create!(
   name: "Striped Shirt",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[0],
   tag_list: "cream"
   )
@@ -250,7 +250,7 @@ yuichiro_jeans.photo.attach(io: file, filename: 'yuichiro-jeans.png', content_ty
 pink_trousers = Item.create!(
   name: "Pink Trousers",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "pink"
   )
@@ -260,7 +260,7 @@ pink_trousers.photo.attach(io: file, filename: 'pink_trousers.png', content_type
 brown_pants = Item.create!(
   name: "Brown Pants",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "brown"
   )
@@ -270,7 +270,7 @@ brown_pants.photo.attach(io: file, filename: 'brown_pants.png', content_type: 'i
 soda_jeans = Item.create!(
   name: "Jeans",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "jeans"
   )
@@ -290,7 +290,7 @@ noemi_jeans.photo.attach(io: file, filename: 'noemi_jeans.png', content_type: 'i
 short_skirt = Item.create!(
   name: "Plaid Skirt",
   size: "M",
-  user: yuka,
+  user: soda,
   category: Item::CATEGORIES[1],
   tag_list: "skirt"
   )
@@ -320,7 +320,7 @@ grey_trousers.photo.attach(io: file, filename: 'grey_trousers.png', content_type
 brown_skirt = Item.create!(
   name: "Brown Skirt",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "skirt"
   )
@@ -340,7 +340,7 @@ grey_skirt.photo.attach(io: file, filename: 'grey_skirt.png', content_type: 'ima
 pleated_skirt = Item.create!(
   name: "Pleated Skirt",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "skirt"
   )
@@ -350,7 +350,7 @@ pleated_skirt.photo.attach(io: file, filename: 'pleated_skirt.png', content_type
 black_skirt = Item.create!(
   name: "Plaid Skirt",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[1],
   tag_list: "skirt"
   )
@@ -363,7 +363,7 @@ puts "creating shoes"
 star_shoes = Item.create!(
   name: "Star Shoes",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[2],
   tag_list: "blue"
   )
@@ -383,7 +383,7 @@ flats.photo.attach(io: file, filename: 'flats.png', content_type: 'image/png')
 sneakers = Item.create!(
   name: "Running Shoes",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[2],
   tag_list: "sneakers"
   )
@@ -393,7 +393,7 @@ sneakers.photo.attach(io: file, filename: 'sneakers.png', content_type: 'image/p
 formal_shoes = Item.create!(
   name: "Formal Shoes",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[2],
   tag_list: "heels"
   )
@@ -401,9 +401,9 @@ file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583982065/f
 formal_shoes.photo.attach(io: file, filename: 'formal_shoes.png', content_type: 'image/png')
 
 black_boots = Item.create!(
-  name: "Formal Shoes",
+  name: "Black Boots",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[2],
   tag_list: "boots"
   )
@@ -423,7 +423,7 @@ yuichiro_sneakers.photo.attach(io: file, filename: 'yuichiro_sneakers.png', cont
 yuka_shoes = Item.create!(
   name: "Sneakers",
   size: "M",
-  user: yuka,
+  user: soda,
   category: Item::CATEGORIES[2],
   tag_list: "sneakers"
   )
@@ -433,7 +433,7 @@ yuka_shoes.photo.attach(io: file, filename: 'yuka_shoes.png', content_type: 'ima
 ugg = Item.create!(
   name: "Ugg Boots",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[2],
   tag_list: "brown"
   )
@@ -454,14 +454,54 @@ adidas.photo.attach(io: file, filename: 'adidas.png', content_type: 'image/png')
 puts "creating outerwear"
 
 suit_jacket = Item.create!(
-  name: "Formal Jacket",
+  name: "Blazer",
   size: "M",
   user: soda,
   category: Item::CATEGORIES[3],
-  tag_list: "jacket"
+  tag_list: "blazer"
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975704/suit_jacket.png')
 suit_jacket.photo.attach(io: file, filename: 'suit_jacket.png', content_type: 'image/png')
+
+stripe_blazer = Item.create!(
+  name: "Striped Blazer",
+  size: "M",
+  user: erica,
+  category: Item::CATEGORIES[3],
+  tag_list: "blazer"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584003467/stripe_blazer.png')
+stripe_blazer.photo.attach(io: file, filename: 'stripe_blazer.png', content_type: 'image/png')
+
+stripe_blazer = Item.create!(
+  name: "Striped Blazer",
+  size: "M",
+  user: erica,
+  category: Item::CATEGORIES[3],
+  tag_list: "blazer"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584003467/stripe_blazer.png')
+stripe_blazer.photo.attach(io: file, filename: 'stripe_blazer.png', content_type: 'image/png')
+
+red_blazer = Item.create!(
+  name: "Red Blazer",
+  size: "M",
+  user: erica,
+  category: Item::CATEGORIES[3],
+  tag_list: "blazer"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584003467/red_blazer.png')
+red_blazer.photo.attach(io: file, filename: 'red_blazer.png', content_type: 'image/png')
+
+flower_blazer = Item.create!(
+  name: "Flower Blazer",
+  size: "M",
+  user: beth,
+  category: Item::CATEGORIES[3],
+  tag_list: "blazer"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584003467/flower_blazer.png')
+flower_blazer.photo.attach(io: file, filename: 'flower_blazer.png', content_type: 'image/png')
 
 black_jacket = Item.create!(
   name: "Black Jacket",
@@ -476,7 +516,7 @@ black_jacket.photo.attach(io: file, filename: 'black_jacket.png', content_type: 
 leather_jacket = Item.create!(
   name: "Leather Jacket",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[3],
   tag_list: "jacket"
   )
@@ -486,7 +526,7 @@ leather_jacket.photo.attach(io: file, filename: 'leather_jacket.png', content_ty
 denim_jacket = Item.create!(
   name: "Denim Jacket",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[3],
   tag_list: "jacket"
   )
@@ -496,7 +536,7 @@ denim_jacket.photo.attach(io: file, filename: 'denim_jacket.png', content_type: 
 grey_jacket = Item.create!(
   name: "Grey Jacket",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[3],
   tag_list: "jacket"
   )
@@ -506,7 +546,7 @@ grey_jacket.photo.attach(io: file, filename: 'grey_jacket.png', content_type: 'i
 long_coat = Item.create!(
   name: "Grey Jacket",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[3],
   tag_list: "coat"
   )
@@ -529,7 +569,7 @@ puts "creating accessories"
 glasses = Item.create!(
   name: "Glasses",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "glasses"
   )
@@ -539,7 +579,7 @@ glasses.photo.attach(io: file, filename: 'glasses.png', content_type: 'image/png
 bandana = Item.create!(
   name: "Bandana",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "scarf"
   )
@@ -559,7 +599,7 @@ black_belt.photo.attach(io: file, filename: 'black_belt.png', content_type: 'ima
 brown_bag = Item.create!(
   name: "Brown Bag",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "bag"
   )
@@ -569,7 +609,7 @@ brown_bag.photo.attach(io: file, filename: 'brown_bag.png', content_type: 'image
 scarf = Item.create!(
   name: "Scarf",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "scarf"
   )
@@ -579,7 +619,7 @@ scarf.photo.attach(io: file, filename: 'scarf.png', content_type: 'image/png')
 long_bag = Item.create!(
   name: "Brown Bag",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "bag"
   )
@@ -589,7 +629,7 @@ long_bag.photo.attach(io: file, filename: 'long_bag.png', content_type: 'image/p
 round_belt = Item.create!(
   name: "Black Belt",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "belt"
   )
@@ -599,7 +639,7 @@ round_belt.photo.attach(io: file, filename: 'round_belt.png', content_type: 'ima
 backpack = Item.create!(
   name: "Backpack",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "backpack"
   )
@@ -629,7 +669,7 @@ black_bag.photo.attach(io: file, filename: 'black_bag.png', content_type: 'image
 orange_scarf = Item.create!(
   name: "Orange Scarf",
   size: "M",
-  user: soda,
+  user: yuka,
   category: Item::CATEGORIES[4],
   tag_list: "scarf"
   )
