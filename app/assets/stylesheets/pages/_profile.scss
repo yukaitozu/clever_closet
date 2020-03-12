@@ -3,7 +3,7 @@
   font-size: 24px;
   color: #6c757d;
   position: absolute;
-  top: 7px;
+  top: 0px;
   left: 20px;
 }
 
@@ -13,9 +13,6 @@
   position: absolute;
   top: 28px;
   left: 20px;
-}
-
-.avatar-box {
 }
 
 .gear{
@@ -88,4 +85,42 @@
 
 .fa-times {
   padding-left: 8px;
+}
+
+.btn-white-wide-profile {
+  height: 30px;
+  width: 180px;
+  background-color: white;
+  color: #6c757d;
+  border-radius: 22px;
+  border: 0.5px solid #adb5bd;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.percentage-color {
+  height: 100%;
+  width: 100%;
+  border-radius: 22px;
+  background-color: #c9d5e0;
+}
+
+.bar-progress {
+  position: relative;
+  border: 0.5px solid #adb5bd;
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+  p {
+    position: absolute;
+    position: absolute;
+    top: 3px;
+    right: 70px;
+    font-size: 16px;
+    color: #6c757d;
+  }
+}
+
+.progress-level {
+  background-color: #f19999;
 }

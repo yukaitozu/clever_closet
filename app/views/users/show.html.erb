@@ -1,16 +1,16 @@
 <!-- YOUR PROFILE -->
 <% if current_user.id == params[:id].to_i %>
-  <div class = row >
+  <div class="row">
     <div class="col-5">
-    <%= render "users/avatar_profile" %>
+      <%= render "users/avatar_profile" %>
     </div>
       <div class="profile-title col-7">
         <div class ="user_name">
-        <div class="gear">
-          <%= link_to user_link_path(@user) do %>
-          <i class="fas fa-cog"></i>
-          <% end %>
-        </div>
+          <div class="gear">
+            <%= link_to user_link_path(@user) do %>
+              <i class="fas fa-cog"></i>
+            <% end %>
+          </div>
           <% if @user.badges.present? %>
             <div id = "headerfont-badge">
               <%= @user.username %>
@@ -29,12 +29,14 @@
             <% end %>
           </div>
         </div>
-          <div class = "btn-white-wide-profile my-1 text-center">
-            <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
-            <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
-            <% else %>
-            <%= @user.items.size %>/ <%= @user.items_limit %>
-            <% end %>
+          
+        <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
+          <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
+        <% else %>
+          <div class="progress bar-progress" style="height: 30px; border-radius: 22px; width: 180px;">
+            <div class="progress-bar progress-level" role="progressbar" style="width:<%= @user.items_percentage %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="<% @user.items_limit %>"> </div>
+            <p><%= @user.items.size %>/ <%= @user.items_limit %></p>
+        <% end %>
           </div>
           <div class = "btn-white-wide-profile my-2 text-center">
             <p><%= @user.points %> points</p>
@@ -43,9 +45,10 @@
     </div>
 
     <div class = "btn btn-red-wide-profile">
-    <%= link_to "Create a Look", new_user_look_path(@user) %>
+      <%= link_to "Create a Look", new_user_look_path(@user) %>
     </div>
   </div>
+  
   <div class = "tab">
     <%= render "users/tab" %>
   </div>
@@ -54,43 +57,46 @@
 <% elsif current_user.friends.include?(@user) %>
  <div class = row >
     <div class="col-5">
-    <%= render "users/avatar_profile" %>
+      <%= render "users/avatar_profile" %>
     </div>
-      <div class="profile-title col-7">
-        <div class ="user_name">
+    <div class="profile-title col-7">
+      <div class ="user_name">
         <div class="gear">
           <%= link_to user_link_path(@user) do %>
           <i class="fas fa-cog"></i>
           <% end %>
         </div>
+        <% if @user.badges.present? %>
+          <div id = "headerfont-badge">
+            <%= @user.username %>
+          </div>
+        <% else %>
+          <div id = "headerfont">
+            <%= @user.username %>
+          </div>
+        <% end %>
+        <div class = "badge">
           <% if @user.badges.present? %>
-            <div id = "headerfont-badge">
-              <%= @user.username %>
-            </div>
+            <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
+            <%= @user.badges.last.name %>
           <% else %>
-            <div id = "headerfont">
-              <%= @user.username %>
-            </div>
+            <%= "" %>
           <% end %>
-          <div class = "badge">
-            <% if @user.badges.present? %>
-              <%= image_tag (@user.badges.last.custom_fields[:image]), class: "badge-small" %>
-              <%= @user.badges.last.name %>
-            <% else %>
-              <%= "" %>
-            <% end %>
-          </div>
         </div>
-          <div class = "btn-white-wide-profile my-1 text-center">
-            <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
-            <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
-            <% else %>
-            <%= @user.items.size %>/ <%= @user.items_limit %>
-            <% end %>
-          </div>
-          <div class = "btn-white-wide-profile my-2 text-center">
-            <p>62 points</p>
-          </div>
+      </div>
+          
+      <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
+      <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
+      <% else %>
+      <div class="progress bar-progress" style="height: 30px; border-radius: 22px; width: 180px;">
+        <div class="progress-bar progress-level" role="progressbar" style="width:<%= @user.items_percentage %>%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="<% @user.items_limit %>"> </div>
+        <p><%= @user.items.size %>/ <%= @user.items_limit %></p>
+      </div>
+      <% end %>
+        
+        <div class = "btn-white-wide-profile my-2 text-center">
+          <p>62 points</p>
+        </div>
       </div>
     </div>
 

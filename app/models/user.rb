@@ -22,7 +22,11 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates_each :items do |user, attr, value|
-    user.errors.add attr, "Too many items for user" if user.items.size > user.items_limit
+    user.errors.add attr, "Too many items" if user.items.size > user.items_limit
+  end
+
+  def items_percentage
+    ((self.items.size.to_f / self.items_limit) * 100).to_i
   end
   # user.clothes("top")
   def clothes(type)
