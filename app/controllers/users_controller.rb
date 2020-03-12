@@ -35,9 +35,8 @@ class UsersController < ApplicationController
 
   def notification
     @notifications = Notification.where(user: current_user)
-    # unread_ids = @notifications.reject(&:read?).select(&:id)
-    # Notification.read!(unread_ids)
-    # @notification_groups = @notifications.group_by { |note| note.created_at.to_date }
+    unread_ids = @notifications.reject(&:read?).select(&:id)
+    @notifications.read!(unread_ids)
     authorize current_user
   end
 

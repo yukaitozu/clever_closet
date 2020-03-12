@@ -1,4 +1,11 @@
 .notification_card{
   border-top: 1px solid;
   border-bottom: 1px solid;
+  border-color: $light-gray;
+  background-color: white;
+  margin: 7px;
+  padding: 7px;
+  p{
+    font-size: 15px;
+  }
 }

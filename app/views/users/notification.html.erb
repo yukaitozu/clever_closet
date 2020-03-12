@@ -1,6 +1,3 @@
-<!-- things to show -->
-<!-- friends request -->
-<!-- looks suggetion -->
 <% @notifications.each do |notification|%>
 <div class="notification_card">
   <div class="row">
@@ -14,10 +11,12 @@
         <p><%= notification.notify_type%> from <%= User.find(notification.actor_id).username %></p>
       </div>
       <div class="col-4">
-      <%= link_to "link", main_app.look_path(notification.target), class: 'btn-gray-small mx-1' %>
+      <%= link_to "link", main_app.look_path(notification.target), class: 'btn-red-thick-small' %>
     </div>
     <% end %>
   </div>
 </div>
 <% end %>
- <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn btn-sm btn-secondary', method: 'delete' %>
+<div class="clean_notifications justify-content-right">
+  <%= link_to t('notifications.clean_all'), notifications.clean_notifications_path, class: 'btn-remove-white', method: 'delete' %>
+</div>
