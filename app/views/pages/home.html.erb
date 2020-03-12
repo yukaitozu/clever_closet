@@ -38,7 +38,7 @@
           <h1>Simplify Your Style</h1>
           <p>Start building outfits with your friends!</p>
           <div class="d-flex justify-content-center">
-            <a class="btn btn-red" href="#">Create Looks</a>
+            <a class="btn btn-red" href="#">Create A Look</a>
           </div>
         </div>
       </div>
@@ -53,19 +53,17 @@
     <% @looks.each do |look| %>
       <%= link_to user_path(look.user), class: "feed-username", style: "text-decoration:none;" do %>
         <div class="look-top-line">
-        <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
-        
-          <%= look.user.username %> 
-          
+          <%= cl_image_tag look.user.photo.key, height: 100, width: 100, crop: :fill, class: "avatar-feed"%>
+          <%= look.user.username %>
           <%= link_to upvote_look_path(look), remote: true, method: :put do %>
-          <div class="upvote-content">
-            <% if current_user.voted_for?(look) %>
-              <i class="fas fa-caret-square-up vote-icon gray-icon" data-id="<%= look.id %>"></i>
-            <% else %>
-              <i class="fas fa-caret-square-up vote-icon" data-id="<%= look.id %>"></i>
+            <div class="upvote-content">
+              <% if current_user.voted_for?(look) %>
+                <i class="fas fa-caret-square-up vote-icon gray-icon" data-id="<%= look.id %>"></i>
+              <% else %>
+                <i class="fas fa-caret-square-up vote-icon" data-id="<%= look.id %>"></i>
+              <% end %>
             <% end %>
-          <% end %>
-           <%= render "looks/upvote_size", look: look %>
+            <%= render "looks/upvote_size", look: look %>
           </div>
         <% end %>
       </div>
@@ -82,4 +80,3 @@
       </div>
     <% end %>
   <% end %>
-

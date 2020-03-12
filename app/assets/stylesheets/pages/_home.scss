@@ -61,6 +61,7 @@
     font-size: 32px;
     line-height: 40px;
     font-weight: 100;
+    margin-top: 8px;
 
   }
 
@@ -69,13 +70,15 @@
     line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
-    padding: 8px 30px;
+    padding: 6px 15px;
     color: white;
+    font-size: 16px;
   }
 }
 
@@ -96,6 +99,7 @@
         font-size: 32px;
     line-height: 40px;
     font-weight: 100;
+    margin-top: 10px;
 
   }
 
@@ -104,12 +108,14 @@
     line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
-    padding: 8px 30px;
+    padding: 6px 30px;
+    font-size: 16px;
   }
 }
 
@@ -130,6 +136,7 @@
     font-size: 32px;
     line-height: 40px;
     font-weight: 100;
+    margin-top:45px;
 
   }
 
@@ -137,13 +144,15 @@
     font-size: 18px;
     line-height: 25px;
     text-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-    margin-top: 24px;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
   }
 
   .btn-red {
     height: 40px;
     width: 180px;
     padding: 8px 30px;
+    font-size: 16px;
   }
 }
 
