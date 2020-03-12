@@ -65,6 +65,14 @@ beth = User.create!(
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583929128/girl2.jpg')
 beth.photo.attach(io: file, filename: 'girl2.jpg', content_type: 'image/jpg')
 
+brad = User.create!(
+  username: "Brad",
+  email: "brad@gmail.com",
+  password: "123456"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975947/boy_qomnkt.jpg')
+brad.photo.attach(io: file, filename: 'boy.jpg', content_type: 'image/jpg')
+
 puts "creating shirts"
 
 red = Item.create!(
