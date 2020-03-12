@@ -3,7 +3,7 @@
   font-size: 24px;
   color: #6c757d;
   position: absolute;
-  top: 7px;
+  top: 0px;
   left: 20px;
 }
 
@@ -13,9 +13,6 @@
   position: absolute;
   top: 28px;
   left: 20px;
-}
-
-.avatar-box {
 }
 
 .gear{
@@ -111,7 +108,7 @@
 .bar-progress {
   position: relative;
   border: 0.5px solid #adb5bd;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   margin-top: 8px;
 
   p {
@@ -125,5 +122,5 @@
 }
 
 .progress-level {
-  background-color: #b7b8b9;
+  background-color: #f19999;
 }
