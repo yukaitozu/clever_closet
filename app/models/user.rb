@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_merit
 
   has_one_attached :photo
+  acts_as_voter
 
 
 
