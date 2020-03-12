@@ -49,7 +49,7 @@ Merit::Badge.create!(
 
 Merit::Badge.create!(
   id: 5,
-  name: "Advanced Donator",
+  name: "Master Donator",
   description: "Donated 50-74 items",
   custom_fields: { image: 'badge2.png'}
 )
