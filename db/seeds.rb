@@ -579,7 +579,7 @@ scarf.photo.attach(io: file, filename: 'scarf.png', content_type: 'image/png')
 long_bag = Item.create!(
   name: "Brown Bag",
   size: "M",
-  user: noemi,
+  user: soda,
   category: Item::CATEGORIES[4],
   tag_list: "bag"
   )
