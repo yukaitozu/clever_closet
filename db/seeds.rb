@@ -79,7 +79,7 @@ striped_shirt = Item.create!(
   size: "M",
   user: noemi,
   category: Item::CATEGORIES[0],
-  tag_list: "cream"
+  tag_list: "stripe"
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975705/striped-shirt.png')
 striped_shirt.photo.attach(io: file, filename: 'striped-shirt.png', content_type: 'image/png')
@@ -127,7 +127,7 @@ white_shirt.photo.attach(io: file, filename: 'white_shirt.png', content_type: 'i
 orange_blouse = Item.create!(
   name: "Orange Blouse",
   size: "M",
-  user: yuka,
+  user: noemi,
   category: Item::CATEGORIES[0],
   tag_list: "orange"
   )
@@ -229,7 +229,7 @@ long_stripe = Item.create!(
   size: "M",
   user: yuka,
   category: Item::CATEGORIES[0],
-  tag_list: "cream"
+  tag_list: "stripe"
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583982068/long_stripe.png')
 long_stripe.photo.attach(io: file, filename: 'long_stripe.png', content_type: 'image/png')
@@ -273,6 +273,96 @@ brown_shirt = Item.create!(
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005966/brown_shirt.png')
 brown_shirt.photo.attach(io: file, filename: 'brown_shirt.png', content_type: 'image/png')
+
+red_tank = Item.create!(
+  name: "Red Tank",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[0],
+  tag_list: "red"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027029/red_tank.png')
+red_tank.photo.attach(io: file, filename: 'red_tank.png', content_type: 'image/png')
+
+black_cardigan = Item.create!(
+  name: "Black Cardigan",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[0],
+  tag_list: "black"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027029/black_cardigan.png')
+black_cardigan.photo.attach(io: file, filename: 'black_cardigan.png', content_type: 'image/png')
+
+green_tank = Item.create!(
+  name: "Green Tank",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[0],
+  tag_list: "green"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027045/green_tank.png')
+green_tank.photo.attach(io: file, filename: 'green_tank.png', content_type: 'image/png')
+
+orange_shirt = Item.create!(
+  name: "Orange Shirt",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[0],
+  tag_list: "orange"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027046/orange_shirt.png')
+orange_shirt.photo.attach(io: file, filename: 'orange_shirt.png', content_type: 'image/png')
+
+stripes = Item.create!(
+  name: "Striped Shirt",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[0],
+  tag_list: "stripe"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027053/stripes.png')
+stripes.photo.attach(io: file, filename: 'stripes.png', content_type: 'image/png')
+
+stripe = Item.create!(
+  name: "Striped Shirt",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[0],
+  tag_list: "stripe"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027059/stripe.png')
+stripe.photo.attach(io: file, filename: 'stripe.png', content_type: 'image/png')
+
+blue_tank = Item.create!(
+  name: "Blue Tank",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[0],
+  tag_list: "blue"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027060/blue_tank.png')
+blue_tank.photo.attach(io: file, filename: 'blue_tank.png', content_type: 'image/png')
+
+pink_long = Item.create!(
+  name: "Pink Long Sleeve",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[0],
+  tag_list: "pink"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584065699/pink_long.png')
+pink_long.photo.attach(io: file, filename: 'pink_long.png', content_type: 'image/png')
+
+doraemon = Item.create!(
+  name: "Doraemon",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[0],
+  tag_list: "blue"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584065704/doraemon.png')
+doraemon.photo.attach(io: file, filename: 'doraemon.png', content_type: 'image/png')
 
 
 puts "creating botoms"
@@ -437,6 +527,36 @@ red_pants = Item.create!(
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005965/red_pants.png')
 red_pants.photo.attach(io: file, filename: 'red_pants.png', content_type: 'image/png')
 
+shorts = Item.create!(
+  name: "Jean Shorts",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[1],
+  tag_list: "shorts"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027043/shorts.png')
+shorts.photo.attach(io: file, filename: 'shorts.png', content_type: 'image/png')
+
+trouser = Item.create!(
+  name: "Trouser",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[1],
+  tag_list: "trouser"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027063/trouser.png')
+trouser.photo.attach(io: file, filename: 'trouser.png', content_type: 'image/png')
+
+jean = Item.create!(
+  name: "Jean",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[1],
+  tag_list: "jeans"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027063/jean.png')
+jean.photo.attach(io: file, filename: 'jean.png', content_type: 'image/png')
+
 
 puts "creating shoes"
 
@@ -490,6 +610,16 @@ black_boots = Item.create!(
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583982065/black_boots.png')
 black_boots.photo.attach(io: file, filename: 'black_boots.png', content_type: 'image/png')
 
+red_heels = Item.create!(
+  name: "Red Heels",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[2],
+  tag_list: "heels"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027043/red_heels.png')
+red_heels.photo.attach(io: file, filename: 'red_heels.png', content_type: 'image/png')
+
 yuichiro_sneakers = Item.create!(
   name: "Sneakers",
   size: "M",
@@ -540,6 +670,36 @@ red_flats = Item.create!(
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005964/red_flats.png')
 red_flats.photo.attach(io: file, filename: 'red_flats.png', content_type: 'image/png')
 
+black_heels = Item.create!(
+  name: "Black Heels",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[2],
+  tag_list: "heels"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027054/black_heels.png')
+black_heels.photo.attach(io: file, filename: 'black_heels.png', content_type: 'image/png')
+
+mule = Item.create!(
+  name: "Black Mules",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[2],
+  tag_list: "mules"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027065/mule.png')
+mule.photo.attach(io: file, filename: 'mule.png', content_type: 'image/png')
+
+pink_shoes = Item.create!(
+  name: "Pink Sneakers",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[2],
+  tag_list: "sneakers"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584065660/pink_shoes.png')
+pink_shoes.photo.attach(io: file, filename: 'pink_shoes.png', content_type: 'image/png')
+
 
 puts "creating outerwear"
 
@@ -552,16 +712,6 @@ suit_jacket = Item.create!(
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1583975704/suit_jacket.png')
 suit_jacket.photo.attach(io: file, filename: 'suit_jacket.png', content_type: 'image/png')
-
-stripe_blazer = Item.create!(
-  name: "Striped Blazer",
-  size: "M",
-  user: erica,
-  category: Item::CATEGORIES[3],
-  tag_list: "blazer"
-  )
-file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584003467/stripe_blazer.png')
-stripe_blazer.photo.attach(io: file, filename: 'stripe_blazer.png', content_type: 'image/png')
 
 stripe_blazer = Item.create!(
   name: "Striped Blazer",
@@ -672,6 +822,26 @@ fleece_jacket = Item.create!(
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005965/fleece_jacket.png')
 fleece_jacket.photo.attach(io: file, filename: 'fleece_jacket.png', content_type: 'image/png')
+
+down = Item.create!(
+  name: "Down Coat",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[3],
+  tag_list: "down"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027048/down.png')
+down.photo.attach(io: file, filename: 'down.png', content_type: 'image/png')
+
+burgandy = Item.create!(
+  name: "Burgandy Leather Jacket",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[3],
+  tag_list: "burgandy"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584065677/burgandy.png')
+burgandy.photo.attach(io: file, filename: 'burgandy.png', content_type: 'image/png')
 
 
 puts "creating accessories"
@@ -815,5 +985,55 @@ sunglasses = Item.create!(
   )
 file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584005965/sunglasses.png')
 sunglasses.photo.attach(io: file, filename: 'sunglasses.png', content_type: 'image/png')
+
+red_bag = Item.create!(
+  name: "Red Bag",
+  size: "M",
+  user: noemi,
+  category: Item::CATEGORIES[4],
+  tag_list: "bag"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027030/red_bag.png')
+red_bag.photo.attach(io: file, filename: 'red_bag.png', content_type: 'image/png')
+
+coach_bag = Item.create!(
+  name: "Coach Bag",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[4],
+  tag_list: "bag"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027037/coach_bag.png')
+coach_bag.photo.attach(io: file, filename: 'coach_bag.png', content_type: 'image/png')
+
+hat = Item.create!(
+  name: "Hat",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[4],
+  tag_list: "hat"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027040/hat.png')
+hat.photo.attach(io: file, filename: 'hat.png', content_type: 'image/png')
+
+sunglasses2 = Item.create!(
+  name: "Sunglasses",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[4],
+  tag_list: "glasses"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027047/sunglasses2.png')
+sunglasses2.photo.attach(io: file, filename: 'sunglasses2.png', content_type: 'image/png')
+
+handbag = Item.create!(
+  name: "Handbag",
+  size: "M",
+  user: yuka,
+  category: Item::CATEGORIES[4],
+  tag_list: "bag"
+  )
+file = URI.open('https://res.cloudinary.com/drihevibr/image/upload/v1584027059/handbag.png')
+handbag.photo.attach(io: file, filename: 'handbag.png', content_type: 'image/png')
 
 puts "finish"
