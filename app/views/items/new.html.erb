@@ -6,7 +6,7 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :category, collection: Item::CATEGORIES , as: :radio_buttons  %>
     <%= f.input :tag_list,  hint: "Add your tags, separated by commas" %>
-    <div class="center d-flex justify-content-center mt-4">
+    <div class="center d-flex justify-content-center mt-3">
       <%= f.submit "Add Item", class: "btn btn-red btn-request" %>
     </div>
   <% end %>
