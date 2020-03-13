@@ -1,26 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offeset-3">
-      <div class="chat-header" data-chat-room-id="<%= @chat_room.id %>" data-user-id="<%= current_user.id %>">
-        <%= link_to chat_room_path do %>
-          <h4> <%= @chat_room.name %></h4>
+<div class="row">
+  <div class="col-sm-6 col-sm-offeset-3">
+    <div class="chat-header" data-chat-room-id="<%= @chat_room.id %>" data-user-id="<%= current_user.id %>">
+      <%= link_to chat_room_path, style: "text-decoration: none;" do %>
+        <h4 style="color: white;"> <%= @chat_room.name %></h4>
+      <% end %>
+    </div>
+    <div class="messages">
+      <% @chat_room.messages.each do |message| %>
+        <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
+      <% end %>
+    </div>
+    <div id="create-message">
+      <%= simple_form_for [ @chat_room, @message ], remote: @item.nil? do |f| %>
+        <%= f.input :content, label: false %>
+        <%= f.association :item, as: :hidden %>
+        <% if @item.present? %>
+          <%= render 'messages/chat_card', item: @message.item %>
         <% end %>
-      </div>
-      <div class="messages">
-        <% @chat_room.messages.each do |message| %>
-          <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
-        <% end %>
-      </div>
-      <div id="create-message">
-        <%= simple_form_for [ @chat_room, @message ], remote: @item.nil? do |f| %>
-          <%= f.input :content, label: false %>
-          <%= f.association :item, as: :hidden %>
-          <% if @item.present? %>
-            <%= render 'messages/chat_card', item: @message.item %>
-          <% end %>
-          <%= f.submit "Send", class: "btn btn-red-small my-2" %>
-        <% end %>
-      </div>
+        <%= f.submit "Send", class: "btn btn-red-small my-2" %>
+      <% end %>
     </div>
   </div>
 </div>
