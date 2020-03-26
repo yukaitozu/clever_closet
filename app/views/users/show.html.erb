@@ -29,7 +29,7 @@
             <% end %>
           </div>
         </div>
-          
+
         <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
           <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
         <% else %>
@@ -39,7 +39,7 @@
         <% end %>
           </div>
           <div class = "btn-white-wide-profile my-2 text-center">
-            <p><%= @user.points %> points</p>
+            <p><%= "63" %> points</p>
           </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
       <%= link_to "Create a Look", new_user_look_path(@user) %>
     </div>
   </div>
-  
+
   <div class = "tab">
     <%= render "users/tab" %>
   </div>
@@ -84,7 +84,7 @@
           <% end %>
         </div>
       </div>
-          
+
       <% if  @user.items.size.to_i >= @user.items_limit.to_i %>
       <p>over <%= @user.items.size.to_i - @user.items_limit.to_i %> items</p>
       <% else %>
@@ -93,7 +93,7 @@
         <p><%= @user.items.size %>/ <%= @user.items_limit %></p>
       </div>
       <% end %>
-        
+
         <div class = "btn-white-wide-profile my-2 text-center">
           <p>62 points</p>
         </div>
